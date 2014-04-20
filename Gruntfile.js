@@ -16,6 +16,18 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
+    // deletes files
+    // clean:dev does not delete vendor.js because it rarely changes
+    clean: {
+      build: ['build'],
+      dev: {
+        src: ['build/app.js', 'build/<%= pkg.name %>.css', 'build/<%= pkg.name %>.js']
+      },
+      prod: ['dist']
+    },
+
+    // front end package manager
+    // like npm but for the front end
     bower: {
       install: {
         options: {
@@ -25,14 +37,8 @@ module.exports = function(grunt) {
       }
     },
 
-    clean: {
-      build: ['build'],
-      dev: {
-        src: ['build/app.js', 'build/<%= pkg.name %>.css', 'build/<%= pkg.name %>.js']
-      },
-      prod: ['dist']
-    },
-
+    // front end dependency management
+    // uses node require() style
     browserify: {
       vendor: {
         src: ['client/requires/**/*.js'],
