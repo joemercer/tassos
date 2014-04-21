@@ -58,12 +58,17 @@ module.exports = function(grunt) {
     },
 
     // front end dependency management
-    // uses node require() style
+    // use node require() style to include modules
+    // note: vendor.js includes all javascript from dependencies in bower.json
+    // but we're ignoring the bootstrap js files
     browserify: {
       vendor: {
         src: ['client/requires/**/*.js'],
         dest: 'build/<%= ops.browserify.vendor %>.js',
         options: {
+          ignore: [
+            'client/requires/bootstrap-less/js/*.js'
+          ],
           shim: {
             jquery: {
               path: 'client/requires/jquery/js/jquery.js',
