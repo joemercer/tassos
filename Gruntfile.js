@@ -42,6 +42,7 @@ module.exports = function(grunt) {
       dev: {
         src: ['build/<%= ops.browserify.app %>.js', 'build/<%= ops.built.css %>.css', 'build/<%= ops.built.js %>.js']
       },
+      'public': ['public'],
       prod: ['dist']
     },
 
@@ -155,7 +156,7 @@ module.exports = function(grunt) {
       prod: {
         template: 'hbs/views/**/*.hbs',
         templateData: 'hbs/data/**/*.json',
-        output: 'public/**/*.html',
+        output: 'dist/**/*.html',
         //helpers: 'hbs/helpers/**/*.js',
         //partials: 'hbs/partials/**/*.hbs',
         globals: [
@@ -215,7 +216,7 @@ module.exports = function(grunt) {
       }
     },
 
-    // runs tasks when front-end code changes
+    // runs tasks when code changes
     watch: {
       scripts: {
         files: ['client/templates/*.hbs', 'client/src/**/*.js'],
@@ -224,6 +225,10 @@ module.exports = function(grunt) {
       less: {
         files: ['client/styles/**/*.less'],
         tasks: ['less:transpile', 'copy:dev']
+      },
+      hbs: {
+        files: ['hbs/views/**/*.hbs', 'hbs/data/**/*.json'],
+        tasks: ['clean:public', 'compile-handlebars:dev', 'copy:dev']
       },
       test: {
         files: ['build/<%= ops.browserify.app %>.js', 'client/spec/**/*.test.js'],
@@ -253,7 +258,7 @@ module.exports = function(grunt) {
     // can also run multiple blocking tasks (like nodemon and watch)
     concurrent: {
       dev: {
-        tasks: ['nodemon:dev', 'watch:scripts', 'watch:less', 'watch:test'],
+        tasks: ['nodemon:dev', 'watch:scripts', 'watch:less', 'watch:hbs', 'watch:test'],
         options: {
           logConcurrentOutput: true
         }
@@ -310,16 +315,24 @@ module.exports = function(grunt) {
   // cleans the build, then downloads front end packages
   grunt.registerTask('init:dev', ['clean', 'bower', 'browserify:vendor']);
 
-  grunt.registerTask('build:dev', ['clean:dev', 'browserify:app', 'browserify:test', 'jshint:dev', 'less:transpile', 'concat', 'copy:dev']);
-  grunt.registerTask('build:prod', ['clean:prod', 'browserify:vendor', 'browserify:app', 'jshint:all', 'less:transpile', 'concat', 'cssmin', 'uglify', 'copy:prod']);
+  // builds dev/prod
+  grunt.registerTask('build:dev', ['clean:dev', 'browserify:app', 'browserify:test', 'jshint:dev', 'less:transpile', 'concat', 'compile-handlebars:dev', 'copy:dev']);
+  grunt.registerTask('build:prod', ['clean:prod', 'browserify:vendor', 'browserify:app', 'jshint:all', 'less:transpile', 'concat', 'compile-handlebars:prod', 'cssmin', 'uglify', 'copy:prod']);
 
-  grunt.registerTask('heroku', ['init:dev', 'build:dev']);
+  // !!!
+  // also kill Procfile
+  // grunt.registerTask('heroku', ['init:dev', 'build:dev']);
 
+  // builds dev then starts the server
   grunt.registerTask('server', ['build:dev', 'concurrent:dev']);
+  // tests the server code
   grunt.registerTask('test:server', ['simplemocha:server']);
 
+  // tests the client code
   grunt.registerTask('test:client', ['karma:test']);
+  // continuously tests the client code when files change
   grunt.registerTask('tdd', ['karma:watcher:start', 'concurrent:test']);
 
+  // runs all the tests once
   grunt.registerTask('test', ['test:server', 'test:client']);
 };
