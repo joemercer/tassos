@@ -13,6 +13,13 @@ module.exports = function(grunt) {
       css: 'styles',
       js: 'main'
     },
+    // root src filenames
+    // these are the files that require/import the rest of the files
+    // !!! not dynamic yet
+    src: {
+      css: 'main',
+      js: 'main'
+    }
 
     // don't change names below here
 
