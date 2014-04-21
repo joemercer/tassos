@@ -319,10 +319,6 @@ module.exports = function(grunt) {
   grunt.registerTask('build:dev', ['clean:dev', 'browserify:app', 'browserify:test', 'jshint:dev', 'less:transpile', 'concat', 'compile-handlebars:dev', 'copy:dev']);
   grunt.registerTask('build:prod', ['clean:prod', 'browserify:vendor', 'browserify:app', 'jshint:all', 'less:transpile', 'concat', 'compile-handlebars:prod', 'cssmin', 'uglify', 'copy:prod']);
 
-  // !!!
-  // also kill Procfile
-  // grunt.registerTask('heroku', ['init:dev', 'build:dev']);
-
   // builds dev then starts the server
   grunt.registerTask('server', ['build:dev', 'concurrent:dev']);
   // tests the server code
