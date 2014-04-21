@@ -15,8 +15,8 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     // NOTE: do NOT include jasmine here because grunt-karma already does
     files: [
-      'build/vendor.js',
-      'build/tests.js',
+      'build/browserify-vendor.js',
+      'build/browserify-tests.js',
     ],
 
 

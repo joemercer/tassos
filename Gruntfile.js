@@ -7,21 +7,38 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
   // define some app specific settings
-  var settings = {
-    jsName: 'main',
-    cssName: 'styles'
+  var ops = {
+    // final filenames
+    name: {
+      css: 'styles',
+      js: 'main'
+    },
+
+    // options for built directory naming
+    built: {
+      css: 'built-styles',
+      js: 'built-main'
+    },
+    // options for browserify naming
+    // these are also used in the karma.conf.js
+    browserify: {
+      app: 'browserify-app',
+      vendor: 'browserify-vendor',
+      test: 'browserify-tests'
+    }
   };
 
   // project configuration
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    ops: ops,
 
     // deletes files
     // clean:dev does not delete vendor.js because it rarely changes
     clean: {
       build: ['build'],
       dev: {
-        src: ['build/app.js', 'build/<%= pkg.name %>.css', 'build/<%= pkg.name %>.js']
+        src: ['build/<%= ops.browserify.app %>.js', 'build/<%= ops.built.css %>.css', 'build/<%= ops.built.js %>.js']
       },
       prod: ['dist']
     },
@@ -42,7 +59,7 @@ module.exports = function(grunt) {
     browserify: {
       vendor: {
         src: ['client/requires/**/*.js'],
-        dest: 'build/vendor.js',
+        dest: 'build/<%= ops.browserify.vendor %>.js',
         options: {
           shim: {
             jquery: {
@@ -74,7 +91,7 @@ module.exports = function(grunt) {
       },
       app: {
         files: {
-          'build/app.js': ['client/src/main.js']
+          'build/<%= ops.browserify.app %>.js': ['client/src/main.js']
         },
         options: {
           transform: ['hbsfy'],
@@ -83,7 +100,7 @@ module.exports = function(grunt) {
       },
       test: {
         files: {
-          'build/tests.js': [
+          'build/<%= ops.browserify.test %>.js': [
             'client/spec/**/*.test.js'
           ]
         },
@@ -94,10 +111,18 @@ module.exports = function(grunt) {
       }
     },
 
+    // checks for good JavaScript coding practices
+    jshint: {
+      all: ['Gruntfile.js', 'server.js', 'client/src/**/*.js', 'client/spec/**/*.js'],
+      dev: ['client/src/**/*.js'],
+      test: ['client/spec/**/*.js']
+    },
+
+    // compiles less files to css files
     less: {
       transpile: {
         files: {
-          'build/<%= pkg.name %>.css': [
+          'build/<%= ops.built.css %>.css': [
             'client/styles/reset.css',
             'client/requires/*/css/*',
             'client/styles/less/main.less'
@@ -106,18 +131,21 @@ module.exports = function(grunt) {
       }
     },
 
+    // concatanates js files
     concat: {
-      'build/<%= pkg.name %>.js': ['build/vendor.js', 'build/app.js']
+      'build/<%= ops.built.js %>.js': ['build/<%= ops.browserify.vendor %>.js', 'build/<%= ops.browserify.app %>.js']
     },
 
+    // copies files
+    // !!! will need to add more copying for data and html files
     copy: {
       dev: {
         files: [{
-          src: 'build/<%= pkg.name %>.js',
-          dest: 'public/js/<%= pkg.name %>.js'
+          src: 'build/<%= ops.built.js %>.js',
+          dest: 'public/js/<%= ops.name.js %>.js'
         }, {
-          src: 'build/<%= pkg.name %>.css',
-          dest: 'public/css/<%= pkg.name %>.css'
+          src: 'build/<%= ops.built.css %>.css',
+          dest: 'public/css/<%= ops.name.css %>.css'
         }, {
           src: 'client/img/*',
           dest: 'public/img/'
@@ -134,8 +162,8 @@ module.exports = function(grunt) {
     // CSS minification.
     cssmin: {
       minify: {
-        src: ['build/<%= pkg.name %>.css'],
-        dest: 'dist/css/<%= pkg.name %>.css'
+        src: ['build/<%= ops.built.css %>.css'],
+        dest: 'dist/css/<%= ops.name.css %>.css'
       }
     },
 
@@ -147,8 +175,8 @@ module.exports = function(grunt) {
           verbose: true
         },
         files: [{
-          src: 'build/<%= pkg.name %>.js',
-          dest: 'dist/js/<%= pkg.name %>.js'
+          src: 'build/<%= ops.built.js %>.js',
+          dest: 'dist/js/<%= ops.name.js %>.js'
         }]
       }
     },
@@ -164,11 +192,11 @@ module.exports = function(grunt) {
         tasks: ['less:transpile', 'copy:dev']
       },
       test: {
-        files: ['build/app.js', 'client/spec/**/*.test.js'],
+        files: ['build/<%= ops.browserify.app %>.js', 'client/spec/**/*.test.js'],
         tasks: ['browserify:test']
       },
       karma: {
-        files: ['build/tests.js'],
+        files: ['build/<%= ops.browserify.test %>.js'],
         tasks: ['jshint:test', 'karma:watcher:run']
       }
     },
@@ -232,15 +260,11 @@ module.exports = function(grunt) {
       test: {
         singleRun: true
       }
-    },
-
-    jshint: {
-      all: ['Gruntfile.js', 'client/src/**/*.js', 'client/spec/**/*.js'],
-      dev: ['client/src/**/*.js'],
-      test: ['client/spec/**/*.js']
     }
+
   });
 
+  // cleans the build, then downloads front end packages
   grunt.registerTask('init:dev', ['clean', 'bower', 'browserify:vendor']);
 
   grunt.registerTask('build:dev', ['clean:dev', 'browserify:app', 'browserify:test', 'jshint:dev', 'less:transpile', 'concat', 'copy:dev']);
