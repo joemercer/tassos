@@ -131,8 +131,6 @@ module.exports = function(grunt) {
       transpile: {
         files: {
           'build/<%= ops.built.css %>.css': [
-            'client/styles/reset.css',
-            'client/requires/*/css/*',
             'client/styles/less/main.less'
           ]
         }
