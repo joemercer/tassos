@@ -138,6 +138,32 @@ module.exports = function(grunt) {
       'build/<%= ops.built.js %>.js': ['build/<%= ops.browserify.vendor %>.js', 'build/<%= ops.browserify.app %>.js']
     },
 
+    // precompiles handlebars templates to html on the server
+    // copies the file structure in hbs/views
+    // uses data from hbs/data
+    'compile-handlebars': {
+      dev: {
+        template: 'hbs/views/**/*.hbs',
+        templateData: 'hbs/data/**/*.json',
+        output: 'public/**/*.html',
+        //helpers: 'hbs/helpers/**/*.js',
+        //partials: 'hbs/partials/**/*.hbs',
+        globals: [
+          'hbs/global.json'
+        ]
+      },
+      prod: {
+        template: 'hbs/views/**/*.hbs',
+        templateData: 'hbs/data/**/*.json',
+        output: 'public/**/*.html',
+        //helpers: 'hbs/helpers/**/*.js',
+        //partials: 'hbs/partials/**/*.hbs',
+        globals: [
+          'hbs/global.json'
+        ]
+      }
+    },
+
     // copies files
     // !!! will need to add more copying for data and html files
     copy: {
