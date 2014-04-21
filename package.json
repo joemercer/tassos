@@ -1,11 +1,11 @@
 {
-  "name": "myapp",
-  "description": "Boilerplate web app using node, express, mongodb, backbone, marionette.  Tooling includes Grunt, Bower, Browserify, etc.",
+  "name": "seed",
+  "description": "Seed web app using node, express, backbone, marionette.  Tooling includes Grunt, Bower, Browserify, etc.",
   "version": "0.0.1",
-  "author": "Jason Krol",
+  "author": "Joe Mercer",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jkat98/benm.git"
+    "url": "!!!"
   },
   "engines": {
     "node": "0.10.x"
