@@ -19,7 +19,7 @@ module.exports = function(grunt) {
     src: {
       css: 'main',
       js: 'main'
-    }
+    },
 
     // don't change names below here
 
