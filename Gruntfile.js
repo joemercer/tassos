@@ -6,7 +6,7 @@ module.exports = function(grunt) {
   // grunt modules defined in package.json
   require('load-grunt-tasks')(grunt);
 
-  // define some app specific settings
+  // define some app specific options
   var ops = {
     // final filenames
     name: {
@@ -14,13 +14,15 @@ module.exports = function(grunt) {
       js: 'main'
     },
 
+    // don't change names below here
+
     // options for built directory naming
     built: {
       css: 'built-styles',
       js: 'built-main'
     },
     // options for browserify naming
-    // these are also used in the karma.conf.js
+    // also used in the karma.conf.js
     browserify: {
       app: 'browserify-app',
       vendor: 'browserify-vendor',
@@ -159,7 +161,8 @@ module.exports = function(grunt) {
       }
     },
 
-    // CSS minification.
+    // css minification
+    // puts the file to /dist
     cssmin: {
       minify: {
         src: ['build/<%= ops.built.css %>.css'],
@@ -167,7 +170,8 @@ module.exports = function(grunt) {
       }
     },
 
-    // Javascript minification.
+    // javascript minification
+    // puts the file in /dist
     uglify: {
       compile: {
         options: {
@@ -181,7 +185,7 @@ module.exports = function(grunt) {
       }
     },
 
-    // for changes to the front-end code
+    // runs tasks when front-end code changes
     watch: {
       scripts: {
         files: ['client/templates/*.hbs', 'client/src/**/*.js'],
@@ -201,6 +205,7 @@ module.exports = function(grunt) {
       }
     },
 
+    // restarts server when server.js changes
     nodemon: {
       dev: {
         options: {
@@ -214,25 +219,8 @@ module.exports = function(grunt) {
       }
     },
 
-    // server tests
-    simplemocha: {
-      options: {
-        globals: ['expect', 'sinon'],
-        timeout: 3000,
-        ignoreLeaks: false,
-        ui: 'bdd',
-        reporter: 'spec'
-      },
-
-      server: {
-        src: ['spec/spechelper.js', 'spec/**/*.test.js']
-      }
-    },
-
-    shell: {
-
-    },
-
+    // run slow tasks concurrently to speed them up
+    // can also run multiple blocking tasks (like nodemon and watch)
     concurrent: {
       dev: {
         tasks: ['nodemon:dev', 'watch:scripts', 'watch:less', 'watch:test'],
@@ -248,10 +236,35 @@ module.exports = function(grunt) {
       }
     },
 
+    // runs arbitrary shell commands
+    // supports background processes
+    shell: {
+
+    },
+
+    // runs server tests
+    simplemocha: {
+      options: {
+        globals: ['expect', 'sinon'],
+        timeout: 3000,
+        ignoreLeaks: false,
+        ui: 'bdd',
+        reporter: 'spec'
+      },
+
+      server: {
+        src: ['spec/spechelper.js', 'spec/**/*.test.js']
+      }
+    },
+
     // for front-end tdd
     karma: {
       options: {
-        configFile: 'karma.conf.js'
+        configFile: 'karma.conf.js',
+        files: [
+          'build/<%= ops.browserify.vendor %>.js',
+          'build/<%= ops.browserify.test %>.js'
+        ]
       },
       watcher: {
         background: true,
