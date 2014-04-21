@@ -165,7 +165,7 @@ module.exports = function(grunt) {
     },
 
     // copies files
-    // !!! will need to add more copying for data and html files
+    // everything in content is copied as is
     copy: {
       dev: {
         files: [{
@@ -175,14 +175,18 @@ module.exports = function(grunt) {
           src: 'build/<%= ops.built.css %>.css',
           dest: 'public/css/<%= ops.name.css %>.css'
         }, {
-          src: 'client/img/*',
-          dest: 'public/img/'
+          expand: true,
+          cwd: 'content/',
+          src: '**/*',
+          dest: 'public/'
         }]
       },
       prod: {
         files: [{
-          src: ['client/img/*'],
-          dest: 'dist/img/'
+          expand: true,
+          cwd: 'content/',
+          src: '**/*',
+          dest: 'dist/'
         }]
       }
     },
