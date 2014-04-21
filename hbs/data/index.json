@@ -1,3 +1,11 @@
 {
-	"hello": "world"
+	"title": "Seed App",
+	"heading": "Hello Pals!",
+	"about": {
+    "picture": {
+      "src": "http://placehold.it/228x228",
+      "alt": "Placeholder image"
+    },
+    "summary": "Salvia church-key brunch, Brooklyn wolf dreamcatcher flexitarian paleo craft beer blog Bushwick next level mustache. Master cleanse roof party post-ironic, yr disrupt VHS Shoreditch. Chia biodiesel VHS, master cleanse Portland craft beer +1. Ethical try-hard skateboard, PBR&B before they sold out trust fund XOXO banjo pour-over flexitarian. Chia beard leggings keffiyeh banh mi seitan lo-fi Etsy Echo Park chillwave hoodie Pitchfork DIY, deep v gentrify. Mumblecore roof party Carles, Neutra dreamcatcher food truck polaroid Cosby sweater fixie. Artisan leggings Austin McSweeney's plaid, master cleanse letterpress whatever messenger bag try-hard."
+  }
 }

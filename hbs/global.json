@@ -1,3 +1,13 @@
 {
-	"global": "found"
+	"author": {
+		"name": "Joe Mercer",
+		"twitter": {
+      "label": "@jomrcr",
+      "href": "https://twitter.com/jomrcr"
+    },
+    "github": {
+      "label": "github.com/joemercer",
+      "href": "https://github.com/joemercer"
+    }
+  }
 }

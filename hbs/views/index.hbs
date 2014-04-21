@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Seed App</title>
+    <title>{{title}}</title>
 
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 
@@ -16,12 +16,17 @@
     <![endif]-->
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <h1>{{heading}}</h1>
 
     <div id="content">
-      global: {{global}}
+      <h3>So what is this?</h3>
+      <img src="{{about.picture.src}}" alt="{{about.picture.alt}}">
+      <p>{{about.summary}}</p>
+      <small>This came from index.json!</small>
       <br>
-      hello: {{hello}}
+      <h3>And who made it?</h3>
+      <p><a href="{{author.twitter.href}}" target="_blank">{{author.twitter.label}}</a> made this and put it on his <a href="{{author.github.href}}" target="_blank">Github</a>.</p>
+      <small>This came from global.json!</small>
     </div>
 
     <script type="text/javascript" src="js/main.js"></script>
