@@ -1,9 +1,22 @@
-var Marionette = require('backbone.marionette');
+var Backbone = require('backbone');
 
-module.exports = Router = Marionette.AppRouter.extend({
-    appRoutes: {
-        ''  : 'home',
-        'details/:id' : 'details',
-        'add' : 'add'
-    }
+var ArticlePreviewsView = require('./views/articlePreviews');
+
+module.exports = Router = Backbone.Router.extend({
+  routes: {
+    '': 'home',
+    'blog': 'blog'
+  },
+
+  home: function() {
+    console.log('home');
+  },
+
+  blog: function() {
+    console.log('blog');
+    window.App.views.articlePreviews = new ArticlePreviewsView({
+      collection: window.App.data.articles
+    });
+  }
+
 });

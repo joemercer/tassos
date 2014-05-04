@@ -47,7 +47,7 @@ module.exports = function(grunt) {
     clean: {
       build: ['build'],
       dev: {
-        src: ['build/<%= ops.browserify.app %>.js', 'build/<%= ops.built.css %>.css', 'build/<%= ops.built.js %>.js']
+        src: ['public', 'build/<%= ops.browserify.app %>.js', 'build/<%= ops.built.css %>.css', 'build/<%= ops.built.js %>.js']
       },
       'public': ['public'],
       prod: ['dist']
@@ -89,16 +89,10 @@ module.exports = function(grunt) {
               path: 'client/requires/backbone/js/backbone.js',
               exports: 'Backbone',
               depends: {
-                underscore: 'underscore'
-              }
-            },
-            'backbone.marionette': {
-              path: 'client/requires/backbone.marionette/js/backbone.marionette.js',
-              exports: 'Marionette',
-              depends: {
-                jquery: '$',
-                backbone: 'Backbone',
-                underscore: '_'
+                underscore: 'underscore',
+                // we're including jquery as a dependency even though it technically isn't
+                // because Backbone.router seems to complain about not doing so
+                jquery: '$'
               }
             }
           }
@@ -110,7 +104,7 @@ module.exports = function(grunt) {
         },
         options: {
           transform: ['hbsfy'],
-          external: ['jquery', 'underscore', 'backbone', 'backbone.marionette']
+          external: ['jquery', 'underscore', 'backbone']
         }
       },
       test: {
@@ -121,7 +115,7 @@ module.exports = function(grunt) {
         },
         options: {
           transform: ['hbsfy'],
-          external: ['jquery', 'underscore', 'backbone', 'backbone.marionette']
+          external: ['jquery', 'underscore', 'backbone']
         }
       }
     },
@@ -130,7 +124,10 @@ module.exports = function(grunt) {
     jshint: {
       all: ['Gruntfile.js', 'server.js', 'client/src/**/*.js', 'client/spec/**/*.js'],
       dev: ['client/src/**/*.js'],
-      test: ['client/spec/**/*.js']
+      test: ['client/spec/**/*.js'],
+      options: {
+        debug: true
+      }
     },
 
     // compiles less files to css files
@@ -230,7 +227,7 @@ module.exports = function(grunt) {
     watch: {
       scripts: {
         files: ['client/templates/*.hbs', 'client/src/**/*.js'],
-        tasks: ['clean:dev', 'browserify:app', 'concat', 'copy:dev']
+        tasks: ['clean:dev', 'browserify:app', 'less:transpile', 'concat', 'compile-handlebars:dev', 'copy:dev']
       },
       less: {
         files: ['client/styles/**/*.less'],
