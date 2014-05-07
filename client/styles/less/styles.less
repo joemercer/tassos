@@ -36,12 +36,42 @@
 
 }
 
+// Header
+// _________
+
 #header {
-	.header-img {
+ position: fixed;
+ height: 58px;
+ width: 100%;
+ z-index: 10;
+}
+
+.header-space {
+	height: 50px;
+	margin-top: 8px;
+	background-color: @white;
+	opacity: .9;
+	border-bottom: 1px solid @golden-gray-lighter;
+}
+
+.header-color-block {
+	height: 8px;
+	width: 8.3333333%;
+	margin: 0;
+	padding: 0;
+	float: left;
+	opacity: 1;
+}
+
+// Content
+// _________
+
+#content {
+	padding-top: 58px;
+}
+
+#introduction {
+	.intro-img {
 		width: 203px;
-	}
-	.thing {
-		width: 203px;
-		background-image: url('../img/joe.jpg');
 	}
 }
