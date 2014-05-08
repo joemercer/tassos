@@ -33,7 +33,46 @@
 }
 
 .hover-link {
+	opacity: .3;
+	-moz-transition-duration: 0.4s;
+	-moz-transition-property: 'opacity';
+	-moz-transition-delay: 0s;
+	-moz-transition-timing-function: linear;
+	-webkit-transition-duration: 0.4s;
+	-webkit-transition-property: 'opacity';
+	-webkit-transition-delay: 0s;
+	-webkit-transition-timing-function: linear;
+	-webkit-backface-visibility: hidden;
+	transition-duration: 0.4s;
+	transition-property: 'opacity';
+	transition-delay: 0s;
+	transition-timing-function: linear;
 
+	&:hover {
+		color: @yellow;
+		opacity: 1;
+		-moz-transition-duration: 0.4s;
+		-moz-transition-property: 'opacity';
+		-moz-transition-delay: 0s;
+		-moz-transition-timing-function: linear;
+		-webkit-transition-duration: 0.4s;
+		-webkit-transition-property: 'opacity';
+		-webkit-transition-delay: 0s;
+		-webkit-transition-timing-function: linear;
+		-webkit-backface-visibility: hidden;
+		transition-duration: 0.4s;
+		transition-property: 'opacity';
+		transition-delay: 0s;
+		transition-timing-function: linear;
+	}
+}
+
+a {
+	font-family: @headings-font-family;
+}
+
+.row {
+	margin-top: 140px;
 }
 
 // Header
