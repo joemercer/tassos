@@ -109,8 +109,8 @@ a {
 	padding-top: 58px;
 }
 
-// Introduction
-// ______________
+// # Introduction
+// ________________
 
 #introduction {
 	.intro-img {
@@ -120,4 +120,76 @@ a {
 		margin: 0;
 		line-height: 203px;
 	}
+}
+
+
+// # Nav
+// _______
+
+@nav-height: (1.5 * @golden-line-height-computed);
+@nav-item-horizontal-spacing: @golden-line-height-computed;
+@nav-vertical-margin: @golden-line-height-computed;
+
+.nav-container {
+  height: @nav-height;
+  margin: @nav-vertical-margin 0px;
+  text-align: center;
+}
+
+.nav {
+	display: inline-block;
+  padding: 0px @nav-item-horizontal-spacing;
+}
+
+.nav-item,
+.nav-item a {
+  display: inline-block;
+  line-height: @nav-height;
+  padding: 0px @nav-item-horizontal-spacing;
+
+  font-family: @headings-font-family;
+  color: @golden-gray-dark;
+  font-size: @golden-font-size-large;
+
+  &:hover,
+  &.active {
+  	color: @brand-primary;
+  	font-weight: bold;
+  	text-decoration: none;
+  }
+}
+
+// # Nav-Main
+
+.nav-container {
+	.nav {
+		border-top: 1px solid @golden-gray;
+		border-bottom: 1px solid @golden-gray;
+	}
+}
+
+// # Nav-Fixed
+
+.nav-container.fixed {
+	position: fixed;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	z-index: 1000;
+	margin: 0px;
+	background-color: @golden-gray-dark;
+	color: @golden-gray-lightest;
+
+	.nav-item a {
+		color: @golden-gray-lightest;
+
+		&.active {
+	  	color: @brand-primary;
+	  }
+	}
+
+	.nav {
+		border: none;
+	}
+
 }
