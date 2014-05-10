@@ -76,6 +76,14 @@ module.exports = function(grunt) {
           dest: 'public/css/<%= ops.name.css %>.css'
         }]
       },
+      fonts: {
+        files: [{
+          expand: true,
+          cwd: 'client/requires/fontawesome/fonts',
+          src: '**/*',
+          dest: 'public/fonts'
+        }]
+      },
       img: {
         files: [{
           expand: true,
@@ -94,6 +102,12 @@ module.exports = function(grunt) {
         },
         {
           expand: true,
+          cwd: 'client/requires/fontawesome/fonts',
+          src: '**/*',
+          dest: 'public/fonts'
+        },
+        {
+          expand: true,
           cwd: 'client/img',
           src: '**/*',
           dest: 'public/img'
@@ -101,6 +115,12 @@ module.exports = function(grunt) {
       },
       prod: {
         files: [{
+          expand: true,
+          cwd: 'client/requires/fontawesome/fonts',
+          src: '**/*',
+          dest: 'dist/fonts'
+        },
+        {
           expand: true,
           cwd: 'client/img',
           src: '**/*',
