@@ -1,6 +1,7 @@
 # TODO
 ________
 
+- put data in data file
 - fix JavaScript
 - - remove Backbone
 - - include styles.js with jQuery
