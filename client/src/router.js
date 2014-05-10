@@ -1,22 +1,22 @@
-var Backbone = require('backbone');
+// var Backbone = require('backbone');
 
-var ArticlePreviewsView = require('./views/articlePreviews');
+// var ArticlePreviewsView = require('./views/articlePreviews');
 
-module.exports = Router = Backbone.Router.extend({
-  routes: {
-    '': 'home',
-    'blog': 'blog'
-  },
+// module.exports = Router = Backbone.Router.extend({
+//   routes: {
+//     '': 'home',
+//     'blog': 'blog'
+//   },
 
-  home: function() {
-    console.log('home');
-  },
+//   home: function() {
+//     console.log('home');
+//   },
 
-  blog: function() {
-    console.log('blog');
-    window.App.views.articlePreviews = new ArticlePreviewsView({
-      collection: window.App.data.articles
-    });
-  }
+//   blog: function() {
+//     console.log('blog');
+//     window.App.views.articlePreviews = new ArticlePreviewsView({
+//       collection: window.App.data.articles
+//     });
+//   }
 
-});
+// });
