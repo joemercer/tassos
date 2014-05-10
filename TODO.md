@@ -2,6 +2,8 @@
 ________
 
 - put data in data file
+- put global data in global data file
+- include font awesome
 - fix JavaScript
 - - remove Backbone
 - - include styles.js with jQuery
