@@ -3,7 +3,8 @@ ________
 
 - put data in data file
 - put global data in global data file
-- include font awesome
+- include social network links
+- add a nice markdown compiler that plays nicely with other json data
 - fix JavaScript
 - - remove Backbone
 - - include styles.js with jQuery
