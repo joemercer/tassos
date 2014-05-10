@@ -1,7 +1,6 @@
 # TODO
 ________
 
-- refactor location of views
 - fix JavaScript
 - - remove Backbone
 - - include styles.js with jQuery
@@ -10,5 +9,5 @@ ________
 - - navbar
 - - perhaps other things
 - fix the pipeline
-- - only delete the necessary things
+- - test that nothing broke
 - - perhaps use a grunt plugin to only run moved tasks

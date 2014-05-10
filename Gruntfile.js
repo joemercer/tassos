@@ -8,20 +8,25 @@ module.exports = function(grunt) {
 
   // define some app specific options
   var ops = {
-    // final filenames
+
+    // output filenames:
+    // styles.css
+    // main.js
     name: {
       css: 'styles',
       js: 'main'
     },
-    // root src filenames
-    // these are the files that require/import the rest of the files
-    // !!! not dynamic yet
+
+    // input filenames:
+    // main.less imports the rest of the less files
+    // main.js requires the rest of the javascript files
     src: {
       css: 'main',
       js: 'main'
     },
 
     // don't change names below here
+    // _____________________________
 
     // options for built directory naming
     built: {
@@ -44,15 +49,13 @@ module.exports = function(grunt) {
 
     // deletes files
     // clean:dev does not delete vendor.js because it rarely changes
-    // !!! we should try to not delete other stuff when we can
-    // !!! need to check places with clean:dev
     clean: {
-      build: ['build'],
-      'public': ['public'],
       scripts: ['public/js', 'build/<%= ops.browserify.app %>.js', 'build/<%= ops.built.js %>.js'],
       styles: ['public/css', 'build/<%= ops.built.css %>.css'],
       templates: ['public/**/*.html'],
       img: ['public/img'],
+      build: ['build'],
+      'public': ['public'],
       dev: {
         src: ['public', 'build/<%= ops.browserify.app %>.js', 'build/<%= ops.built.css %>.css', 'build/<%= ops.built.js %>.js']
       },
@@ -60,8 +63,6 @@ module.exports = function(grunt) {
     },
 
     // copies files
-    // !!! need a better solution for copying the images
-    // !!! or maybe just only copy images 
     copy: {
       scripts: {
         files: [{
@@ -158,6 +159,7 @@ module.exports = function(grunt) {
           'build/<%= ops.browserify.app %>.js': ['client/src/main.js']
         },
         options: {
+          // hbsfy allows you to require handlebars templates in your javascript
           transform: ['hbsfy'],
           external: ['jquery', 'underscore', 'backbone']
         }
@@ -202,6 +204,7 @@ module.exports = function(grunt) {
     },
 
     // precompiles handlebars templates to html on the server
+    // TODO(joe) check this for helpers and partials
     'compile-handlebars': {
       dev: {
         template: 'client/templates/views/**/*.hbs',
@@ -226,7 +229,7 @@ module.exports = function(grunt) {
     },
 
     // css minification
-    // puts the file to /dist
+    // puts the file in /dist
     cssmin: {
       minify: {
         src: ['build/<%= ops.built.css %>.css'],
@@ -250,8 +253,8 @@ module.exports = function(grunt) {
     },
 
     // runs tasks when code changes
-    // !!! do i still need copy:dev (test?)
-    // !!! add a watcher for images? does it work with adding files
+    // TODO(joe) test this and make sure it works
+    // TODO(joe) test a watcher for images
     watch: {
       scripts: {
         files: ['client/src/**/*.js'],
@@ -275,7 +278,7 @@ module.exports = function(grunt) {
       }
     },
 
-    // restarts server when server.js changes
+    // restarts server when server.js or watchedFolders files change
     nodemon: {
       dev: {
         options: {
@@ -350,8 +353,13 @@ module.exports = function(grunt) {
   // cleans the build, then downloads front end packages
   grunt.registerTask('init:dev', ['clean', 'bower', 'browserify:vendor']);
 
-  // builds dev/prod
+  // builds dev
+  // 1. deletes /public
+  // 2. builds assets except vendor.js
+  // 3. copies assets to /public
+  // TODO(joe) consider not copying over images and other large files
   grunt.registerTask('build:dev', ['clean:dev', 'browserify:app', 'browserify:test', 'jshint:dev', 'less:transpile', 'concat', 'compile-handlebars:dev', 'copy:dev']);
+  // builds prod
   grunt.registerTask('build:prod', ['clean:prod', 'browserify:vendor', 'browserify:app', 'jshint:all', 'less:transpile', 'concat', 'compile-handlebars:prod', 'cssmin', 'uglify', 'copy:prod']);
 
   // builds dev then starts the server
