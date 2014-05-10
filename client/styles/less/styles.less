@@ -71,64 +71,89 @@ a {
 	font-family: @headings-font-family;
 }
 
-.row {
-	margin-top: 140px;
-}
+@zindex-navbar-fixed: 'use this';
 
-// Header
+// # Header
 // _________
+
+@header-height: 58px;
+@header-color-block-height: 8px;
+@num-header-color-blocks: 12;
+@border-color: @golden-gray-lighter;
 
 #header {
  position: fixed;
- height: 58px;
+ height: @header-height;
  width: 100%;
- z-index: 10;
-}
-
-.header-space {
-	height: 50px;
-	margin-top: 8px;
-	background-color: @white;
-	opacity: .9;
-	border-bottom: 1px solid @golden-gray-lighter;
+ z-index: @zindex-navbar;
 }
 
 .header-color-block {
-	height: 8px;
-	width: 8.3333333%;
+	height: @header-color-block-height;
+	width: 100% / @num-header-color-blocks;
 	margin: 0;
 	padding: 0;
 	float: left;
 	opacity: 1;
 }
 
-// Content
-// _________
+.header-space {
+	height: @header-height - @header-color-block-height;
+	margin-top: @header-color-block-height;
+	background-color: @white;
+	opacity: .9;
+	border-bottom: 1px solid @border-color;
+}
+
+
+// # Content
+// ___________
 
 #content {
-	padding-top: 58px;
+	padding-top: @header-height;
 }
 
-// # Introduction
-// ________________
+// # Intro
+// ___________
 
-#introduction {
+@intro-margin-top: 162px;
+@intro-margin-bottom: 140px;
+@intro-summary-margin-top: 105px;
+@intro-title-height: 203px;
+
+#intro {
+	margin-top: @intro-margin-top;
+	margin-bottom: @intro-margin-bottom;
+
+	#intro-title {
+
+	}
+
+	#intro-summary {
+		margin-top: @intro-summary-margin-top;
+	}
+
 	.intro-img {
-		width: 203px;
+		width: @intro-title-height;
 	}
-	.intro-title {
+	.intro-title-header {
 		margin: 0;
-		line-height: 203px;
+		line-height: @intro-title-height;
 	}
-}
 
+}
 
 // # Nav
 // _______
 
-@nav-height: (1.5 * @golden-line-height-computed);
-@nav-item-horizontal-spacing: @golden-line-height-computed;
+@nav-margin-bottom: 70px;
+@nav-height: @header-height - @header-color-block-height;
+@nav-item-horizontal-spacing: 14px;
 @nav-vertical-margin: @golden-line-height-computed;
+
+#nav {
+	margin-bottom: @nav-margin-bottom;
+}
 
 .nav-container {
   height: @nav-height;
@@ -146,25 +171,14 @@ a {
   display: inline-block;
   line-height: @nav-height;
   padding: 0px @nav-item-horizontal-spacing;
-
-  font-family: @headings-font-family;
-  color: @golden-gray-dark;
-  font-size: @golden-font-size-large;
-
-  &:hover,
-  &.active {
-  	color: @brand-primary;
-  	font-weight: bold;
-  	text-decoration: none;
-  }
 }
 
 // # Nav-Main
 
 .nav-container {
 	.nav {
-		border-top: 1px solid @golden-gray;
-		border-bottom: 1px solid @golden-gray;
+		border-top: 1px solid @border-color;
+		border-bottom: 1px solid @border-color;
 	}
 }
 
