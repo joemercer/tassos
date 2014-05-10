@@ -2,14 +2,18 @@
 // this file imports all the other less files
 // --------------------------------------------------
 
-// Bootstrap path
-@path: "../../requires/bootstrap-less/less";
+// Path to modules
+@root: "../../requires";
 
-@font-awesome: "../../requires/fontawesome/less";
+// Bootstrap path
+@bootstrap: "@{root}/bootstrap-less/less";
+
+// Font-Awesome path
+@font-awesome: "@{root}/fontawesome/less";
 
 // Core variables and mixins
-@import "@{path}/variables.less";
-@import "@{path}/mixins.less";
+@import "@{bootstrap}/variables.less";
+@import "@{bootstrap}/mixins.less";
 
 // Custom variables
 @import "./custom-variables.less";

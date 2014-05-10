@@ -76,6 +76,8 @@ module.exports = function(grunt) {
           dest: 'public/css/<%= ops.name.css %>.css'
         }]
       },
+      // TODO(joe) is there a better way to copy these?
+      // TODO(joe) should I do this with other fonts as well?
       fonts: {
         files: [{
           expand: true,
