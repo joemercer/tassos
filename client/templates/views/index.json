@@ -1,5 +1,25 @@
 {
 	"title": "Seed App",
+
+	"projects": {
+		"label": "Projects",
+		"items": [{
+			"title": "Golden",
+			"href": "href",
+			"summary": "An open source CSS framework based on the Golden Ratio"
+		},
+		{
+			"title": "Waitless",
+			"href": "href",
+			"summary": "A food ordering system built with Meteor.js"
+		},
+		{
+			"title": "Tic Tac Code!",
+			"href": "href",
+			"summary": "Play Tic Tac Toe at 1000 moves a second by writing scripts"
+		}]
+	},
+	
 	"heading": "Hello Pals!",
 	"about": {
     "picture": {
