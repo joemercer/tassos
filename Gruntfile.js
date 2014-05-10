@@ -44,13 +44,68 @@ module.exports = function(grunt) {
 
     // deletes files
     // clean:dev does not delete vendor.js because it rarely changes
+    // !!! we should try to not delete other stuff when we can
+    // !!! need to check places with clean:dev
     clean: {
       build: ['build'],
+      'public': ['public'],
+      scripts: ['public/js', 'build/<%= ops.browserify.app %>.js', 'build/<%= ops.built.js %>.js'],
+      styles: ['public/css', 'build/<%= ops.built.css %>.css'],
+      templates: ['public/**/*.html'],
+      img: ['public/img'],
       dev: {
         src: ['public', 'build/<%= ops.browserify.app %>.js', 'build/<%= ops.built.css %>.css', 'build/<%= ops.built.js %>.js']
       },
-      'public': ['public'],
       prod: ['dist']
+    },
+
+    // copies files
+    // !!! need a better solution for copying the images
+    // !!! or maybe just only copy images 
+    copy: {
+      scripts: {
+        files: [{
+          src: 'build/<%= ops.built.js %>.js',
+          dest: 'public/js/<%= ops.name.js %>.js'
+        }]
+      },
+      styles: {
+        files: [{
+          src: 'build/<%= ops.built.css %>.css',
+          dest: 'public/css/<%= ops.name.css %>.css'
+        }]
+      },
+      img: {
+        files: [{
+          expand: true,
+          cwd: 'client/img',
+          src: '**/*',
+          dest: 'public/img'
+        }]
+      },
+      dev: {
+        files: [{
+          src: 'build/<%= ops.built.js %>.js',
+          dest: 'public/js/<%= ops.name.js %>.js'
+        }, {
+          src: 'build/<%= ops.built.css %>.css',
+          dest: 'public/css/<%= ops.name.css %>.css'
+        },
+        {
+          expand: true,
+          cwd: 'client/img',
+          src: '**/*',
+          dest: 'public/img'
+        }]
+      },
+      prod: {
+        files: [{
+          expand: true,
+          cwd: 'client/img',
+          src: '**/*',
+          dest: 'dist/img'
+        }]
+      }
     },
 
     // front end package manager
@@ -147,55 +202,26 @@ module.exports = function(grunt) {
     },
 
     // precompiles handlebars templates to html on the server
-    // copies the file structure in hbs/views
-    // uses data from hbs/data
     'compile-handlebars': {
       dev: {
-        template: 'hbs/views/**/*.hbs',
-        templateData: 'hbs/data/**/*.json',
+        template: 'client/templates/views/**/*.hbs',
+        templateData: 'client/templates/views/**/*.json',
         output: 'public/**/*.html',
-        //helpers: 'hbs/helpers/**/*.js',
-        //partials: 'hbs/partials/**/*.hbs',
+        //helpers: 'client/templates/helpers/**/*.js',
+        //partials: 'client/templates/partials/**/*.hbs',
         globals: [
-          'hbs/global.json'
+          'client/data/global.json'
         ]
       },
       prod: {
-        template: 'hbs/views/**/*.hbs',
-        templateData: 'hbs/data/**/*.json',
+        template: 'client/templates/views/**/*.hbs',
+        templateData: 'client/templates/views/**/*.json',
         output: 'dist/**/*.html',
-        //helpers: 'hbs/helpers/**/*.js',
-        //partials: 'hbs/partials/**/*.hbs',
+        //helpers: 'client/templates/helpers/**/*.js',
+        //partials: 'client/templates/partials/**/*.hbs',
         globals: [
-          'hbs/global.json'
+          'client/data/global.json'
         ]
-      }
-    },
-
-    // copies files
-    // everything in content is copied as is
-    copy: {
-      dev: {
-        files: [{
-          src: 'build/<%= ops.built.js %>.js',
-          dest: 'public/js/<%= ops.name.js %>.js'
-        }, {
-          src: 'build/<%= ops.built.css %>.css',
-          dest: 'public/css/<%= ops.name.css %>.css'
-        }, {
-          expand: true,
-          cwd: 'content/',
-          src: '**/*',
-          dest: 'public/'
-        }]
-      },
-      prod: {
-        files: [{
-          expand: true,
-          cwd: 'content/',
-          src: '**/*',
-          dest: 'dist/'
-        }]
       }
     },
 
@@ -224,18 +250,20 @@ module.exports = function(grunt) {
     },
 
     // runs tasks when code changes
+    // !!! do i still need copy:dev (test?)
+    // !!! add a watcher for images? does it work with adding files
     watch: {
       scripts: {
-        files: ['client/templates/*.hbs', 'client/src/**/*.js'],
-        tasks: ['clean:dev', 'browserify:app', 'less:transpile', 'concat', 'compile-handlebars:dev', 'copy:dev']
+        files: ['client/src/**/*.js'],
+        tasks: ['clean:scripts', 'browserify:app', 'concat', 'copy:scripts']
       },
       less: {
         files: ['client/styles/**/*.less'],
-        tasks: ['less:transpile', 'copy:dev']
+        tasks: ['clean:styles', 'less:transpile', 'copy:styles']
       },
-      hbs: {
-        files: ['hbs/views/**/*.hbs', 'hbs/data/**/*.json'],
-        tasks: ['clean:public', 'compile-handlebars:dev', 'copy:dev']
+      templates: {
+        files: ['client/templates/views/**/*.hbs', 'client/templates/views/**/*.json'],
+        tasks: ['clean:templates', 'compile-handlebars:dev']
       },
       test: {
         files: ['build/<%= ops.browserify.app %>.js', 'client/spec/**/*.test.js'],
@@ -265,7 +293,7 @@ module.exports = function(grunt) {
     // can also run multiple blocking tasks (like nodemon and watch)
     concurrent: {
       dev: {
-        tasks: ['nodemon:dev', 'watch:scripts', 'watch:less', 'watch:hbs', 'watch:test'],
+        tasks: ['nodemon:dev', 'watch:scripts', 'watch:less', 'watch:templates', 'watch:test'],
         options: {
           logConcurrentOutput: true
         }

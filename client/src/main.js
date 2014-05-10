@@ -1,6 +1,6 @@
-var App = require('./start');
-var app = new App();
-app.start();
+// var App = require('./start');
+// var app = new App();
+// app.start();
 
 var $ = require('jquery');
 
