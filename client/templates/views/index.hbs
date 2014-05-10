@@ -71,12 +71,12 @@
 
       <section id="projects" class="row">
         <div class="golden-col-md-narrow text-center">
-          <h2>Projects</h2>
+          <h2>{{projects.label}}</h2>
         </div>
         <div class="golden-col-md-wide">
-          <p><a>Golden</a> - An open source CSS framework based on the Golden Ratio</p>
-          <p><a>Waitless</a> - A food ordering system built during the Facebook hackathon</p>
-          <p><a>Tic Tac Code!</a> - Play 5000 games of Tic Tac Toe in parallel by writing scripts.</a>
+          {{#each projects.items}}
+            <p><a class="hover-link">{{title}}</a> - {{summary}}</p>
+          {{/each}}
         </div>
       </section>
 
