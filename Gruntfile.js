@@ -63,6 +63,7 @@ module.exports = function(grunt) {
     },
 
     // copies files
+    // TODO(joe) would be nice to create copy:dev from copy:scripts, copy:styles, etc to improve code resuse
     copy: {
       scripts: {
         files: [{
@@ -76,10 +77,14 @@ module.exports = function(grunt) {
           dest: 'public/css/<%= ops.name.css %>.css'
         }]
       },
-      // TODO(joe) is there a better way to copy these?
-      // TODO(joe) should I do this with other fonts as well?
       fonts: {
         files: [{
+          expand: true,
+          cwd: 'client/fonts',
+          src: '**/*',
+          dest: 'public/fonts'
+        },
+        {
           expand: true,
           cwd: 'client/requires/fontawesome/fonts',
           src: '**/*',
@@ -104,6 +109,12 @@ module.exports = function(grunt) {
         },
         {
           expand: true,
+          cwd: 'client/fonts',
+          src: '**/*',
+          dest: 'public/fonts'
+        },
+        {
+          expand: true,
           cwd: 'client/requires/fontawesome/fonts',
           src: '**/*',
           dest: 'public/fonts'
@@ -117,6 +128,12 @@ module.exports = function(grunt) {
       },
       prod: {
         files: [{
+          expand: true,
+          cwd: 'client/fonts',
+          src: '**/*',
+          dest: 'dist/fonts'
+        },
+        {
           expand: true,
           cwd: 'client/requires/fontawesome/fonts',
           src: '**/*',
