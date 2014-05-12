@@ -5,3 +5,4 @@ client/requires/*
 build/*
 public/*
 dist/*
+.grunt/*

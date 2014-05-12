@@ -388,7 +388,7 @@ module.exports = function(grunt) {
     },
 
     // host site using github pages
-    // !!! (grunt build:prod first to build it then this to push to gh-pages)
+    // puts dist directory in a gh-pages branch and pushes to origin remote
     'gh-pages': {
       options: {
         base: 'dist'
@@ -422,4 +422,7 @@ module.exports = function(grunt) {
 
   // runs all the tests once
   grunt.registerTask('test', ['test:server', 'test:client']);
+
+  // release the site via hosting on github pages
+  grunt.registerTask('release', ['build:prod', 'gh-pages']);
 };
