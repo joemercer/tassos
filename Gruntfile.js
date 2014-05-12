@@ -385,6 +385,15 @@ module.exports = function(grunt) {
       test: {
         singleRun: true
       }
+    },
+
+    // host site using github pages
+    // !!! (grunt build:prod first to build it then this to push to gh-pages)
+    'gh-pages': {
+      options: {
+        base: 'dist'
+      },
+      src: ['**']
     }
 
   });
