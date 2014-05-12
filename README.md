@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ulimit -n
 ulimit -n 2048
 
@@ -85,3 +86,7 @@ Note:
     $ grunt test
 
 (will run all tests - both server and client)
+=======
+static-seed
+===========
+>>>>>>> 1053cc399bc49c9cb725c1dd63e5f774da9a4c49
