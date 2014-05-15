@@ -1,5 +1,6 @@
 {
-	"title": "Seed App",
+	"title": "Static Seed App",
+	"description": "A seed app for quickly creating and deploying a static website. Includes Handlebars for templating, LESS, a customized version of Bootstrap, Golden for spacing, Font Awesome for icons, Bower and Browserify for frontend JavaScript dependency management, Underscore, jQuery, Grunt for the build pipeline, a simple Express web server, Mocha for testing the server, Karma for testing the frontend, and Github for hosting. Made by @jomrcr.",
 
 	"projects": {
 		"label": "Projects",
