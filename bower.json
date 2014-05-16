@@ -27,7 +27,10 @@
       "less": "less/*.less",
       "fonts": "fonts/*"
     },
-    "fontawesome": {},
+    "fontawesome": {
+      "less": "less/*",
+      "fonts": "fonts/*"
+    },
     "jasmine": {}
   }
 }
