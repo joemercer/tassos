@@ -15,6 +15,8 @@ $(function(){
 	// # Nav
 	// - fix the nav
 
+	console.log('!!!!');
+
 	var $nav = $('.nav-container');
 	var fixNavTrigger = $nav.offset().top;
 	$window.scroll(function(){

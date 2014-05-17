@@ -71,35 +71,39 @@ a {
 	font-family: @headings-font-family;
 }
 
-@zindex-navbar-fixed: 'use this';
+@zindex-navbar-fixed: '!!! use this';
+
+// # Variables
+// ____________
+
+@border-color: @golden-gray-lighter;
 
 // # Header
 // _________
 
-@header-height: 58px;
-@header-color-block-height: 8px;
-@num-header-color-blocks: 12;
-@border-color: @golden-gray-lighter;
+@trim-height: 8px;
+@header-height: 50px;
+@num-trim-colors: 12;
 
 #header {
  position: fixed;
- height: @header-height;
+ height: @trim-height + @header-height;
  width: 100%;
  z-index: @zindex-navbar;
 }
 
-.header-color-block {
-	height: @header-color-block-height;
-	width: 100% / @num-header-color-blocks;
+.trim-color-block {
+	height: @trim-height;
+	width: 100% / @num-trim-colors;
 	margin: 0;
 	padding: 0;
 	float: left;
 	opacity: 1;
 }
 
-.header-space {
-	height: @header-height - @header-color-block-height;
-	margin-top: @header-color-block-height;
+.header {
+	margin-top: @trim-height;
+	height: @header-height;
 	background-color: @white;
 	opacity: .9;
 	border-bottom: 1px solid @border-color;
@@ -120,50 +124,14 @@ a {
 	}
 }
 
-// # Content
-// ___________
-
-#content {
-	padding-top: @header-height;
-}
-
-// # Intro
-// ___________
-
-@intro-margin-top: 162px;
-@intro-margin-bottom: 140px;
-@intro-summary-margin-top: 105px;
-@intro-title-height: 203px;
-
-#intro {
-	margin-top: @intro-margin-top;
-	margin-bottom: @intro-margin-bottom;
-
-	#intro-title {
-
-	}
-
-	#intro-summary {
-		margin-top: @intro-summary-margin-top;
-	}
-
-	.intro-img {
-		width: @intro-title-height;
-	}
-	.intro-title-header {
-		margin: 0;
-		line-height: @intro-title-height;
-	}
-
-}
-
 // # Nav
 // _______
 
 @nav-margin-bottom: 70px;
-@nav-height: @header-height - @header-color-block-height;
+@nav-height: @header-height;
 @nav-item-horizontal-spacing: 14px;
 @nav-vertical-margin: @golden-line-height-computed;
+@nav-border-color: @border-color;
 
 #nav {
 	margin-bottom: @nav-margin-bottom;
@@ -191,8 +159,8 @@ a {
 
 .nav-container {
 	.nav {
-		border-top: 1px solid @border-color;
-		border-bottom: 1px solid @border-color;
+		border-top: 1px solid @nav-border-color;
+		border-bottom: 1px solid @nav-border-color;
 	}
 }
 
@@ -219,5 +187,53 @@ a {
 	.nav {
 		border: none;
 	}
+}
 
+// # Content
+// ___________
+
+#content {
+	padding-top: @header-height;
+}
+
+// # Intro
+// ___________
+
+@intro-margin-top: 162px;
+@intro-margin-bottom: 140px;
+@intro-summary-margin-top: 105px;
+@intro-title-height: 203px;
+
+#intro {
+	margin-top: @intro-margin-top;
+	margin-bottom: @intro-margin-bottom;
+	margin-top: 19vh;
+	margin-bottom: 17vh;
+
+	#intro-title {
+
+	}
+
+	#intro-summary {
+		margin-top: @intro-summary-margin-top;
+	}
+
+	.intro-img {
+		width: @intro-title-height;
+	}
+	.intro-title-header {
+		margin: 0;
+		line-height: @intro-title-height;
+	}
+
+}
+
+
+
+// # Projects
+
+
+
+#projects {
+	margin-top: 50px;
 }

@@ -2,6 +2,7 @@
 ________
 
 - use vh for the margin top space above the splash
+- use rem
 - - and the space below the splash
 - - can you have negative vh?
 - more thought into transitions
