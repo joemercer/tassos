@@ -5,7 +5,6 @@
   "dependencies": {
     "jquery": "~1.10.2",
     "underscore": "~1.5.2",
-    "backbone": "~1.1.0",
     "bootstrap-less": "~3.1.1",
     "fontawesome": "~4.0.3"
   },
@@ -18,9 +17,6 @@
     },
     "underscore": {
       "js": "underscore.js"
-    },
-    "backbone": {
-      "js": "backbone.js"
     },
     "bootstrap-less": {
       "js": "js/*.js",

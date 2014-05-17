@@ -169,7 +169,8 @@ module.exports = function(grunt) {
         dest: 'build/<%= ops.browserify.vendor %>.js',
         options: {
           ignore: [
-            'client/requires/bootstrap-less/js/*.js'
+            'client/requires/bootstrap-less/**/*.js',
+            'client/requires/fontawesome/**/*.js'
           ],
           shim: {
             jquery: {
@@ -179,16 +180,6 @@ module.exports = function(grunt) {
             underscore: {
               path: 'client/requires/underscore/js/underscore.js',
               exports: '_'
-            },
-            backbone: {
-              path: 'client/requires/backbone/js/backbone.js',
-              exports: 'Backbone',
-              depends: {
-                underscore: 'underscore',
-                // we're including jquery as a dependency even though it technically isn't
-                // because Backbone.router seems to complain about not doing so
-                jquery: '$'
-              }
             }
           }
         }
@@ -200,7 +191,7 @@ module.exports = function(grunt) {
         options: {
           // hbsfy allows you to require handlebars templates in your javascript
           transform: ['hbsfy'],
-          external: ['jquery', 'underscore', 'backbone']
+          external: ['jquery', 'underscore']
         }
       },
       test: {
@@ -211,7 +202,7 @@ module.exports = function(grunt) {
         },
         options: {
           transform: ['hbsfy'],
-          external: ['jquery', 'underscore', 'backbone']
+          external: ['jquery', 'underscore']
         }
       }
     },

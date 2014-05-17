@@ -1,6 +1,6 @@
 {
   "name": "seed",
-  "description": "Seed web app using node, express, backbone, marionette.  Tooling includes Grunt, Bower, Browserify, etc.",
+  "description": "Seed web app using node, express.  Tooling includes Grunt, Bower, Browserify, etc.",
   "version": "0.0.1",
   "author": "Joe Mercer",
   "repository": {
