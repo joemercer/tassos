@@ -9,8 +9,6 @@ $(function(){
 	// - fixes the nav to the top of the screen
 	// _______
 
-
-
 	var $nav = $('.nav-container');
 	var fixNavTrigger = $nav.offset().top - 5;
 
@@ -31,6 +29,38 @@ $(function(){
 				$intro.css('margin-bottom', introMarginBottom + 'px');
 			}
     }
+	});
+
+
+	// # Hover Links
+	// _______________
+
+	var colors = [
+		'yellow',
+		'amber',
+		'orange',
+		'sunset',
+		'red',
+		'fuchsia',
+		'purple',
+		'indigo',
+		'blue',
+		'aqua',
+		'green',
+		'lime'
+	];
+
+	var $links = $('.hover-link');
+
+	$links.mouseenter(function(e){
+		var $target = $(e.target);
+		var i = Math.floor(9.999999 * Math.random());
+		$target.addClass(colors[i]);
+	});
+
+	$links.mouseleave(function(e){
+		var $target = $(e.target);
+		$target.removeClass(_($target.attr('class').split(/\s+/)).last());
 	});
 
 
