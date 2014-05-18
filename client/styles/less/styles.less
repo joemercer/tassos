@@ -71,8 +71,6 @@ a {
 	font-family: @headings-font-family;
 }
 
-@zindex-navbar-fixed: '!!! use this';
-
 // # Variables
 // ____________
 
@@ -111,7 +109,7 @@ a {
 	text-align: right;
 
 	i {
-		font-size: 26px;
+		font-size: 26px; font-size: 2.6rem;
 		line-height: 50px;
 		margin-right: 13px;
 	}
@@ -150,6 +148,8 @@ a {
   display: inline-block;
   line-height: @nav-height;
   padding: 0px @nav-item-horizontal-spacing;
+
+  font-size: 14px; font-size: 1.4rem;
 }
 
 // # Nav
@@ -168,19 +168,9 @@ a {
 	width: 100%;
 	top: 0px;
 	left: 0px;
-	z-index: 1000;
+	z-index: @zindex-navbar-fixed;
 	margin: 0px;
 	margin-top: @trim-height;
-	// background-color: @golden-gray-dark;
-	// color: @golden-gray-lightest;
-
-	.nav-item a {
-		color: @golden-gray;
-
-		&.active {
-	  	color: @brand-primary;
-	  }
-	}
 
 	.nav {
 		border: none;
@@ -191,29 +181,24 @@ a {
 // ___________
 
 #content {
-	padding-top: @header-height;
+	padding-top: @trim-height + @header-height;
 }
 
 // # Intro
 // ___________
 
-@intro-margin-top: 162px;
-@intro-margin-bottom: 140px;
-@intro-summary-margin-top: 105px;
 @intro-title-height: 203px;
 
 #intro {
-	margin-top: @intro-margin-top;
-	margin-bottom: @intro-margin-bottom;
-	margin-top: 19vh;
-	margin-bottom: 17vh;
+	margin-top: 162px; margin-top: 19vh;
+	margin-bottom: 140px; margin-bottom: 17vh;
 
 	#intro-title {
 
 	}
 
 	#intro-summary {
-		margin-top: @intro-summary-margin-top;
+		margin-top: 105px; margin-top: 10vh;
 	}
 
 	.intro-img {
@@ -226,12 +211,30 @@ a {
 
 }
 
-
-
 // # Projects
-
-
+// ____________
 
 #projects {
-	margin-top: 50px;
+	padding-top: 80px; padding-top: 9vh;
+	padding-bottom: 80px; padding-bottom: 9vh;
+	border-top: 1px solid @border-color;
+	border-bottom: 1px solid @border-color;
+}
+
+// # Posts
+// ____________
+
+#posts {
+	padding-top: 80px; padding-top: 9vh;
+	padding-bottom: 80px; padding-bottom: 9vh;
+	border-bottom: 1px solid @border-color;
+}
+
+// # Pics
+// ____________
+
+#pics {
+	padding-top: 80px; padding-top: 9vh;
+	padding-bottom: 80px; padding-bottom: 9vh;
+	border-bottom: 1px solid @border-color;
 }

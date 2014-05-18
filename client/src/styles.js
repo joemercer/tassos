@@ -12,7 +12,7 @@ $(function(){
 
 
 	var $nav = $('.nav-container');
-	var fixNavTrigger = $nav.offset().top;
+	var fixNavTrigger = $nav.offset().top - 5;
 
 	var $intro = $('#intro');
 	var introMarginBottom = parseInt($intro.css('margin-bottom'));
