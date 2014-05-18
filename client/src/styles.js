@@ -54,7 +54,7 @@ $(function(){
 
 	$links.mouseenter(function(e){
 		var $target = $(e.target).closest('.hover-link');
-		var i = Math.floor(9.999999 * Math.random());
+		var i = Math.floor(11.1111111 * Math.random());
 		$target.addClass(colors[i]);
 	});
 

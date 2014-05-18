@@ -37,6 +37,8 @@ a {
 	}
 }
 
+// !!! this is also gross
+// should be using the font-size variable
 p {
 	font-size: 14px; font-size: 1.4rem;
 	a {
@@ -80,19 +82,19 @@ p {
 	opacity: .9;
 	border-bottom: 1px solid @border-color;
 
-	text-align: right;
+	text-align: left;
 
 	i {
 		font-size: 26px; font-size: 2.6rem;
 		line-height: 50px;
-		margin-right: 13px;
+		margin-left: 13px;
 	}
 
 	img {
 		height: 35px;
 		margin-bottom: 8px;
-		margin-right: 8px;
-		margin-left: -4px;
+		margin-left: 8px;
+		margin-right: -4px;
 	}
 }
 
@@ -109,7 +111,15 @@ p {
   height: @nav-height;
   margin: @nav-vertical-margin 0px;
   margin-bottom: @nav-margin-bottom;
-  text-align: center;
+
+  text-align: right;
+
+  // !!! fix this
+  i {
+		font-size: 26px; font-size: 2.6rem;
+		line-height: 50px;
+		padding: 0 20px; padding: 0 2rem;
+	}
 }
 
 .nav {
@@ -123,7 +133,13 @@ p {
   line-height: @nav-height;
   padding: 0px @nav-item-horizontal-spacing;
 
-  font-size: 14px; font-size: 1.4rem;
+  font-size: 18px; font-size: 1.8rem;
+  font-weight: lighter;
+
+  &:hover {
+  	// !!! perhaps transition this
+  	font-weight: bold;
+  }
 }
 
 // # Nav
