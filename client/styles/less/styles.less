@@ -133,13 +133,10 @@ a {
 @nav-vertical-margin: @golden-line-height-computed;
 @nav-border-color: @border-color;
 
-#nav {
-	margin-bottom: @nav-margin-bottom;
-}
-
 .nav-container {
   height: @nav-height;
   margin: @nav-vertical-margin 0px;
+  margin-bottom: @nav-margin-bottom;
   text-align: center;
 }
 
@@ -155,7 +152,7 @@ a {
   padding: 0px @nav-item-horizontal-spacing;
 }
 
-// # Nav-Main
+// # Nav
 
 .nav-container {
 	.nav {
@@ -173,11 +170,12 @@ a {
 	left: 0px;
 	z-index: 1000;
 	margin: 0px;
-	background-color: @golden-gray-dark;
-	color: @golden-gray-lightest;
+	margin-top: @trim-height;
+	// background-color: @golden-gray-dark;
+	// color: @golden-gray-lightest;
 
 	.nav-item a {
-		color: @golden-gray-lightest;
+		color: @golden-gray;
 
 		&.active {
 	  	color: @brand-primary;

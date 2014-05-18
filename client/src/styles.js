@@ -10,17 +10,25 @@ $(function(){
 	// _______
 
 
+
 	var $nav = $('.nav-container');
 	var fixNavTrigger = $nav.offset().top;
+
+	var $intro = $('#intro');
+	var introMarginBottom = parseInt($intro.css('margin-bottom'));
+	var navHeight = $nav.outerHeight() + parseInt($nav.css('margin-bottom'));
+
 	$window.scroll(function(){
     if ($window.scrollTop() >= fixNavTrigger){
 			if (!$nav.hasClass('fixed')) {
 				$nav.addClass('fixed');
+				$intro.css('margin-bottom', introMarginBottom + navHeight + 'px');
 			}
     }
     else{
 			if ($nav.hasClass('fixed')) {
 				$nav.removeClass('fixed');
+				$intro.css('margin-bottom', introMarginBottom + 'px');
 			}
     }
 	});
