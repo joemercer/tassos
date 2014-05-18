@@ -53,14 +53,18 @@ $(function(){
 	var $links = $('.hover-link');
 
 	$links.mouseenter(function(e){
-		var $target = $(e.target);
+		var $target = $(e.target).closest('.hover-link');
 		var i = Math.floor(9.999999 * Math.random());
 		$target.addClass(colors[i]);
 	});
 
 	$links.mouseleave(function(e){
-		var $target = $(e.target);
-		$target.removeClass(_($target.attr('class').split(/\s+/)).last());
+		var $target = $(e.target).closest('.hover-link');
+		_($target.attr('class').split(/\s+/)).forEach(function(i){
+			if (_(colors).contains(i)) {
+				$target.removeClass(i);
+			}
+		});
 	});
 
 
