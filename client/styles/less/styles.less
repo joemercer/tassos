@@ -214,7 +214,6 @@ p {
 	margin-bottom: 140px; margin-bottom: 17vh;
 
 	#intro-title {
-
 	}
 
 	#intro-summary {
@@ -227,6 +226,11 @@ p {
 	.intro-title-header {
 		margin: 0;
 		line-height: @intro-title-height;
+	}
+	@media (max-width: @screen-xs-max) {
+		.intro-title-header {
+			font-size: 68px;
+		}
 	}
 
 }
