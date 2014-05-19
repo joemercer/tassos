@@ -173,9 +173,20 @@ p {
 }
 
 // # Nav on phones
+// - fix to the top
 
 @media (max-width: @screen-xs-max) {
   .nav-container {
+  	// verbatim from fixed
+  	// !!! should use less somehow here
+  	position: fixed;
+		width: 100%;
+		top: 0px;
+		left: 0px;
+		z-index: @zindex-navbar-fixed;
+		margin: 0px;
+		margin-top: @trim-height;
+
   	text-align: left;
 
   	&.fixed .nav {
