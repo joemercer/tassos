@@ -16,16 +16,25 @@ $(function(){
 	var introMarginBottom = parseInt($intro.css('margin-bottom'));
 	var navHeight = $nav.outerHeight() + parseInt($nav.css('margin-bottom'));
 
+	// recalculate these values when window changes size
+	$window.resize(function(e){
+		fixNavTrigger = $nav.offset().top - 7;
+		introMarginBottom = parseInt($intro.css('margin-bottom'));
+		navHeight = $nav.outerHeight() + parseInt($nav.css('margin-bottom'));
+	});
+
 	$window.scroll(function(){
     if ($window.scrollTop() >= fixNavTrigger){
 			if (!$nav.hasClass('fixed')) {
 				$nav.addClass('fixed');
+				$nav.find('.nav-inner-container').addClass('container');
 				$intro.css('margin-bottom', introMarginBottom + navHeight + 'px');
 			}
     }
     else{
 			if ($nav.hasClass('fixed')) {
 				$nav.removeClass('fixed');
+				$nav.find('.nav-inner-container').removeClass('container');
 				$intro.css('margin-bottom', introMarginBottom + 'px');
 			}
     }
@@ -35,7 +44,7 @@ $(function(){
 	// _______________
 
 	$('.toggle-nav').click(function(e){
-		$nav.children('.nav').toggleClass('hide');
+		$nav.find('.nav').toggleClass('hide');
 
 		// need display block on the list items
 		// and margin top 50px

@@ -2,6 +2,7 @@
 ________
 
 - use vh for the margin top space above the splash
+- fix spacing on various view sizes
 - fix bug with golden content (not right width)
 - use rem
 - - and the space below the splash

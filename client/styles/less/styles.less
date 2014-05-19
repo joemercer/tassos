@@ -117,8 +117,6 @@ p {
   // !!! fix this
   // should probably have a better class selector
   i {
-  	position: absolute;
-  	right: 0px;
 		padding: 0 20px; padding: 0 2rem;
 		font-size: 26px; font-size: 2.6rem;
 		line-height: 50px;
@@ -126,8 +124,6 @@ p {
 }
 
 .nav {
-	position: absolute;
-	right: 50px; // !!! should be a variable
 	display: inline-block;
   padding: 0px @nav-item-horizontal-spacing;
 }
@@ -192,6 +188,14 @@ p {
   	&.fixed .nav {
   		border-bottom: 1px solid @nav-border-color;
   	}
+
+  	// !!! fix this
+	  // should probably have a better class selector
+	  i {
+			position: absolute;
+			top: 0px;
+			right: 0px;
+		}
   }
 
   .nav {
