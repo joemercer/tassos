@@ -10,7 +10,7 @@ $(function(){
 	// _______
 
 	var $nav = $('.nav-container');
-	var fixNavTrigger = $nav.offset().top - 5;
+	var fixNavTrigger = $nav.offset().top - 3;
 
 	var $intro = $('#intro');
 	var introMarginBottom = parseInt($intro.css('margin-bottom'));
@@ -31,6 +31,16 @@ $(function(){
     }
 	});
 
+	// # Toggle the nav
+	// _______________
+
+	$('.toggle-nav').click(function(e){
+		$nav.children('.nav').toggleClass('hide');
+
+		// need display block on the list items
+		// and margin top 50px
+		// when there isn't enough horizontal room
+	});
 
 	// # Hover Links
 	// _______________

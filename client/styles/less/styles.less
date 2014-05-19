@@ -115,14 +115,19 @@ p {
   text-align: right;
 
   // !!! fix this
+  // should probably have a better class selector
   i {
+  	position: absolute;
+  	right: 0px;
+		padding: 0 20px; padding: 0 2rem;
 		font-size: 26px; font-size: 2.6rem;
 		line-height: 50px;
-		padding: 0 20px; padding: 0 2rem;
 	}
 }
 
 .nav {
+	position: absolute;
+	right: 50px; // !!! should be a variable
 	display: inline-block;
   padding: 0px @nav-item-horizontal-spacing;
 }
@@ -142,7 +147,7 @@ p {
   }
 }
 
-// # Nav
+// # Nav not fixed
 
 .nav-container {
 	.nav {
@@ -151,7 +156,7 @@ p {
 	}
 }
 
-// # Nav-Fixed
+// # Nav fixed
 
 .nav-container.fixed {
 	position: fixed;
@@ -165,6 +170,31 @@ p {
 	.nav {
 		border: none;
 	}
+}
+
+// # Nav on phones
+
+@media (max-width: @screen-xs-max) {
+  .nav-container {
+  	text-align: left;
+
+  	&.fixed .nav {
+  		border-bottom: 1px solid @nav-border-color;
+  	}
+  }
+
+  .nav {
+  	left: 0px;
+  	display: block;
+  	width: 100%;
+  	margin-top: @header-height;
+
+  	background-color: @white;
+  }
+
+  .nav-item {
+  	display: block;
+  }
 }
 
 // # Content
