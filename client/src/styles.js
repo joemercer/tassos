@@ -10,32 +10,29 @@ $(function(){
 	// _______
 
 	var $nav = $('.nav-container');
-	var fixNavTrigger = $nav.offset().top - 7;
+	var $navBuffer = $('.nav-fixed-buffer')
+	var navOuterHeight = $nav ? $nav.outerHeight(true) : $navBuffer.height() + $('.trim-color-block').height();
 
-	var $intro = $('#intro');
-	var introMarginBottom = parseInt($intro.css('margin-bottom'));
-	var navHeight = $nav.outerHeight() + parseInt($nav.css('margin-bottom'));
+	var fixNavTrigger = $('#projects').offset().top - navOuterHeight;
 
-	// recalculate these values when window changes size
+	// recalculate the trigger when window is resized
 	$window.resize(function(e){
-		fixNavTrigger = $nav.offset().top - 7;
-		introMarginBottom = parseInt($intro.css('margin-bottom'));
-		navHeight = $nav.outerHeight() + parseInt($nav.css('margin-bottom'));
+		fixNavTrigger = $('#projects').offset().top - navOuterHeight;
 	});
 
 	$window.scroll(function(){
     if ($window.scrollTop() >= fixNavTrigger){
 			if (!$nav.hasClass('fixed')) {
 				$nav.addClass('fixed');
+				$navBuffer.removeClass('hide');
 				$nav.find('.nav-inner-container').addClass('container');
-				$intro.css('margin-bottom', introMarginBottom + navHeight + 'px');
 			}
     }
     else{
 			if ($nav.hasClass('fixed')) {
 				$nav.removeClass('fixed');
+				$navBuffer.addClass('hide');
 				$nav.find('.nav-inner-container').removeClass('container');
-				$intro.css('margin-bottom', introMarginBottom + 'px');
 			}
     }
 	});

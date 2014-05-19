@@ -101,15 +101,19 @@ p {
 // # Nav
 // _______
 
+@nav-margin-top: @trim-height;
 @nav-margin-bottom: 70px;
 @nav-height: @header-height;
 @nav-item-horizontal-spacing: 14px;
-@nav-vertical-margin: @golden-line-height-computed;
 @nav-border-color: @border-color;
+
+.nav-fixed-buffer {
+	height: @nav-height + @nav-margin-bottom;
+}
 
 .nav-container {
   height: @nav-height;
-  margin: @nav-vertical-margin 0px;
+  margin-top: @nav-margin-top;
   margin-bottom: @nav-margin-bottom;
 
   text-align: right;
