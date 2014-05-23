@@ -103,19 +103,21 @@ p {
 // _______
 
 @nav-margin-top: @trim-height;
-@nav-margin-bottom: 70px;
+// @nav-margin-bottom: 70px;
 @nav-height: @header-height;
 @nav-item-horizontal-spacing: 14px;
 @nav-border-color: @border-color;
 
 .nav-fixed-buffer {
-	height: @nav-height + @nav-margin-bottom;
+	// height: @nav-height + @nav-margin-bottom;
+	// i don't think margin even makes a difference here.
+	height: @nav-height;
 }
 
 .nav-container {
   height: @nav-height;
   margin-top: @nav-margin-top;
-  margin-bottom: @nav-margin-bottom;
+  // margin-bottom: @nav-margin-bottom;
 
   text-align: right;
 
@@ -230,8 +232,9 @@ p {
 @intro-title-height: 203px;
 
 #intro {
-	margin-top: 162px; margin-top: 19vh;
-	margin-bottom: 140px; margin-bottom: 14vh; // !!! change pixels
+	height: 900px; height: 90vh;
+	padding-top: 162px; padding-top: 19vh;
+	padding-bottom: 140px; padding-bottom: 14vh; // !!! change pixels
 
 	#intro-title {
 	}

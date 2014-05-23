@@ -11,24 +11,30 @@ $(function(){
 
 	var $nav = $('.nav-container');
 	var $navBuffer = $('.nav-fixed-buffer')
-	var navOuterHeight = $nav ? $nav.outerHeight(true) : $navBuffer.height() + $('.trim-color-block').height();
 
-	var fixNavTrigger = $('#projects').offset().top - navOuterHeight;
+	var $aboveNav = $('#intro-summary');
+	var fixNavTrigger = $aboveNav.offset().top + $aboveNav.outerHeight();
 
 	// recalculate the trigger when window is resized
 	$window.resize(function(e){
-		fixNavTrigger = $('#projects').offset().top - navOuterHeight;
+		fixNavTrigger = $aboveNav.offset().top + $aboveNav.outerHeight();
 	});
 
 	$window.scroll(function(){
-    if ($window.scrollTop() >= fixNavTrigger){
+
+		// need to recalculate the trigger here also because the dom 
+		// elements haven't necessarily spaced properly yet
+		fixNavTrigger = $aboveNav.offset().top + $aboveNav.outerHeight();
+
+		// !!! need to also call this on resize
+    if ($window.scrollTop() >= fixNavTrigger) {
 			if (!$nav.hasClass('fixed')) {
 				$nav.addClass('fixed');
 				$navBuffer.removeClass('hide');
 				$nav.find('.nav-inner-container').addClass('container');
 			}
     }
-    else{
+    else {
 			if ($nav.hasClass('fixed')) {
 				$nav.removeClass('fixed');
 				$navBuffer.addClass('hide');
