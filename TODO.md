@@ -1,6 +1,7 @@
 # TODO
 ________
 
+- hover link should have a default color of text color, not blue
 - fix spacing on various view sizes
 - fix bug with golden content (not right width)
 - more thought into transitions

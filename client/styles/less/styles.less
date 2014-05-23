@@ -44,6 +44,7 @@ p {
 	a {
 		font-size: 24px; font-size: 2.4rem;
 		font-weight: bold;
+		// consider text-transform uppercase
 	}
 }
 
@@ -230,7 +231,7 @@ p {
 
 #intro {
 	margin-top: 162px; margin-top: 19vh;
-	margin-bottom: 140px; margin-bottom: 17vh;
+	margin-bottom: 140px; margin-bottom: 14vh; // !!! change pixels
 
 	#intro-title {
 	}
@@ -246,9 +247,23 @@ p {
 		margin: 0;
 		line-height: @intro-title-height;
 	}
-	@media (max-width: @screen-xs-max) {
+
+	// Smaller than xs (so even more so mobile)
+	@screen-xxs-max: 565px;
+	@media (max-width: @screen-xxs-max) {
 		.intro-title-header {
 			font-size: 68px;
+		}
+
+		.golden-content {
+			padding: 0px;
+
+			p {
+				font-size: 24px; font-size: 2.4rem;
+				a {
+					font-size: 18px; font-size: 1.8rem;
+				}
+			}
 		}
 	}
 
