@@ -164,16 +164,25 @@ p {
 
 // # Nav fixed
 
-.nav-container.fixed {
-	position: fixed;
-	width: 100%;
-	top: 0px;
-	left: 0px;
-	z-index: @zindex-navbar-fixed;
-	margin: 0px;
-	margin-top: @trim-height;
+.nav-container {
 
-	.nav {
+	// Reusable styles a fixed nav
+	.fixed() {
+		position: fixed;
+		width: 100%;
+		top: 0px;
+		left: 0px;
+		z-index: @zindex-navbar-fixed;
+		margin: 0px;
+		margin-top: @trim-height;
+	}
+
+	&.fixed {
+		.nav-container.fixed();
+	}
+
+	&.fixed .nav {
+		// Already a border being shown from the header
 		border: none;
 	}
 }
@@ -183,17 +192,10 @@ p {
 
 @media (max-width: @screen-xs-max) {
   .nav-container {
-  	// verbatim from fixed
-  	// !!! should use less somehow here
-  	position: fixed;
-		width: 100%;
-		top: 0px;
-		left: 0px;
-		z-index: @zindex-navbar-fixed;
-		margin: 0px;
-		margin-top: @trim-height;
 
-  	text-align: left;
+		.nav-container.fixed();
+
+		text-align: left;
 
   	&.fixed .nav {
   		// Show a bottom border on expanded nav in mobile
