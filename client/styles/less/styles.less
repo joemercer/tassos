@@ -149,6 +149,7 @@ p {
   &:hover {
   	// !!! perhaps transition this
   	// !!! need to not use line height for vert centering
+  	// causes pixel jumping in stacked layouts
   	font-weight: bold;
   }
 }
@@ -195,12 +196,11 @@ p {
   	text-align: left;
 
   	&.fixed .nav {
+  		// Show a bottom border on expanded nav in mobile
   		border-bottom: 1px solid @nav-border-color;
   	}
 
-  	// !!! fix this
-	  // should probably have a better class selector
-	  i {
+	  .nav-icon {
 			position: absolute;
 			top: 0px;
 			right: 0px;

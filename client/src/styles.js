@@ -55,8 +55,9 @@ $(function(){
 	// # Toggle the nav
 	// _______________
 
+	// !!! fix this
 	$('.toggle-nav').click(function(e){
-		$nav.find('.nav').toggleClass('hide');
+		Nav.$nav.find('.nav').toggleClass('hide');
 
 		// need display block on the list items
 		// and margin top 50px
