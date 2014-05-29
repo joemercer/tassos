@@ -12,22 +12,21 @@ $(function(){
 	var $nav = $('.nav-container');
 	var $navBuffer = $('.nav-fixed-buffer')
 
-	var $aboveNav = $('#intro-summary');
-	var fixNavTrigger = $aboveNav.offset().top + $aboveNav.outerHeight();
 
-	// recalculate the trigger when window is resized
-	$window.resize(function(e){
-		fixNavTrigger = $aboveNav.offset().top + $aboveNav.outerHeight();
-	});
 
-	$window.scroll(function(){
+	var getFixNavTrigger = function() {
+		if ($nav.hasClass('fixed')) {
+			return $navBuffer.offset().top - parseInt($nav.css('margin-top'));
+		}
+		else {
+			return $nav.offset().top - parseInt($nav.css('margin-top'));
+		}
+	}
 
-		// need to recalculate the trigger here also because the dom 
-		// elements haven't necessarily spaced properly yet
-		fixNavTrigger = $aboveNav.offset().top + $aboveNav.outerHeight();
+	var fixNavTrigger = getFixNavTrigger();
 
-		// !!! need to also call this on resize
-    if ($window.scrollTop() >= fixNavTrigger) {
+	var fixNav = function() {
+		if ($window.scrollTop() >= fixNavTrigger) {
 			if (!$nav.hasClass('fixed')) {
 				$nav.addClass('fixed');
 				$navBuffer.removeClass('hide');
@@ -41,6 +40,16 @@ $(function(){
 				$nav.find('.nav-inner-container').removeClass('container');
 			}
     }
+	}
+
+	// recalculate the trigger when window is resized
+	$window.resize(function(e){
+		fixNavTrigger = getFixNavTrigger();
+		fixNav();
+	});
+
+	$window.scroll(function(){
+		fixNav();
 	});
 
 	// # Toggle the nav
