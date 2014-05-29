@@ -90,13 +90,15 @@ p {
 
 	text-align: left;
 
-	i {
+	.header-icon {
 		font-size: 26px; font-size: 2.6rem;
-		line-height: 50px;
+		line-height: @header-height;
 		margin-left: 13px;
 	}
 
-	img {
+	// TODO(joe): consider changing this image to something with color
+	// TODO(joe): consider turning this into a font format
+	.header-icon-image {
 		height: 35px;
 		margin-bottom: 8px;
 		margin-left: 8px;
@@ -108,14 +110,11 @@ p {
 // _______
 
 @nav-margin-top: @trim-height;
-// @nav-margin-bottom: 70px;
 @nav-height: @header-height;
 @nav-item-horizontal-spacing: 14px;
 @nav-border-color: @border-color;
 
 .nav-fixed-buffer {
-	// height: @nav-height + @nav-margin-bottom;
-	// i don't think margin even makes a difference here.
 	height: @nav-height;
 	margin-top: @nav-margin-top;
 }
@@ -123,16 +122,13 @@ p {
 .nav-container {
   height: @nav-height;
   margin-top: @nav-margin-top;
-  // margin-bottom: @nav-margin-bottom;
 
   text-align: right;
 
-  // !!! fix this
-  // should probably have a better class selector
-  i {
+  .nav-icon {
 		padding: 0 20px; padding: 0 2rem;
 		font-size: 26px; font-size: 2.6rem;
-		line-height: 50px;
+		line-height: @nav-height;
 	}
 }
 
