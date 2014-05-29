@@ -37,13 +37,16 @@ $(function(){
 					this.$nav.find('.nav-inner-container').removeClass('container');
 				}
 	    }
+		},
+		toggleNav: function() {
+			this.$nav.find('.nav').toggleClass('hide');
 		}
 	};
 	Nav.setTrigger();
 	Nav.maybeFixNav();
 
-	// recalculate the trigger when window is resized
 	$window.resize(function(e){
+		// recalculate the trigger when window is resized
 		Nav.setTrigger();
 		Nav.maybeFixNav();
 	});
@@ -55,13 +58,8 @@ $(function(){
 	// # Toggle the nav
 	// _______________
 
-	// !!! fix this
 	$('.toggle-nav').click(function(e){
-		Nav.$nav.find('.nav').toggleClass('hide');
-
-		// need display block on the list items
-		// and margin top 50px
-		// when there isn't enough horizontal room
+		Nav.toggleNav();
 	});
 
 	// # Hover Links
