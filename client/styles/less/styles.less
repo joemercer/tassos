@@ -27,6 +27,11 @@
 }
 
 // !!! make this nicer
+.golden-content {
+	max-width: 77.1rem;
+  padding: 0px 1.1rem;
+}
+
 a {
 	// color: @gray-light;
 	color: @text-color;
@@ -232,17 +237,6 @@ p {
 @intro-title-height: 203px;
 
 #intro {
-	height: 900px; height: 90vh;
-	padding-top: 162px; padding-top: 19vh;
-	padding-bottom: 140px; padding-bottom: 14vh; // !!! change pixels
-
-	#intro-title {
-	}
-
-	#intro-summary {
-		margin-top: 105px; margin-top: 10vh;
-	}
-
 	.intro-img {
 		width: @intro-title-height;
 	}
@@ -251,33 +245,121 @@ p {
 		line-height: @intro-title-height;
 	}
 
-	// Smaller than xs (so even more so mobile)
-	@screen-xxs-max: 565px;
-	@media (max-width: @screen-xxs-max) {
-		.intro-title-header {
-			font-size: 68px;
-		}
+}
 
-		.golden-content {
-			padding: 0px;
+// # !!! RESPONSIVE MAYBE?
+// __________________________
 
-			p {
-				font-size: 24px; font-size: 2.4rem;
-				a {
-					font-size: 18px; font-size: 1.8rem;
-				}
+// Smaller than xs (so even more so mobile)
+@screen-xxs-max: 565px;
+
+// making the font bigger on mobile
+@media (max-width: @screen-xxs-max) {
+	.intro-title-header {
+		font-size: 68px;
+	}
+
+	.golden-content {
+		padding: 0px;
+
+		p {
+			font-size: 24px; font-size: 2.4rem;
+			a {
+				font-size: 18px; font-size: 1.8rem;
 			}
 		}
 	}
+}
 
+// # Spacing
+// ____________
+
+// set the splash area spacing by abusing media queries
+// !!! perfect this later
+
+@media (max-width: @screen-xs-max) {
+  #intro {
+		padding-top: 196px;
+		padding-bottom: 94px;
+	}
+
+	#intro-summary {
+		margin-top: 73px;
+		margin-bottom: 23px;
+	}
+
+	#projects {
+		padding-top: 94px;
+	}
+}
+// xxs overrides xs if necessary
+@media (max-width: @screen-xxs-max) {
+  #intro {
+		padding-top: 105px;
+		padding-bottom: 94px;
+	}
+
+	#intro-summary {
+		margin-top: 92px;
+		margin-bottom: 0px;
+	}
+
+	#projects {
+		padding-top: 94px;
+	}
+}
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+  #intro {
+		padding-top: 196px;
+		padding-bottom: 94px;
+	}
+
+	#intro-summary {
+		margin-top: 73px;
+		margin-bottom: 49px;
+	}
+
+	#projects {
+		padding-top: 94px;
+	}
+}
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+	#intro {
+		padding-top: 277px;
+		padding-bottom: 94px;
+	}
+
+	#intro-summary {
+		margin-top: 170px;
+		margin-bottom: 62px;
+	}
+
+	#projects {
+		padding-top: 94px;
+	}
+}
+@media (min-width: @screen-lg-min) {
+	#intro {
+		padding-top: 277px;
+		padding-bottom: 94px;
+	}
+
+	#intro-summary {
+		margin-top: 170px;
+		margin-bottom: 62px;
+	}
+
+	#projects {
+		padding-top: 94px;
+	}
 }
 
 // # Projects
 // ____________
 
 #projects {
-	padding-top: 80px; padding-top: 9vh;
-	padding-bottom: 80px; padding-bottom: 9vh;
+	// padding-top is handling by # Spacing
+	padding-bottom: 80px;
 	border-top: 1px solid @border-color;
 	border-bottom: 1px solid @border-color;
 }
