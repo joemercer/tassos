@@ -2,7 +2,6 @@
 ________
 
 - fix data
-- fix links to work properly
 - fix styling for section headers
 - clean up existing css
 - clean up existing js
@@ -11,6 +10,7 @@ ________
 - add global.json to the watch
 
 - slow scroll
+- add slow scroll links
 - effect for the Nav + button
 - effect for the Nav items
 
