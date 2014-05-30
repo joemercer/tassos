@@ -50,6 +50,9 @@
 // ## Links
 a {
 	font-family: @link-font-family;
+	font-weight: bold;
+
+	font-size: 24px; font-size: 2.4rem;
 
 	&:hover,
   &:focus {
@@ -58,23 +61,16 @@ a {
   }
 }
 
-// p {
-// 	font-size: 14px; font-size: 1.4rem;
-// 	a {
-// 		font-size: 24px; font-size: 2.4rem;
-// 		font-weight: bold;
-// 	}
-// }
-
-// @media (max-width: @screen-xxs-max) {
-// 	p {
-// 		font-size: 24px; font-size: 2.4rem;
-// 		a {
-// 			font-size: 18px; font-size: 1.8rem;
-// 			text-transform: uppercase;
-// 		}
-// 	}
-// }
+// special handling for font sizes on mobile
+@media (max-width: @screen-xxs-max) {
+	p {
+		font-size: 22px; font-size: 2.2rem;
+		a {
+			font-size: 18px; font-size: 1.8rem;
+			text-transform: uppercase;
+		}
+	}
+}
 
 // # Header
 // _________
@@ -258,8 +254,13 @@ a {
 		width: @intro-title-height;
 	}
 	.intro-title-header {
+		font-size: 90px; font-size: 9rem;
 		margin: 0;
 		line-height: @intro-title-height;
+
+		a {
+			font-size: 90px; font-size: 9rem;
+		}
 	}
 	.golden-content {
 		max-width: 771px; max-width: 77.1rem;
@@ -276,7 +277,10 @@ a {
 // making the font bigger on mobile
 @media (max-width: @screen-xxs-max) {
 	.intro-title-header {
-		font-size: 68px;
+		font-size: 68px; font-size: 6.8rem;
+		a {
+			font-size: 68px; font-size: 6.8rem;
+		}
 	}
 
 	.golden-content {

@@ -4,6 +4,7 @@ ________
 - clean up existing css
 - clean up existing js
 - add global.json to the watch
+- nav fix buffer should always be hide on mobile
 
 - footer
 - slow scroll
