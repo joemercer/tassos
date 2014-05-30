@@ -2,6 +2,8 @@
 ________
 
 - fixed nav stops hovering on social media
+- this involves refactoring social into the nav
+- which involves having a two part navbar
 
 - footer
 - slow scroll
