@@ -30,17 +30,16 @@
 	}
 }
 
+// # Variables
+// ____________
 
+// Smaller than xs (so even more so mobile)
+@screen-xxs-max: 565px;
 
+@border-color: @golden-gray-lighter;
 
-// ________________________
-// !!! edit this stuff
-
-// bigger font on mobile
-// fix generic font size in general
-// font family for links
-// font color for links
-// font family for headers
+// # Overrides
+// _____________
 
 a {
 	// color: @gray-light;
@@ -49,6 +48,14 @@ a {
 
 	&:hover {
 		text-decoration: none;
+	}
+}
+
+p {
+	font-size: 14px; font-size: 1.4rem;
+	a {
+		font-size: 24px; font-size: 2.4rem;
+		font-weight: bold;
 	}
 }
 
@@ -61,27 +68,6 @@ a {
 		}
 	}
 }
-
-// !!! this is also gross
-// should be using the font-size variable
-p {
-	font-size: 14px; font-size: 1.4rem;
-	a {
-		font-size: 24px; font-size: 2.4rem;
-		font-weight: bold;
-	}
-}
-
-// __________________________________
-
-
-
-
-
-// # Variables
-// ____________
-
-@border-color: @golden-gray-lighter;
 
 // # Header
 // _________
@@ -279,9 +265,6 @@ p {
 // - margin and padding
 // !!! improve this later by asking people if they like it
 // ________________________
-
-// Smaller than xs (so even more so mobile)
-@screen-xxs-max: 565px;
 
 // making the font bigger on mobile
 @media (max-width: @screen-xxs-max) {
