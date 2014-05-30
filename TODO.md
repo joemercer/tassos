@@ -9,6 +9,10 @@ ________
 - rename joe.jpg to me.jpg
 - remove header.jpg (or use it somewhere)
 
+- slow scroll
+- effect for the Nav + button
+- effect for the Nav items
+
 - hover link should have a default color of text color, not blue
 - img-circle css not working on first page load
 - i think more thought needs to be put into how the page and css is structured
