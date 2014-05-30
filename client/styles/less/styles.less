@@ -11,6 +11,9 @@
 	-o-transition: opacity .5s ease;
   transition: opacity .5s ease;
 
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
 	&:hover,
 	&:focus {
 		opacity: 1;
@@ -26,6 +29,8 @@
 	-o-transition: opacity .5s ease, color .5s ease;
   transition: opacity .5s ease, color .6s ease-in;
 
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 
 	&:hover,
   &:focus {
@@ -104,7 +109,7 @@ a {
 
 	text-align: left;
 
-	.header-icon {
+	i {
 		font-size: 26px; font-size: 2.6rem;
 		line-height: @header-height;
 		margin-left: 13px;
@@ -117,6 +122,31 @@ a {
 		margin-bottom: 8px;
 		margin-left: 8px;
 		margin-right: -4px;
+	}
+}
+
+.footer {
+	height: @header-height;
+	background-color: @white;
+	opacity: .9;
+	border-bottom: 1px solid @border-color;
+
+	span {
+		vertical-align: middle;
+	}
+
+	i {
+		font-size: 26px; font-size: 2.6rem;
+		vertical-align: middle;
+		margin-left: 6px;
+		margin-right: 6px;
+	}
+
+	// TODO(joe): see header icon image
+	.footer-icon-image {
+		height: 35px;
+		vertical-align: middle;
+		margin-left: 8px;
 	}
 }
 

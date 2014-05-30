@@ -1,6 +1,8 @@
 # TODO
 ________
 
+- fixed nav stops hovering on social media
+
 - footer
 - slow scroll
 - add slow scroll links
