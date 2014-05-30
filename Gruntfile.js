@@ -295,7 +295,7 @@ module.exports = function(grunt) {
         tasks: ['clean:styles', 'less:transpile', 'copy:styles']
       },
       templates: {
-        files: ['client/templates/views/**/*.hbs', 'client/templates/views/**/*.json'],
+        files: ['client/templates/views/**/*.hbs', 'client/templates/views/**/*.json', 'client/data/**/*.json'],
         tasks: ['clean:templates', 'compile-handlebars:dev']
       },
       test: {
