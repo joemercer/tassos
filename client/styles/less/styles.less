@@ -11,7 +11,8 @@
 	-o-transition: opacity .5s ease;
   transition: opacity .5s ease;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		opacity: 1;
 	}
 }
@@ -25,9 +26,11 @@
 	-o-transition: opacity .5s ease, color .5s ease;
   transition: opacity .5s ease, color .6s ease-in;
 
-	&:hover {
-		opacity: 1;
-	}
+
+	&:hover,
+  &:focus {
+    opacity: 1;
+  }
 }
 
 // # Variables
@@ -48,9 +51,11 @@
 a {
 	font-family: @link-font-family;
 
-	&:hover {
-		text-decoration: none;
-	}
+	&:hover,
+  &:focus {
+    color: @link-color;
+    text-decoration: none;
+  }
 }
 
 // p {
