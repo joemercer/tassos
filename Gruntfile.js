@@ -288,7 +288,7 @@ module.exports = function(grunt) {
     watch: {
       scripts: {
         files: ['client/src/**/*.js'],
-        tasks: ['clean:scripts', 'browserify:app', 'concat', 'copy:scripts']
+        tasks: ['jshint:dev', 'clean:scripts', 'browserify:app', 'concat', 'copy:scripts']
       },
       less: {
         files: ['client/styles/**/*.less'],
@@ -314,7 +314,7 @@ module.exports = function(grunt) {
         options: {
           file: 'server.js',
           nodeArgs: ['--debug'],
-          watchedFolders: [],
+          watchedFolders: ['Gruntfile.js'],
           env: {
             PORT: '3300'
           }

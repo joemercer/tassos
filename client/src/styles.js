@@ -6,7 +6,6 @@ $(function(){
 	var $window = $(window);
 
 	// # Nav
-	// - fixes the nav to the top of the screen
 	// _______
 
 	var Nav = {
@@ -42,6 +41,9 @@ $(function(){
 			this.$nav.find('.nav').toggleClass('hide');
 		}
 	};
+
+	// ## Fix nav to the top of the window
+
 	Nav.setTrigger();
 	Nav.maybeFixNav();
 
@@ -55,8 +57,7 @@ $(function(){
 		Nav.maybeFixNav();
 	});
 
-	// # Toggle the nav
-	// _______________
+	// ## Toggle the nav open and closed
 
 	$('.toggle-nav').click(function(e){
 		Nav.toggleNav();
