@@ -8,6 +8,7 @@ ________
 - clean up existing js
 - rename joe.jpg to me.jpg
 - remove header.jpg (or use it somewhere)
+- add global.json to the watch
 
 - slow scroll
 - effect for the Nav + button
