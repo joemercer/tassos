@@ -1,11 +1,10 @@
 # TODO
 ________
 
-- fix styling for section headers
-- clean up existing css
-- clean up existing js
 - rename joe.jpg to me.jpg
 - remove header.jpg (or use it somewhere)
+- clean up existing css
+- clean up existing js
 - add global.json to the watch
 
 - footer
