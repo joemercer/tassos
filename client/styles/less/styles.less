@@ -1,3 +1,7 @@
+// # General utilities
+// !!! consider pulling these out into better modules
+// ______________________
+
 .hover-img {
 	opacity: .3;
 
@@ -26,6 +30,12 @@
 	}
 }
 
+
+
+
+// ________________________
+// !!! edit this stuff
+
 // !!! make this nicer
 .golden-content {
 	max-width: 77.1rem;
@@ -52,6 +62,12 @@ p {
 		// consider text-transform uppercase
 	}
 }
+
+// __________________________________
+
+
+
+
 
 // # Variables
 // ____________
@@ -154,7 +170,7 @@ p {
   }
 }
 
-// # Nav not fixed
+// ## Nav not fixed
 
 .nav-container {
 	.nav {
@@ -162,7 +178,7 @@ p {
 	}
 }
 
-// # Nav fixed
+// ## Nav fixed
 
 .nav-container {
 
@@ -187,7 +203,7 @@ p {
 	}
 }
 
-// # Nav on phones
+// ## Nav on phones
 // - fix to the top
 
 @media (max-width: @screen-xs-max) {
@@ -246,11 +262,11 @@ p {
 
 }
 
-// # Responsive
+// # Responsive sizing
 // - font-size
-// - spacing
-// !!! perfect this later by asking people if they like it
-// ____________
+// - margin and padding
+// !!! improve this later by asking people if they like it
+// ________________________
 
 // Smaller than xs (so even more so mobile)
 @screen-xxs-max: 565px;
@@ -273,7 +289,7 @@ p {
 	}
 }
 
-// set the splash area spacing by abusing media queries
+// set the intro area spacing by abusing media queries
 @media (max-width: @screen-xs-max) {
   #intro {
 		padding-top: 196px;
@@ -351,12 +367,18 @@ p {
 	}
 }
 
+// # Sections
+// !!! consider pulling more of this into a general class
+// ____________
+
+@section-padding-vertical: 90px;
+
 // # Projects
 // ____________
 
 #projects {
-	// padding-top is handling by # Spacing
-	padding-bottom: 80px;
+	// padding-top is handling by #Responsive
+	padding-bottom: @section-padding-vertical;
 	border-top: 1px solid @border-color;
 	border-bottom: 1px solid @border-color;
 }
@@ -365,8 +387,8 @@ p {
 // ____________
 
 #posts {
-	padding-top: 80px; padding-top: 9vh;
-	padding-bottom: 80px; padding-bottom: 9vh;
+	padding-top: @section-padding-vertical;
+	padding-bottom: @section-padding-vertical;
 	border-bottom: 1px solid @border-color;
 }
 
@@ -374,7 +396,7 @@ p {
 // ____________
 
 #pics {
-	padding-top: 80px; padding-top: 9vh;
-	padding-bottom: 80px; padding-bottom: 9vh;
+	padding-top: @section-padding-vertical;
+	padding-bottom: @section-padding-vertical;
 	border-bottom: 1px solid @border-color;
 }
