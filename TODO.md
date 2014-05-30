@@ -1,7 +1,6 @@
 # TODO
 ________
 
-- fix data
 - fix styling for section headers
 - clean up existing css
 - clean up existing js
@@ -9,6 +8,7 @@ ________
 - remove header.jpg (or use it somewhere)
 - add global.json to the watch
 
+- footer
 - slow scroll
 - add slow scroll links
 - effect for the Nav + button
