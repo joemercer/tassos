@@ -1,13 +1,13 @@
 # TODO
 ________
 
+- fix data
+- fix links to work properly
+- fix styling for section headers
 - clean up existing css
 - clean up existing js
 - rename joe.jpg to me.jpg
 - remove header.jpg (or use it somewhere)
-- fix styling for section headers
-- fix links to work properly
-- fix data
 
 - hover link should have a default color of text color, not blue
 - img-circle css not working on first page load
