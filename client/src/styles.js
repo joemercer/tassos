@@ -29,14 +29,14 @@ $(function(){
 					this.$navBuffer.removeClass('hide');
 					this.$nav.find('.nav-inner-container').addClass('container');
 				}
-	    }
-	    else {
+			}
+			else {
 				if (this.$nav.hasClass('fixed')) {
 					this.$nav.removeClass('fixed');
 					this.$navBuffer.addClass('hide');
 					this.$nav.find('.nav-inner-container').removeClass('container');
 				}
-	    }
+			}
 		},
 		toggleNav: function() {
 			this.$nav.find('.nav').toggleClass('hide');
