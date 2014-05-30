@@ -1,8 +1,6 @@
 # TODO
 ________
 
-- clean up existing js
-
 - footer
 - slow scroll
 - add slow scroll links
