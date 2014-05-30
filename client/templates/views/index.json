@@ -5,9 +5,19 @@
 	"projects": {
 		"label": "Projects",
 		"items": [{
+			"href": "http://joemercer.github.io/golden/",
 			"title": "Golden",
-			"href": "href",
 			"summary": "An open source CSS framework based on the Golden Ratio"
+		},
+		{
+			"href": "https://github.com/joemercer/stachetag",
+			"title": "Stachetag",
+			"summary": "Hacking with the Twitter API to produce new types of tags"
+		},
+		{
+			"href": "https://github.com/joemercer/tictactoe",
+			"title": "Tic Tac Code!",
+			"summary": "Play Tic Tac Toe at 1000 moves a second by writing scripts"
 		},
 		{
 			"title": "Waitless",
@@ -15,9 +25,9 @@
 			"summary": "A food ordering system built with Meteor.js"
 		},
 		{
-			"title": "Tic Tac Code!",
-			"href": "href",
-			"summary": "Play Tic Tac Toe at 1000 moves a second by writing scripts"
+			"title": "iClickr",
+			"href": "http://iClickr.meteor.com/",
+			"summary": "Ask and answer multiple choice questions in realtime"
 		}]
 	}
 
