@@ -10,6 +10,7 @@ ________
 - add slow scroll links
 - effect for the Nav + button
 - effect for the Nav items
+- remove bold effect from nav items (or doing something different on hover)
 
 - hover link should have a default color of text color, not blue
 - img-circle css not working on first page load

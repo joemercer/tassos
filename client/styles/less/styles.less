@@ -36,11 +36,11 @@
 // ________________________
 // !!! edit this stuff
 
-// !!! make this nicer
-.golden-content {
-	max-width: 77.1rem;
-  padding: 0px 1.1rem;
-}
+// bigger font on mobile
+// fix generic font size in general
+// font family for links
+// font color for links
+// font family for headers
 
 a {
 	// color: @gray-light;
@@ -52,6 +52,16 @@ a {
 	}
 }
 
+@media (max-width: @screen-xxs-max) {
+	p {
+		font-size: 24px; font-size: 2.4rem;
+		a {
+			font-size: 18px; font-size: 1.8rem;
+			text-transform: uppercase;
+		}
+	}
+}
+
 // !!! this is also gross
 // should be using the font-size variable
 p {
@@ -59,7 +69,6 @@ p {
 	a {
 		font-size: 24px; font-size: 2.4rem;
 		font-weight: bold;
-		// consider text-transform uppercase
 	}
 }
 
@@ -259,7 +268,10 @@ p {
 		margin: 0;
 		line-height: @intro-title-height;
 	}
-
+	.golden-content {
+		max-width: 771px; max-width: 77.1rem;
+	  padding: 0px 1.1rem;
+	}
 }
 
 // # Responsive sizing
@@ -281,9 +293,8 @@ p {
 		padding: 0px;
 
 		p {
-			font-size: 24px; font-size: 2.4rem;
 			a {
-				font-size: 18px; font-size: 1.8rem;
+				text-transform: uppercase;
 			}
 		}
 	}
