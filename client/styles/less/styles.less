@@ -309,10 +309,6 @@ a {
 		margin-top: 73px;
 		margin-bottom: 23px;
 	}
-
-	#projects {
-		padding-top: 94px;
-	}
 }
 // xxs overrides xs if necessary
 @media (max-width: @screen-xxs-max) {
@@ -325,10 +321,6 @@ a {
 		margin-top: 92px;
 		margin-bottom: 0px;
 	}
-
-	#projects {
-		padding-top: 94px;
-	}
 }
 @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
   #intro {
@@ -339,10 +331,6 @@ a {
 	#intro-summary {
 		margin-top: 73px;
 		margin-bottom: 49px;
-	}
-
-	#projects {
-		padding-top: 94px;
 	}
 }
 @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
@@ -355,10 +343,6 @@ a {
 		margin-top: 170px;
 		margin-bottom: 62px;
 	}
-
-	#projects {
-		padding-top: 94px;
-	}
 }
 @media (min-width: @screen-lg-min) {
 	#intro {
@@ -369,10 +353,6 @@ a {
 	#intro-summary {
 		margin-top: 170px;
 		margin-bottom: 62px;
-	}
-
-	#projects {
-		padding-top: 94px;
 	}
 }
 
@@ -386,10 +366,14 @@ a {
 // ____________
 
 #projects {
-	// padding-top is handling by #Responsive
+	padding-top: @section-padding-vertical;
 	padding-bottom: @section-padding-vertical;
 	border-top: 1px solid @border-color;
 	border-bottom: 1px solid @border-color;
+
+	h2 {
+		margin-bottom: 60px; margin-bottom: 6rem;
+	}
 }
 
 // # Posts
@@ -399,6 +383,10 @@ a {
 	padding-top: @section-padding-vertical;
 	padding-bottom: @section-padding-vertical;
 	border-bottom: 1px solid @border-color;
+
+	h2 {
+		margin-bottom: 60px; margin-bottom: 6rem;
+	}
 }
 
 // # Pics
@@ -408,4 +396,8 @@ a {
 	padding-top: @section-padding-vertical;
 	padding-bottom: @section-padding-vertical;
 	border-bottom: 1px solid @border-color;
+
+	h2 {
+		margin-bottom: 60px; margin-bottom: 6rem;
+	}
 }
