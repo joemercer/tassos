@@ -1,5 +1,15 @@
 var $ = require('jquery');
 
+// # Rotate Effect
+// ________________
+
+$.fn.rotate = function(degrees) {
+		$(this).css({'-webkit-transform' : 'rotate('+ degrees +'deg)',
+									'-moz-transform' : 'rotate('+ degrees +'deg)',
+									'-ms-transform' : 'rotate('+ degrees +'deg)',
+									'transform' : 'rotate('+ degrees +'deg)'});
+};
+
 $(function(){
 	"use strict";
 
@@ -87,8 +97,11 @@ $(function(){
 
 	// ## Toggle the nav open and closed
 
+	var rotateOffset = 0;
 	$('.toggle-nav').click(function(e){
 		Nav.toggleNav();
+		rotateOffset = rotateOffset + (360 * 6);
+		$(this).rotate(rotateOffset);
 	});
 
 	// # Slow scroll on Nav links
@@ -134,26 +147,5 @@ $(function(){
 			}
 		});
 	});
-
-	// # Rotate Effect
-	// ________________
-
-	$.fn.rotate = function(degrees) {
-			$(this).css({'-webkit-transform' : 'rotate('+ degrees +'deg)',
-										'-moz-transform' : 'rotate('+ degrees +'deg)',
-										'-ms-transform' : 'rotate('+ degrees +'deg)',
-										'transform' : 'rotate('+ degrees +'deg)'});
-	};
-
-	var $rotate = $('.rotate-effect');
-
-	// !!! probably call this from the toggle-nav click handler
-	$rotate.click(function(e){
-		$rotate.rotate(360 * 6);
-	});
-
-
-
-
 
 });
