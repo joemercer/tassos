@@ -6,12 +6,15 @@ $(function(){
 	var $window = $(window);
 
 	// # Nav
+	// - when the nav covers the header, we reveal the same set of icons as part of the nav so that they can still be accessed
 	// _______
 
 	var Nav = {
 		$window: $window,
 		$nav: $('.nav-container'),
 		$navBuffer: $('.nav-fixed-buffer'),
+		$header: $('.header .header-inner'),
+		$headerCover: $('.header-cover'),
 		setTrigger: function() {
 			this.navMarginTop = parseInt(this.$nav.css('margin-top'));
 			if (this.$nav.hasClass('fixed')) {
@@ -26,6 +29,8 @@ $(function(){
 				if (!this.$nav.hasClass('fixed')) {
 					this.$nav.addClass('fixed');
 					this.$navBuffer.removeClass('hide');
+					this.$header.addClass('hide');
+					this.$headerCover.removeClass('hide');
 					this.$nav.find('.nav-inner-container').addClass('container');
 				}
 			}
@@ -33,6 +38,8 @@ $(function(){
 				if (this.$nav.hasClass('fixed')) {
 					this.$nav.removeClass('fixed');
 					this.$navBuffer.addClass('hide');
+					this.$header.removeClass('hide');
+					this.$headerCover.addClass('hide');
 					this.$nav.find('.nav-inner-container').removeClass('container');
 				}
 			}

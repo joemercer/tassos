@@ -36,9 +36,11 @@
       <div class="trim-color-block green-back"></div>
       <div class="trim-color-block lime-back"></div>
       <div class="header container">
-        <a class="hover-link"><img src="fonts/logo.png" class="header-icon-image"/></a>
-        <a href="{{joe.github.href}}" target="_blank" class="hover-link"><i class="fa fa-github"></i></a>
-        <a href="{{joe.twitter.href}}" target="_blank" class="hover-link"><i class="fa fa-twitter"></i></a>
+        <div class="header-inner">
+          <a class="hover-link"><img src="fonts/logo.png" class="header-icon-image"/></a>
+          <a href="{{joe.github.href}}" target="_blank" class="hover-link"><i class="fa fa-github"></i></a>
+          <a href="{{joe.twitter.href}}" target="_blank" class="hover-link"><i class="fa fa-twitter"></i></a>
+        </div>
       </div>
     </header>
 
@@ -64,6 +66,11 @@
 
         <nav class="nav-container">
           <div class="nav-inner-container">
+            <div class="header-cover header-inner hide">
+              <a class="hover-link"><img src="fonts/logo.png" class="header-icon-image"/></a>
+              <a href="{{joe.github.href}}" target="_blank" class="hover-link"><i class="fa fa-github"></i></a>
+              <a href="{{joe.twitter.href}}" target="_blank" class="hover-link"><i class="fa fa-twitter"></i></a>
+            </div>
             <ul class="nav hide">
               <li class="nav-item">
                 <a class="">Projects</a>
