@@ -340,13 +340,13 @@ a {
 // set the intro area spacing by abusing media queries
 @media (max-width: @screen-xs-max) {
   #intro {
-		padding-top: 196px;
-		padding-bottom: 94px;
+		padding-top: 104px; //13
+		padding-bottom: 94px; //7
 	}
 
 	#intro-summary {
-		margin-top: 73px;
-		margin-bottom: 23px;
+		margin-top: 53px; //6
+		margin-bottom: 23px; //1
 	}
 }
 // xxs overrides xs if necessary
@@ -363,35 +363,35 @@ a {
 }
 @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
   #intro {
-		padding-top: 196px;
-		padding-bottom: 94px;
+		padding-top: 82px; //13
+		padding-bottom: 69px; //7
 	}
 
 	#intro-summary {
-		margin-top: 73px;
-		margin-bottom: 49px;
+		margin-top: 33px; //4
+		margin-bottom: 23px; //3
 	}
 }
 @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
 	#intro {
-		padding-top: 277px;
-		padding-bottom: 94px;
+		padding-top: 161px; // 21
+		padding-bottom: 94px; //7
 	}
 
 	#intro-summary {
-		margin-top: 170px;
-		margin-bottom: 62px;
+		margin-top: 103px; //16
+		margin-bottom: 62px; // 3
 	}
 }
 @media (min-width: @screen-lg-min) {
 	#intro {
-		padding-top: 277px;
-		padding-bottom: 94px;
+		padding-top: 161px; // same as medium
+		padding-bottom: 84px;
 	}
 
 	#intro-summary {
-		margin-top: 170px;
-		margin-bottom: 62px;
+		margin-top: 103px;
+		margin-bottom: 72px;
 	}
 }
 
@@ -399,7 +399,7 @@ a {
 // !!! consider pulling more of this into a general class
 // ____________
 
-@section-padding-vertical: 90px;
+@section-padding-vertical: 50px;
 
 // # Projects
 // ____________
