@@ -9,11 +9,9 @@ ________
 - effect for the Nav items
 - remove bold effect from nav items (or doing something different on hover)
 
-- on mobile should have padding on the left
-- and effect should come in from left
 
-- fix unpressing it (going backwards)
 - backwards opacity has to happen dynamically whether open or closed
+-- e.g. do the border first on open and last on closed
 
 - fix timing
 - clean up

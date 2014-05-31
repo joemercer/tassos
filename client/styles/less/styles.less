@@ -222,6 +222,14 @@ a {
 	}
 }
 
+// nav-items should slide in from left on mobile
+@media (max-width: @screen-xs-max) {
+	.nav-item.active {
+		padding-right: 0px;
+		padding-left: @nav-item-horizontal-spacing;
+	}
+}
+
 // ## Nav not fixed
 
 .nav-container {
