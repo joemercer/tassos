@@ -14,6 +14,8 @@ $(function(){
 	var Nav = {
 		$window: $window,
 		$nav: $nav,
+		$navItems: $nav.find('.nav-item'),
+		$navItemsContainer: $nav.find('.nav'),
 		navHeight: $nav.outerHeight(),
 		navMarginTop: parseInt($nav.css('margin-top')),
 		$navBuffer: $('.nav-fixed-buffer'),
@@ -48,14 +50,23 @@ $(function(){
 			}
 		},
 		toggleNav: function() {
-			this.$nav.find('.nav').toggleClass('hide').promise().done(function(){
+			if (this.$navItemsContainer.hasClass('hide')) {
+				this.$navItemsContainer.removeClass('hide');
 				// wait 50 ms for elements to un-hide
 				window.setTimeout(function(){
-					// !!! cache these yo
-					$('.nav').toggleClass('opacity-hide');
-					$('.nav-item').toggleClass('opacity-hide').toggleClass('active');
+					Nav.$navItemsContainer.toggleClass('opacity-hide');
+					Nav.$navItems.toggleClass('opacity-hide').toggleClass('active');
 				}, 50);
-			});
+			}
+			else {
+				this.$navItemsContainer.toggleClass('opacity-hide');
+				this.$navItems.toggleClass('opacity-hide').toggleClass('active');
+				// wait 3s for elements to finish animation
+				// !!! perhaps put in a promise thing
+				window.setTimeout(function(){
+					Nav.$navItemsContainer.addClass('hide');
+				}, 3000);
+			}
 		}
 	};
 
