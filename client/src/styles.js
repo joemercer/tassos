@@ -64,17 +64,24 @@ $(function(){
 				this.$navItemsContainer.removeClass('hide');
 				// wait 50 ms for elements to un-hide
 				window.setTimeout(function(){
-					Nav.$navItemsContainer.toggleClass('opacity-hide');
-					Nav.$navItems.toggleClass('opacity-hide').toggleClass('active');
+					Nav.$navItemsContainer.removeClass('opacity-hide');
+					Nav.$navItems.removeClass('opacity-hide').addClass('active');
+
+					// hard set to the final state for multiple fast clicks
+					Nav.$navItemsContainer.removeClass('hide');
 				}, 50);
 			}
 			else {
-				this.$navItemsContainer.toggleClass('opacity-hide');
-				this.$navItems.toggleClass('opacity-hide').toggleClass('active');
+				this.$navItemsContainer.addClass('opacity-hide');
+				this.$navItems.addClass('opacity-hide').removeClass('active');
 				// wait 3s for elements to finish animation
 				// !!! perhaps put in a promise thing
 				window.setTimeout(function(){
 					Nav.$navItemsContainer.addClass('hide');
+
+					// hard set to the final state for multiple fast clicks
+					Nav.$navItemsContainer.addClass('opacity-hide');
+					Nav.$navItems.addClass('opacity-hide').removeClass('active');
 				}, 3000);
 			}
 		}
