@@ -213,7 +213,8 @@ module.exports = function(grunt) {
       dev: ['client/src/**/*.js'],
       test: ['client/spec/**/*.js'],
       options: {
-        debug: true
+        debug: true,
+        smarttabs: true
       }
     },
 

@@ -48,7 +48,14 @@ $(function(){
 			}
 		},
 		toggleNav: function() {
-			this.$nav.find('.nav').toggleClass('hide');
+			this.$nav.find('.nav').toggleClass('hide').promise().done(function(){
+				// wait 50 ms for elements to un-hide
+				window.setTimeout(function(){
+					// !!! cache these yo
+					$('.nav').toggleClass('opacity-hide');
+					$('.nav-item').toggleClass('opacity-hide').toggleClass('active');
+				}, 50);
+			});
 		}
 	};
 
@@ -116,6 +123,26 @@ $(function(){
 			}
 		});
 	});
+
+	// # Rotate Effect
+	// ________________
+
+	$.fn.rotate = function(degrees) {
+			$(this).css({'-webkit-transform' : 'rotate('+ degrees +'deg)',
+										'-moz-transform' : 'rotate('+ degrees +'deg)',
+										'-ms-transform' : 'rotate('+ degrees +'deg)',
+										'transform' : 'rotate('+ degrees +'deg)'});
+	};
+
+	var $rotate = $('.rotate-effect');
+
+	// !!! probably call this from the toggle-nav click handler
+	$rotate.click(function(e){
+		$rotate.rotate(360 * 4);
+	});
+
+
+
 
 
 });

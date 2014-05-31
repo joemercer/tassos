@@ -169,7 +169,7 @@ a {
 
 @nav-margin-top: @trim-height;
 @nav-height: @header-height;
-@nav-item-horizontal-spacing: 14px;
+@nav-item-horizontal-spacing: 28px;
 @nav-border-color: @border-color;
 
 .nav-fixed-buffer {
@@ -195,22 +195,30 @@ a {
   padding: 0px @nav-item-horizontal-spacing;
 }
 
-.nav-item,
-.nav-item a {
+.nav-item {
   display: inline-block;
+  padding: 0px;
+  &.active {
+  	padding: 0px @nav-item-horizontal-spacing;
+  }
+  
   line-height: @nav-height;
-  padding: 0px @nav-item-horizontal-spacing;
-
   font-size: 18px; font-size: 1.8rem;
   font-weight: lighter;
 
-  cursor: pointer;
+  a {
+  	line-height: @nav-height;
+	  font-size: 18px; font-size: 1.8rem;
+	  font-weight: lighter;
 
-  &:hover {
-  	// !!! perhaps transition this
-  	// !!! need to not use line height for vert centering
-  	// causes pixel jumping in stacked layouts
-  	font-weight: bold;
+	  cursor: pointer;
+
+	  &:hover {
+	  	// !!! perhaps transition this
+	  	// !!! need to not use line height for vert centering
+	  	// causes pixel jumping in stacked layouts
+	  	font-weight: bold;
+	  }
   }
 }
 
@@ -453,4 +461,37 @@ a {
 	h2 {
 		margin-bottom: 60px; margin-bottom: 6rem;
 	}
+}
+
+
+
+.rotate-effect {
+	-webkit-transition: 1s ease-in-out;
+  -moz-transition: 1s ease-in-out;
+  -o-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+
+.nav-item-transition-1 {
+	-webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+.nav-item-transition-2 {
+	-webkit-transition: 1s ease-in-out 1s;
+  transition: 1s ease-in-out 1s;
+}
+.nav-item-transition-3 {
+	-webkit-transition: 1s ease-in-out 2s;
+  transition: 1s ease-in-out 2s;
+}
+
+.nav-transition {
+	-webkit-transition: 1s ease-in-out;
+  -moz-transition: 1s ease-in-out;
+  -o-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+
+.opacity-hide {
+	opacity: 0;
 }

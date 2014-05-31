@@ -9,6 +9,8 @@ ________
 - effect for the Nav items
 - remove bold effect from nav items (or doing something different on hover)
 
+- cursor pointer on all links
+
 - hover link should have a default color of text color, not blue
 - img-circle css not working on first page load
 - i think more thought needs to be put into how the page and css is structured
