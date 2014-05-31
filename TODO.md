@@ -1,13 +1,6 @@
 # TODO
 ________
 
-- use rem for spacing units
-- use vh for top padding 
-
-- big text not getting smaller (68px i think)
-
-- also lets make the spacing between sections smaller
-
 - add some margin top to the side in the sections
 
 - slow scroll
