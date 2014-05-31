@@ -138,7 +138,7 @@ $(function(){
 
 	// !!! probably call this from the toggle-nav click handler
 	$rotate.click(function(e){
-		$rotate.rotate(360 * 4);
+		$rotate.rotate(360 * 6);
 	});
 
 

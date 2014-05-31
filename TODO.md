@@ -9,6 +9,18 @@ ________
 - effect for the Nav items
 - remove bold effect from nav items (or doing something different on hover)
 
+- on mobile should have padding on the right
+- and effect should come in from right
+- and underline should fade in last
+
+- fix unpressing it (going backwards)
+- fix spinning on each click (multiple clicks)
+- cache the javascript
+- fix border fading in after being fixed
+- fix "Projects" being pushed right by the thing on the effect when going from big to small
+
+- fix timing
+
 - cursor pointer on all links
 
 - hover link should have a default color of text color, not blue

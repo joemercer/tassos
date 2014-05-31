@@ -9,10 +9,10 @@
 	-moz-transition: opacity .5s ease;
 	-ms-transition: opacity .5s ease;
 	-o-transition: opacity .5s ease;
-  transition: opacity .5s ease;
+	transition: opacity .5s ease;
 
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 
 	&:hover,
 	&:focus {
@@ -27,15 +27,15 @@
 	-moz-transition: opacity .5s ease, color .5s ease;
 	-ms-transition: opacity .5s ease, color .5s ease;
 	-o-transition: opacity .5s ease, color .5s ease;
-  transition: opacity .5s ease, color .6s ease-in;
+	transition: opacity .5s ease, color .6s ease-in;
 
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 
 	&:hover,
-  &:focus {
-    opacity: 1;
-  }
+	&:focus {
+		opacity: 1;
+	}
 }
 
 // # Variables
@@ -60,10 +60,10 @@ a {
 	font-size: 24px; font-size: 2.4rem;
 
 	&:hover,
-  &:focus {
-    color: @link-color;
-    text-decoration: none;
-  }
+	&:focus {
+		color: @link-color;
+		text-decoration: none;
+	}
 }
 
 // special handling for font sizes on mobile
@@ -178,12 +178,12 @@ a {
 }
 
 .nav-container {
-  height: @nav-height;
-  margin-top: @nav-margin-top;
+	height: @nav-height;
+	margin-top: @nav-margin-top;
 
-  text-align: right;
+	text-align: right;
 
-  .nav-icon {
+	.nav-icon {
 		padding: 0 20px; padding: 0 2rem;
 		font-size: 26px; font-size: 2.6rem;
 		line-height: @nav-height;
@@ -192,34 +192,34 @@ a {
 
 .nav {
 	display: inline-block;
-  padding: 0px @nav-item-horizontal-spacing;
+	padding-left: @nav-item-horizontal-spacing;
 }
 
 .nav-item {
-  display: inline-block;
-  padding: 0px;
-  &.active {
-  	padding: 0px @nav-item-horizontal-spacing;
-  }
-  
-  line-height: @nav-height;
-  font-size: 18px; font-size: 1.8rem;
-  font-weight: lighter;
+	display: inline-block;
+	padding: 0px;
+	&.active {
+		padding-right: 2 * @nav-item-horizontal-spacing;
+	}
+	
+	line-height: @nav-height;
+	font-size: 18px; font-size: 1.8rem;
+	font-weight: lighter;
 
-  a {
-  	line-height: @nav-height;
-	  font-size: 18px; font-size: 1.8rem;
-	  font-weight: lighter;
+	a {
+		line-height: @nav-height;
+		font-size: 18px; font-size: 1.8rem;
+		font-weight: lighter;
 
-	  cursor: pointer;
+		cursor: pointer;
 
-	  &:hover {
-	  	// !!! perhaps transition this
-	  	// !!! need to not use line height for vert centering
-	  	// causes pixel jumping in stacked layouts
-	  	font-weight: bold;
-	  }
-  }
+		&:hover {
+			// !!! perhaps transition this
+			// !!! need to not use line height for vert centering
+			// causes pixel jumping in stacked layouts
+			font-weight: bold;
+		}
+	}
 }
 
 // ## Nav not fixed
@@ -263,36 +263,36 @@ a {
 		display: none;
 	}
 
-  .nav-container {
+	.nav-container {
 
 		.nav-container.fixed();
 
 		text-align: left;
 
-  	&.fixed .nav {
-  		// Show a bottom border on expanded nav in mobile
-  		border-bottom: 1px solid @nav-border-color;
-  	}
+		&.fixed .nav {
+			// Show a bottom border on expanded nav in mobile
+			border-bottom: 1px solid @nav-border-color;
+		}
 
-	  .nav-icon {
+		.nav-icon {
 			position: absolute;
 			top: 0px;
 			right: 0px;
 		}
-  }
+	}
 
-  .nav {
-  	left: 0px;
-  	display: block;
-  	width: 100%;
-  	margin-top: @header-height;
+	.nav {
+		left: 0px;
+		display: block;
+		width: 100%;
+		margin-top: @header-height;
 
-  	background-color: @white;
-  }
+		background-color: @white;
+	}
 
-  .nav-item {
-  	display: block;
-  }
+	.nav-item {
+		display: block;
+	}
 }
 
 // # Content
@@ -361,7 +361,7 @@ a {
 
 // set the intro area spacing by abusing media queries
 @media (max-width: @screen-xs-max) {
-  #intro {
+	#intro {
 		padding-top: 104px; padding-top: 10.4rem; padding-top: 13vh;
 		padding-bottom: 80px; padding-bottom: 8rem; padding-bottom: 10vh;
 	}
@@ -373,7 +373,7 @@ a {
 }
 // xxs overrides xs if necessary
 @media (max-width: @screen-xxs-max) {
-  #intro {
+	#intro {
 		padding-top: 105px; padding-top: 10.5rem;
 		padding-bottom: 94px; padding-bottom: 9.4rem;
 	}
@@ -384,7 +384,7 @@ a {
 	}
 }
 @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
-  #intro {
+	#intro {
 		padding-top: 86px; padding-top: 8.6rem; padding-top: 10vh;
 		padding-bottom: 69px; padding-bottom: 6.9rem; padding-bottom: 8vh;
 	}
@@ -465,31 +465,30 @@ a {
 
 
 
+
 .rotate-effect {
-	-webkit-transition: 1s ease-in-out;
-  -moz-transition: 1s ease-in-out;
-  -o-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;
+	-webkit-transition: 3s ease-in-out;
+	transition: 3s ease-in-out;
 }
 
 .nav-item-transition-1 {
 	-webkit-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;
+	transition: 1s ease-in-out;
 }
 .nav-item-transition-2 {
 	-webkit-transition: 1s ease-in-out 1s;
-  transition: 1s ease-in-out 1s;
+	transition: 1s ease-in-out 1s;
 }
 .nav-item-transition-3 {
 	-webkit-transition: 1s ease-in-out 2s;
-  transition: 1s ease-in-out 2s;
+	transition: 1s ease-in-out 2s;
 }
 
 .nav-transition {
 	-webkit-transition: 1s ease-in-out;
-  -moz-transition: 1s ease-in-out;
-  -o-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;
+	-moz-transition: 1s ease-in-out;
+	-o-transition: 1s ease-in-out;
+	transition: 1s ease-in-out;
 }
 
 .opacity-hide {
