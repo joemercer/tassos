@@ -9,14 +9,17 @@ $(function(){
 	// - when the nav covers the header, we reveal the same set of icons as part of the nav so that they can still be accessed
 	// _______
 
+	var $nav = $('.nav-container');
+
 	var Nav = {
 		$window: $window,
-		$nav: $('.nav-container'),
+		$nav: $nav,
+		navHeight: $nav.outerHeight(),
+		navMarginTop: parseInt($nav.css('margin-top')),
 		$navBuffer: $('.nav-fixed-buffer'),
 		$header: $('.header .header-inner'),
 		$headerCover: $('.header-cover'),
 		setTrigger: function() {
-			this.navMarginTop = parseInt(this.$nav.css('margin-top'));
 			if (this.$nav.hasClass('fixed')) {
 				this.trigger = this.$navBuffer.offset().top - this.navMarginTop;
 			}
@@ -68,6 +71,15 @@ $(function(){
 
 	$('.toggle-nav').click(function(e){
 		Nav.toggleNav();
+	});
+
+	// # Slow scroll on Nav links
+	// _____________________________
+
+	$('.scroll-to').click(function(e){
+		var scrollTarget = $(e.target).data().scrollTarget;
+		var scrollTo = $(scrollTarget).offset().top - Nav.navHeight - Nav.navMarginTop + 1;
+		$('html, body').animate({scrollTop: scrollTo}, 'slow');
 	});
 
 	// # Hover Links
