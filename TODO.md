@@ -12,6 +12,7 @@ ________
 
 - backwards opacity has to happen dynamically whether open or closed
 -- e.g. do the border first on open and last on closed
+- click the spinning plus as many times as you want
 
 - fix timing
 - clean up
