@@ -5,7 +5,9 @@ ________
 - this involves refactoring social into the nav
 - which involves having a two part navbar
 
-- footer
+- use rem for spacing units
+- use vh for top padding 
+
 - slow scroll
 - add slow scroll links
 - effect for the Nav + button
