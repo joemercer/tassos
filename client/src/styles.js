@@ -78,15 +78,27 @@ $(function(){
 				showNav = true;
 			}
 			if (showNav || this.$navItemsContainer.hasClass('hide')) {
+
 				// then show the nav
 				this.$navItemsContainer.removeClass('hide');
+
 				// wait 50 ms for elements to un-hide
 				window.setTimeout(function(){
+					// set the proper animation classes
+					// TODO(joe): consider doing this in css by changing
+					// the definition of these classes under different classes
+					Nav.$navItems.first().removeClass('nav-item-transition-3');
+					Nav.$navItems.first().addClass('nav-item-transition-1');
+					Nav.$navItems.last().removeClass('nav-item-transition-1');
+					Nav.$navItems.last().addClass('nav-item-transition-3');
+
+					// trigger the animation
 					Nav.$navItems.removeClass('opacity-hide').addClass('active');
 
 					// hard set to the final state for multiple fast clicks
 					Nav.$navItemsContainer.removeClass('hide');
 				}, 50);
+
 				return true;
 			}
 			else {
@@ -94,17 +106,31 @@ $(function(){
 				// that will be removed once the animation ends
 				this.$navItemsContainer.addClass('before-hide');
 
+				// set the proper animation classes
+				this.$navItems.first().removeClass('nav-item-transition-1');
+				this.$navItems.first().addClass('nav-item-transition-3');
+				this.$navItems.last().removeClass('nav-item-transition-3');
+				this.$navItems.last().addClass('nav-item-transition-1');
+
+				// trigger the animation
 				this.$navItems.addClass('opacity-hide').removeClass('active');
+
 				// wait 3s for elements to finish animation
 				// then hide the nav
-				// !!! perhaps put in a promise thing
 				this.previousHideTimeoutId = window.setTimeout(function(){
+
+					// hide the nav
 					Nav.$navItemsContainer.addClass('hide');
 					Nav.$navItemsContainer.removeClass('before-hide');
 
 					// hard set to the final state for multiple fast clicks
+					Nav.$navItems.first().removeClass('nav-item-transition-1');
+					Nav.$navItems.first().addClass('nav-item-transition-3');
+					Nav.$navItems.last().removeClass('nav-item-transition-3');
+					Nav.$navItems.last().addClass('nav-item-transition-1');
 					Nav.$navItems.addClass('opacity-hide').removeClass('active');
 				}, 3000);
+
 				return false;
 			}
 		}
@@ -132,7 +158,6 @@ $(function(){
 	var rotateOffset = 0;
 	$('.toggle-nav').click(function(e){
 		var addedNav = Nav.toggleNav();
-		console.log(addedNav);
 		if (addedNav) {
 			rotateOffset += (rotateForwardAmount);
 		}

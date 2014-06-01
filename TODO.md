@@ -8,10 +8,7 @@ ________
 - effect for the Nav + button
 - remove bold effect from nav items (or doing something different on hover)
 
-- click the spinning plus as many times as you want
-
--position nav absolute on mobile
--fix border underneat when at top
+- things should leave in an opposite fashion
 
 - fix timing
 - clean up
