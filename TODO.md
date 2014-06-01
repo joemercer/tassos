@@ -7,6 +7,7 @@ ________
 
 - fix timing
 - clean up
+- add all the transition types
 
 
 
