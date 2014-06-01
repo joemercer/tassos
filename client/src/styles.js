@@ -38,6 +38,11 @@ $(function(){
 			else {
 				this.trigger = this.$nav.offset().top - this.navMarginTop;
 			}
+			if ($window.width() <= 767) {
+				// 767 is @screen-xs-max
+				// always be fixed on mobile, even if they scroll into negative space
+				this.trigger = -100;
+			}
 		},
 		maybeFixNav: function() {
 			if (this.$window.scrollTop() >= this.trigger) {
