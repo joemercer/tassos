@@ -171,7 +171,7 @@ a {
 
 @nav-margin-top: @trim-height;
 @nav-height: @header-height;
-@nav-item-horizontal-spacing: 28px;
+@nav-item-horizontal-spacing: 14px;
 @nav-border-color: @border-color;
 
 .nav-fixed-buffer {
@@ -199,9 +199,12 @@ a {
 
 .nav-item {
 	display: inline-block;
-	padding: 0px;
+	padding: 0px @nav-item-horizontal-spacing;
 	&.active {
-		padding-right: @nav-item-horizontal-spacing;
+		-webkit-transform: translate3d(-1 * @nav-item-horizontal-spacing, 0px, 0px);
+		-moz-transform: translate3d(-1 * @nav-item-horizontal-spacing, 0px, 0px);
+		-ms-transform: translate(-1 * @nav-item-horizontal-spacing, 0px);
+		transform: translate3d(-1 * @nav-item-horizontal-spacing, 0px, 0px);
 	}
 
 	line-height: @nav-height;
@@ -220,8 +223,10 @@ a {
 // nav-items should slide in from left on mobile
 @media (max-width: @screen-xs-max) {
 	.nav-item.active {
-		padding-right: 0px;
-		padding-left: @nav-item-horizontal-spacing;
+		-webkit-transform: translate3d(@nav-item-horizontal-spacing / 2, 0px, 0px);
+		-moz-transform: translate3d(@nav-item-horizontal-spacing / 2, 0px, 0px);
+		-ms-transform: translate(@nav-item-horizontal-spacing / 2, 0px);
+		transform: translate3d(@nav-item-horizontal-spacing / 2, 0px, 0px);
 	}
 }
 
@@ -497,6 +502,11 @@ a {
 }
 
 // Hover nav item
+
+// -webkit-transform: translate3d(-1 * @nav-item-horizontal-spacing, 0px, 0px);
+// 		-moz-transform: translate3d(-1 * @nav-item-horizontal-spacing, 0px, 0px);
+// 		-ms-transform: translate(-1 * @nav-item-horizontal-spacing, 0px);
+// 		transform: translate3d(-1 * @nav-item-horizontal-spacing, 0px, 0px);
 
 .hover-nav-item a::before,
 .hover-nav-item a::after {
