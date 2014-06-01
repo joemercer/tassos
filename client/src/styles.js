@@ -173,7 +173,7 @@ $(function(){
 	$('.scroll-to').click(function(e){
 		var scrollTarget = $(e.target).data().scrollTarget;
 		var scrollTo = $(scrollTarget).offset().top - Nav.navHeight - Nav.navMarginTop + 1;
-		$('html, body').animate({scrollTop: scrollTo}, 'slow');
+		$('html, body').animate({scrollTop: scrollTo}, 2000);
 	});
 
 	// # Hover Links
