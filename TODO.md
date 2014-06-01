@@ -5,10 +5,8 @@ ________
 
 - slow scroll
 - add slow scroll links
-- effect for the Nav + button
-- remove bold effect from nav items (or doing something different on hover)
 
-- things should leave in an opposite fashion
+- remove bold effect from nav items (or doing something different on hover)
 
 - fix timing
 - clean up
