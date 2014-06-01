@@ -64,7 +64,6 @@ $(function(){
 				this.$navItemsContainer.removeClass('hide');
 				// wait 50 ms for elements to un-hide
 				window.setTimeout(function(){
-					Nav.$navItemsContainer.removeClass('border-white').addClass('nav-transition-in').removeClass('nav-transition-out');
 					Nav.$navItems.removeClass('opacity-hide').addClass('active');
 
 					// hard set to the final state for multiple fast clicks
@@ -72,15 +71,13 @@ $(function(){
 				}, 50);
 			}
 			else { // hide
-				this.$navItemsContainer.addClass('border-white').addClass('nav-transition-out').removeClass('nav-transition-in');
 				this.$navItems.addClass('opacity-hide').removeClass('active');
 				// wait 3s for elements to finish animation
 				// !!! perhaps put in a promise thing
 				window.setTimeout(function(){
-					Nav.$navItemsContainer.addClass('hide').addClass('nav-transition-out').removeClass('nav-transition-in');
+					Nav.$navItemsContainer.addClass('hide');
 
 					// hard set to the final state for multiple fast clicks
-					Nav.$navItemsContainer.addClass('border-white');
 					Nav.$navItems.addClass('opacity-hide').removeClass('active');
 				}, 3000);
 			}

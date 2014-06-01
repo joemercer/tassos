@@ -17,6 +17,11 @@ ________
 -scrolling on mobile from previous fixed to nonfixed location
 - see some border
 
+-position nav absolute on mobile
+-fix border underneat when at top
+
+- social covered when fixed on mobile
+
 - fix timing
 - clean up
 
