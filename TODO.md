@@ -14,6 +14,9 @@ ________
 -- e.g. do the border first on open and last on closed
 - click the spinning plus as many times as you want
 
+-scrolling on mobile from previous fixed to nonfixed location
+- see some border
+
 - fix timing
 - clean up
 
