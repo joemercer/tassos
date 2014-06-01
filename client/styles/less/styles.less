@@ -2,6 +2,11 @@
 // !!! consider pulling these out into better modules
 // ______________________
 
+
+// # Hover img
+// - Image fades to full clarity
+// ______________
+
 .hover-img {
 	opacity: .3;
 
@@ -20,6 +25,10 @@
 	}
 }
 
+// # Hover link
+// - Link fades to colorful
+// ______________
+
 .hover-link {
 	opacity: .3;
 
@@ -36,6 +45,50 @@
 	&:focus {
 		opacity: 1;
 	}
+}
+
+// # Hover on nav item link
+// - square brackets pop out
+// __________________________
+
+.hover-nav-item a::before,
+.hover-nav-item a::after {
+	display: inline-block;
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
+	-ms-transition: -ms-transform 0.3s, opacity 0.2s;
+	-o-transition: -webkit-transform 0.3s, opacity 0.2s;
+	transition: transform 0.3s, opacity 0.2s;
+}
+
+.hover-nav-item a::before {
+	margin-right: 10px;
+	content: '[';
+	-webkit-transform: translate3d(20px, 0px, 0px);
+	-moz-transform: translate3d(20px, 0px, 0px);
+	-ms-transform: translate(20px, 0px);
+	transform: translate3d(20px, 0px, 0px);
+}
+
+.hover-nav-item a::after {
+	margin-left: 10px;
+	content: ']';
+	-webkit-transform: translate3d(-20px, 0px, 0px);
+	-moz-transform: translate3d(-20px, 0px, 0px);
+	-ms-transform: translate(-20px, 0px);
+	transform: translate3d(-20px, 0px, 0px);
+}
+
+.hover-nav-item a:hover::before,
+.hover-nav-item a:hover::after,
+.hover-nav-item a:focus::before,
+.hover-nav-item a:focus::after {
+	opacity: 1;
+	-webkit-transform: translate3d(0px, 0px, 0px);
+	-moz-transform: translate3d(0px, 0px, 0px);
+	-ms-transform: translate(0px, 0px);
+	transform: translateX3d(0px, 0px, 0px);
 }
 
 // # Variables
@@ -499,44 +552,4 @@ a {
 
 .opacity-hide {
 	opacity: 0;
-}
-
-// Hover nav item
-
-.hover-nav-item a::before,
-.hover-nav-item a::after {
-	display: inline-block;
-	opacity: 0;
-	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
-	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
-	transition: transform 0.3s, opacity 0.2s;
-}
-
-.hover-nav-item a::before {
-	margin-right: 10px;
-	content: '[';
-	-webkit-transform: translate3d(20px, 0px, 0px);
-	-moz-transform: translate3d(20px, 0px, 0px);
-	-ms-transform: translate(20px, 0px);
-	transform: translate3d(20px, 0px, 0px);
-}
-
-.hover-nav-item a::after {
-	margin-left: 10px;
-	content: ']';
-	-webkit-transform: translate3d(-20px, 0px, 0px);
-	-moz-transform: translate3d(-20px, 0px, 0px);
-	-ms-transform: translate(-20px, 0px);
-	transform: translate3d(-20px, 0px, 0px);
-}
-
-.hover-nav-item a:hover::before,
-.hover-nav-item a:hover::after,
-.hover-nav-item a:focus::before,
-.hover-nav-item a:focus::after {
-	opacity: 1;
-	-webkit-transform: translate3d(0px, 0px, 0px);
-	-moz-transform: translate3d(0px, 0px, 0px);
-	-ms-transform: translate(0px, 0px);
-	transform: translateX3d(0px, 0px, 0px);
 }
