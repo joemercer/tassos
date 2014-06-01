@@ -3,15 +3,12 @@ ________
 
 - add some margin top to the side in the sections
 
-- slow scroll
 - add slow scroll links
 
 - remove bold effect from nav items (or doing something different on hover)
 
 - fix timing
 - clean up
-
-- project sections jumps a pixel left when plus is pressed
 
 
 - cursor pointer on all links
