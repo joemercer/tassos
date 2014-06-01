@@ -503,11 +503,6 @@ a {
 
 // Hover nav item
 
-// -webkit-transform: translate3d(-1 * @nav-item-horizontal-spacing, 0px, 0px);
-// 		-moz-transform: translate3d(-1 * @nav-item-horizontal-spacing, 0px, 0px);
-// 		-ms-transform: translate(-1 * @nav-item-horizontal-spacing, 0px);
-// 		transform: translate3d(-1 * @nav-item-horizontal-spacing, 0px, 0px);
-
 .hover-nav-item a::before,
 .hover-nav-item a::after {
 	display: inline-block;
@@ -522,6 +517,7 @@ a {
 	content: '[';
 	-webkit-transform: translate3d(20px, 0px, 0px);
 	-moz-transform: translate3d(20px, 0px, 0px);
+	-ms-transform: translate(20px, 0px);
 	transform: translate3d(20px, 0px, 0px);
 }
 
@@ -530,6 +526,7 @@ a {
 	content: ']';
 	-webkit-transform: translate3d(-20px, 0px, 0px);
 	-moz-transform: translate3d(-20px, 0px, 0px);
+	-ms-transform: translate(-20px, 0px);
 	transform: translate3d(-20px, 0px, 0px);
 }
 
@@ -540,5 +537,6 @@ a {
 	opacity: 1;
 	-webkit-transform: translate3d(0px, 0px, 0px);
 	-moz-transform: translate3d(0px, 0px, 0px);
+	-ms-transform: translate(0px, 0px);
 	transform: translateX3d(0px, 0px, 0px);
 }
