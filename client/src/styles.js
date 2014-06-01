@@ -31,6 +31,7 @@ $(function(){
 		$navBuffer: $('.nav-fixed-buffer'),
 		$header: $('.header .header-inner'),
 		$headerCover: $('.header-cover'),
+		previousHideTimeoutId: -1,
 		setTrigger: function() {
 			if (this.$nav.hasClass('fixed')) {
 				this.trigger = this.$navBuffer.offset().top - this.navMarginTop;
@@ -65,7 +66,19 @@ $(function(){
 			}
 		},
 		toggleNav: function() {
-			if (this.$navItemsContainer.hasClass('hide')) { // show
+			var showNav = false;
+			if (this.$navItemsContainer.hasClass('before-hide')) {
+
+				// then cancel the previous setTimeout
+				clearTimeout(this.previousHideTimeoutId);
+				// and remove the class
+				this.$navItemsContainer.removeClass('before-hide');
+
+				// and run the code for showing the nav
+				showNav = true;
+			}
+			if (showNav || this.$navItemsContainer.hasClass('hide')) {
+				// then show the nav
 				this.$navItemsContainer.removeClass('hide');
 				// wait 50 ms for elements to un-hide
 				window.setTimeout(function(){
@@ -74,17 +87,25 @@ $(function(){
 					// hard set to the final state for multiple fast clicks
 					Nav.$navItemsContainer.removeClass('hide');
 				}, 50);
+				return true;
 			}
-			else { // hide
+			else {
+				// set a class on the element when the removed animation starts
+				// that will be removed once the animation ends
+				this.$navItemsContainer.addClass('before-hide');
+
 				this.$navItems.addClass('opacity-hide').removeClass('active');
 				// wait 3s for elements to finish animation
+				// then hide the nav
 				// !!! perhaps put in a promise thing
-				window.setTimeout(function(){
+				this.previousHideTimeoutId = window.setTimeout(function(){
 					Nav.$navItemsContainer.addClass('hide');
+					Nav.$navItemsContainer.removeClass('before-hide');
 
 					// hard set to the final state for multiple fast clicks
 					Nav.$navItems.addClass('opacity-hide').removeClass('active');
 				}, 3000);
+				return false;
 			}
 		}
 	};
@@ -106,10 +127,18 @@ $(function(){
 
 	// ## Toggle the nav open and closed
 
+	var rotateForwardAmount = 360 * 6;
+	var rotateBackwardAmount = -1 * 360 * 6;
 	var rotateOffset = 0;
 	$('.toggle-nav').click(function(e){
-		Nav.toggleNav();
-		rotateOffset = rotateOffset + (360 * 6);
+		var addedNav = Nav.toggleNav();
+		console.log(addedNav);
+		if (addedNav) {
+			rotateOffset += (rotateForwardAmount);
+		}
+		else {
+			rotateOffset += (rotateBackwardAmount);
+		}
 		$(this).rotate(rotateOffset);
 	});
 

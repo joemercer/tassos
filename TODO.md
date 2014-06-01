@@ -16,6 +16,7 @@ ________
 - fix timing
 - clean up
 
+- project sections jumps a pixel left when plus is pressed
 
 
 - cursor pointer on all links
