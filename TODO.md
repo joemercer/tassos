@@ -3,15 +3,12 @@ ________
 
 - add some margin top to the side in the sections
 
-- add slow scroll links
-
 - remove bold effect from nav items (or doing something different on hover)
 
 - fix timing
 - clean up
 
 
-- cursor pointer on all links
 
 - hover link should have a default color of text color, not blue
 - img-circle css not working on first page load
