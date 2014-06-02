@@ -1,12 +1,13 @@
 # TODO
 ________
 
-- revise server.js
 - revise package.json - remove unused modules
 - revise Gruntfile
 - revise bower.json
 - revise karma.conf.js
 - revise tests (do the run?)
+
+- move to folder static-seed and install to try installing on a new box
 
 
 - split this project into its two parts
