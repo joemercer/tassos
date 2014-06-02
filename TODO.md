@@ -1,6 +1,18 @@
 # TODO
 ________
 
+- revise server.js
+- revise package.json - remove unused modules
+- revise Gruntfile
+- revise bower.json
+- revise karma.conf.js
+- revise tests (do the run?)
+
+
+- split this project into its two parts
+- put it into the joemercer.github repo
+- save the existing joemercer.github repo
+
 - also edit the TODO file (split it into sections, make it nice looking, etc)
 - edit the README !!!
 

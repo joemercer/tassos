@@ -1,6 +1,5 @@
 {
-	"thing1": "hello",
-	"thing2": "goodbye",
+	"title": "You're a Blog",
 	"articles": [
 		{
 			"title": "Freegan Pork Belly",
