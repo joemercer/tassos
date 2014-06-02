@@ -129,7 +129,7 @@ $(function(){
 					Nav.$navItems.last().removeClass('nav-item-transition-3');
 					Nav.$navItems.last().addClass('nav-item-transition-1');
 					Nav.$navItems.addClass('opacity-hide').removeClass('active');
-				}, 3000);
+				}, 1500);
 
 				return false;
 			}
@@ -153,8 +153,8 @@ $(function(){
 
 	// ## Toggle the nav open and closed
 
-	var rotateForwardAmount = 360 * 6;
-	var rotateBackwardAmount = -1 * 360 * 6;
+	var rotateForwardAmount = 360 * 4;
+	var rotateBackwardAmount = -1 * rotateForwardAmount;
 	var rotateOffset = 0;
 	$('.toggle-nav').click(function(e){
 		var addedNav = Nav.toggleNav();

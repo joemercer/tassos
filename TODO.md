@@ -3,7 +3,7 @@ ________
 
 - add some margin top to the side in the sections
 
-- fix timing
+
 - clean up
 
 
