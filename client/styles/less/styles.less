@@ -10,7 +10,7 @@
 .hover-img {
 	opacity: .3;
 
-	.transition(opacity .5s ease);
+	.transition(opacity .5s ease-in-out);
 
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
@@ -23,21 +23,16 @@
 
 // # Hover link
 // - Link fades to colorful
+// - color handled via JavaScript
 // ______________
 
 .hover-link {
-	opacity: .3;
+	color: #BEBEBE;
 
-	.transition(opacity .5s ease);
-	.transition(color .6s ease-in);
+	.transition(color .5s ease-in-out);
 
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
-
-	&:hover,
-	&:focus {
-		opacity: 1;
-	}
 }
 
 // # Rotate effect
