@@ -51,10 +51,10 @@ module.exports = function(config) {
     // Start these browsers, currently available:
     // - Chrome
     // - ChromeCanary
-    // - Firefox
+    // - Firefox (has to be installed with `npm install karma-firefox-launcher`)
     // - Opera (has to be installed with `npm install karma-opera-launcher`)
     // - Safari (only Mac; has to be installed with `npm install karma-safari-launcher`)
-    // - PhantomJS
+    // - PhantomJS (has to be installed with `npm install karma-phantomjs-launcher`)
     // - IE (only Windows; has to be installed with `npm install karma-ie-launcher`)
     browsers: ['Chrome'],
 

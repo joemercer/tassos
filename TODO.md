@@ -16,6 +16,7 @@ ________
 
 - also edit the TODO file (split it into sections, make it nice looking, etc)
 - edit the README !!!
+- edit package.json
 
 
 
@@ -45,7 +46,115 @@ _________
 - chrome needed a 256x256 to work (dunno why)
 
 ## Grunt error about not being able to watch enough files
-- change the ulimit
+- change the ulimit: `ulimit -n 2048`
+
+
+
+
+
+
+_______________________
+
+# Installing Node/Npm
+_______________________
+
+# NVM
+- https://www.npmjs.org/package/nvm
+
+We will use nvm to manage our node and npm installation (instead of using Homebrew).
+
+1. Install nvm
+
+If you don't yet have Node but you do have Homebrew:
+
+`brew install nvm`
+
+If you already have Node/Npm:
+
+`npm install -g nvm`
+
+
+
+2. Follow the setup instructions for nvm: https://www.npmjs.org/package/nvm
+
+In my case this meant:
+
+2.1. What is said to do in the console
+
+Add the following to your ~/.bash_profile:
+
+```
+# nvm node package for installing and managing different versions of node
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+```
+
+- 
+
+2.2. What is said to do on the site
+
+- Update your path to include ./node_modules/.bin
+
+In your ~/.bash_profile replace
+
+```
+export PATH
+```
+
+with
+
+
+```
+PATH=./node_modules/.bin:$PATH
+export PATH
+```
+
+2.3. Source ~/.bash_profile
+
+`source ~/.bash_profile`
+
+
+
+3. Install Node/Npm
+
+`nvm install <version>`
+
+For example, in my case I installed Node version 0.10.24
+
+`nvm install v0.10.24`
+
+
+
+4. Check that is worked
+
+Display your version of Node:
+
+`node --version`
+
+Display your version of Npm
+
+`npm --version`
+
+
+
+
+### Log of the problems I encountered
+
+- node/npm seem to have a problem with ~ or ^ in links: https://github.com/npm/npm/issues/4587
+
+- the solution is to upgrade npm: https://github.com/npm/npm/issues/1840
+
+- for some reason npm has trouble upgrading when node was installed with Homebrew: https://github.com/Homebrew/homebrew/issues/22408
+
+
+
+_____________________________________________________________________
+
+
+
+
+
+
 
 
 
