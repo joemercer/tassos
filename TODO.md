@@ -3,15 +3,11 @@ ________
 
 - add some margin top to the side in the sections
 
-- remove bold effect from nav items (or doing something different on hover)
-
 - fix timing
 - clean up
-- add all the transition types
 
 
 
-- hover link should have a default color of text color, not blue
 - img-circle css not working on first page load
 - i think more thought needs to be put into how the page and css is structured
 - - to maximize reuse for new sites
