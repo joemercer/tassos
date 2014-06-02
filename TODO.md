@@ -4,10 +4,6 @@ ________
 - add some margin top to the side in the sections
 
 
-- clean up
-
-
-
 - img-circle css not working on first page load
 - i think more thought needs to be put into how the page and css is structured
 - - to maximize reuse for new sites

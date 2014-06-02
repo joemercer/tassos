@@ -40,6 +40,28 @@
 	}
 }
 
+// # Rotate effect
+// - clicking on the plus button causes it to rotate
+// _________________
+
+.rotate-effect {
+	.transition(1.5s ease-in-out);
+}
+
+// # Nav item transition
+// - clicking on the plus button causes the nav items to appear sliding in
+// _____________________
+
+.nav-item-transition-1 {
+	.transition(.5s ease-in-out);
+}
+.nav-item-transition-2 {
+	.transition(.5s ease-in-out .5s);
+}
+.nav-item-transition-3 {
+	.transition(.5s ease-in-out 1s);
+}
+
 // # Hover on nav item link
 // - square brackets pop out
 // __________________________
@@ -79,6 +101,13 @@
 
 	-ms-transform: translate(0px, 0px);
 	.translate3d(0px, 0px, 0px);
+}
+
+// # Utility classes
+// ___________________
+
+.opacity-hide {
+	opacity: 0;
 }
 
 // # Variables
@@ -511,27 +540,3 @@ a {
 	}
 }
 
-
-// rotate effect
-
-.rotate-effect {
-	.transition(1.5s ease-in-out);
-}
-
-// nav item transtion
-
-.nav-item-transition-1 {
-	.transition(.5s ease-in-out);
-}
-.nav-item-transition-2 {
-	.transition(.5s ease-in-out .5s);
-}
-.nav-item-transition-3 {
-	.transition(.5s ease-in-out 1s);
-}
-
-// utility method
-
-.opacity-hide {
-	opacity: 0;
-}
