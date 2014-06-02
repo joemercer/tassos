@@ -1,14 +1,19 @@
 # TODO
 ________
 
-- add some margin top to the side in the sections
-
-
-- img-circle css not working on first page load
-- i think more thought needs to be put into how the page and css is structured
-- - to maximize reuse for new sites
-- - e.g. things like navbar, sections, header, footer should be easily reusable
+- also edit the TODO file (split it into sections, make it nice looking, etc)
 - edit the README !!!
+
+
+
+# Backlog
+___________
+
+- add some margin top to the side in the sections
+- img-circle css not working on first page load
+
+
+
 - also edit the TODO file (split it into sections, make it nice looking, etc)
 - add a nice markdown compiler that plays nicely with other json data
 - fix the pipeline
@@ -16,11 +21,20 @@ ________
 - condense the list of grunt plugins
 - - probably don't need the karma plugins / don't even know what they do
 
-Used this to convert pngs to ico:
-http://convertico.org/Multi_Image_to_one_icon/
-And this was helpful reference
-https://github.com/audreyr/favicon-cheat-sheet
 
-- chrome needed a 256x256 (for some reason)
 
-ulimit thing for being able to run watch properly
+# Notes
+_________
+
+## favicon.ico
+- reference: https://github.com/audreyr/favicon-cheat-sheet
+- for converting pngs to ico: http://convertico.org/Multi_Image_to_one_icon/
+- chrome needed a 256x256 to work (dunno why)
+
+## Grunt error about not being able to watch enough files
+- change the ulimit
+
+
+
+
+"description": "A seed app for quickly creating and deploying a static website. Includes Handlebars for templating, LESS, a customized version of Bootstrap, Golden for spacing, Font Awesome for icons, Bower and Browserify for frontend JavaScript dependency management, Underscore, jQuery, Grunt for the build pipeline, a simple Express web server, Mocha for testing the server, Karma for testing the frontend, and Github for hosting. Made by @jomrcr.
