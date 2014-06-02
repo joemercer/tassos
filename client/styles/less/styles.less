@@ -10,11 +10,7 @@
 .hover-img {
 	opacity: .3;
 
-	-webkit-transition: opacity .5s ease;
-	-moz-transition: opacity .5s ease;
-	-ms-transition: opacity .5s ease;
-	-o-transition: opacity .5s ease;
-	transition: opacity .5s ease;
+	.transition(opacity .5s ease);
 
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
@@ -32,11 +28,8 @@
 .hover-link {
 	opacity: .3;
 
-	-webkit-transition: opacity .5s ease, color .6s ease-in;
-	-moz-transition: opacity .5s ease, color .5s ease;
-	-ms-transition: opacity .5s ease, color .5s ease;
-	-o-transition: opacity .5s ease, color .5s ease;
-	transition: opacity .5s ease, color .6s ease-in;
+	.transition(opacity .5s ease);
+	.transition(color .6s ease-in);
 
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
@@ -65,21 +58,17 @@
 .hover-nav-item a::before {
 	margin-right: 10px;
 	content: '[';
-	-webkit-transform: translate3d(20px, 0px, 0px);
-	-moz-transform: translate3d(20px, 0px, 0px);
+
 	-ms-transform: translate(20px, 0px);
-	-o-transform: translate(20px, 0px);
-	transform: translate3d(20px, 0px, 0px);
+	.translate3d(20px, 0px, 0px);
 }
 
 .hover-nav-item a::after {
 	margin-left: 10px;
 	content: ']';
-	-webkit-transform: translate3d(-20px, 0px, 0px);
-	-moz-transform: translate3d(-20px, 0px, 0px);
+
 	-ms-transform: translate(-20px, 0px);
-	-o-transform: translate(-20px, 0px);
-	transform: translate3d(-20px, 0px, 0px);
+	.translate3d(-20px, 0px, 0px);
 }
 
 .hover-nav-item a:hover::before,
@@ -87,11 +76,9 @@
 .hover-nav-item a:focus::before,
 .hover-nav-item a:focus::after {
 	opacity: 1;
-	-webkit-transform: translate3d(0px, 0px, 0px);
-	-moz-transform: translate3d(0px, 0px, 0px);
+
 	-ms-transform: translate(0px, 0px);
-	-o-transform: translate(0px, 0px);
-	transform: translateX3d(0px, 0px, 0px);
+	.translate3d(0px, 0px, 0px);
 }
 
 // # Variables
@@ -257,10 +244,8 @@ a {
 	display: inline-block;
 	padding: 0px @nav-item-horizontal-spacing;
 	&.active {
-		-webkit-transform: translate3d(-1 * @nav-item-horizontal-spacing, 0px, 0px);
-		-moz-transform: translate3d(-1 * @nav-item-horizontal-spacing, 0px, 0px);
 		-ms-transform: translate(-1 * @nav-item-horizontal-spacing, 0px);
-		transform: translate3d(-1 * @nav-item-horizontal-spacing, 0px, 0px);
+		.translate3d(-1 * @nav-item-horizontal-spacing, 0px, 0px);
 	}
 
 	line-height: @nav-height;
@@ -279,10 +264,8 @@ a {
 // nav-items should slide in from left on mobile
 @media (max-width: @screen-xs-max) {
 	.nav-item.active {
-		-webkit-transform: translate3d(@nav-item-horizontal-spacing / 2, 0px, 0px);
-		-moz-transform: translate3d(@nav-item-horizontal-spacing / 2, 0px, 0px);
 		-ms-transform: translate(@nav-item-horizontal-spacing / 2, 0px);
-		transform: translate3d(@nav-item-horizontal-spacing / 2, 0px, 0px);
+		.translate3d(@nav-item-horizontal-spacing / 2, 0px, 0px);
 	}
 }
 
@@ -532,23 +515,19 @@ a {
 // rotate effect
 
 .rotate-effect {
-	-webkit-transition: 3s ease-in-out;
-	transition: 3s ease-in-out;
+	.transition(3s ease-in-out);
 }
 
 // nav item transtion
 
 .nav-item-transition-1 {
-	-webkit-transition: 1s ease-in-out;
-	transition: 1s ease-in-out;
+	.transition(1s ease-in-out);
 }
 .nav-item-transition-2 {
-	-webkit-transition: 1s ease-in-out 1s;
-	transition: 1s ease-in-out 1s;
+	.transition(1s ease-in-out 1s);
 }
 .nav-item-transition-3 {
-	-webkit-transition: 1s ease-in-out 2s;
-	transition: 1s ease-in-out 2s;
+	.transition(1s ease-in-out 2s);
 }
 
 // utility method
