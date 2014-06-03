@@ -153,6 +153,24 @@ _____________________________________________________________________
 
 
 
+- curl nvm sh script thing
+
+- restart bash_profile (or do the source thing)
+
+- nvm install <version> (uses .nvmrc by default)
+
+- nvm use <version> to use a a specific version
+
+- note that the .nvmrc is what is handling the version number here
+
+- !!! specify a default
+
+-check
+
+
+
+
+
 
 
 
