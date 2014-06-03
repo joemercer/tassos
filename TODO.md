@@ -1,13 +1,14 @@
 # TODO
 ________
 
-- revise package.json - remove unused modules
+- upgrade obvious packages using npm-check-updates
+- attempt to upgrade browserify **
+- document npm-check-updates
 - revise Gruntfile
-- revise bower.json
 - revise karma.conf.js
 - revise tests (do the run?)
 
-- move to folder static-seed and install to try installing on a new box
+- move to folder static-seed and install to test installing on a new box
 
 
 - split this project into its two parts
