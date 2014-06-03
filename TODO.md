@@ -14,9 +14,11 @@ ________
 - put it into the joemercer.github repo
 - save the existing joemercer.github repo
 
+FOR EACH PART
 - also edit the TODO file (split it into sections, make it nice looking, etc)
 - edit the README !!!
-- edit package.json
+- edit package.json (name, etc)
+- edit bower.json (name, etc)
 
 
 
