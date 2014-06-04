@@ -412,6 +412,7 @@ module.exports = function(grunt) {
   // tests the client code
   grunt.registerTask('test:client', ['jshint:test', 'browserify:test', 'karma:test']);
   // continuously tests the client code when files change
+  // TODO(joe): get this working
   grunt.registerTask('tdd', ['karma:watcher:start', 'concurrent:test']);
 
   // runs all the tests once
