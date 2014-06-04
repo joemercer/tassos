@@ -312,10 +312,11 @@ module.exports = function(grunt) {
     // restarts server when server.js or watchedFolders files change
     nodemon: {
       dev: {
+        script: 'server.js',
         options: {
-          file: 'server.js',
           nodeArgs: ['--debug'],
-          watchedFolders: ['Gruntfile.js'],
+          watch: ['server.js', 'Gruntfile.js'],
+          ignore: [],
           env: {
             PORT: '3300'
           }
