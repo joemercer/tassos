@@ -4,10 +4,11 @@ describe('Server:', function() {
 
   describe('test', function() {
 
-    var test = 'hello';
+    var hello = 'hello';
 
-    it('should exist', function() {
-      expect(test).to.exist;
+    it('should say hello', function() {
+      expect(hello).to.exist;
+      console.log(hello);
     });
 
   });

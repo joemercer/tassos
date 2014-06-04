@@ -212,6 +212,7 @@ module.exports = function(grunt) {
       all: ['Gruntfile.js', 'server.js', 'client/src/**/*.js', 'client/spec/**/*.js'],
       dev: ['client/src/**/*.js'],
       test: ['client/spec/**/*.js'],
+      server: ['Gruntfile.js', 'server.js', 'spec/**/*.js'],
       options: {
         debug: true,
         smarttabs: true
@@ -406,10 +407,10 @@ module.exports = function(grunt) {
   // builds dev then starts the server
   grunt.registerTask('server', ['build:dev', 'concurrent:dev']);
   // tests the server code
-  grunt.registerTask('test:server', ['simplemocha:server']);
+  grunt.registerTask('test:server', ['jshint:server', 'simplemocha:server']);
 
   // tests the client code
-  grunt.registerTask('test:client', ['karma:test']);
+  grunt.registerTask('test:client', ['jshint:test', 'browserify:test', 'karma:test']);
   // continuously tests the client code when files change
   grunt.registerTask('tdd', ['karma:watcher:start', 'concurrent:test']);
 

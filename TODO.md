@@ -8,6 +8,10 @@ ________
 - revise karma.conf.js
 - revise tests (do the run?)
 
+- livereload plugin?
+
+- i should put my tests through jshint as well !!!
+
 - move to folder static-seed and install to test installing on a new box
 
 

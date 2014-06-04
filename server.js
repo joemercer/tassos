@@ -38,7 +38,7 @@ app.use('/', express.static(path.join(__dirname, 'public')));
 
 // dump out errors in development only
 if (process.env.NODE_ENV === 'development') {
-  app.use(errorhandler())
+  app.use(errorhandler());
 }
 
 // boot up the server and listen on the assigned port
