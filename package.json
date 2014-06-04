@@ -14,7 +14,9 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "~4.4.1"
+    "express": "~4.4.1",
+    "morgan": "~1.1.1",
+    "errorHandler": "~1.0.1"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
