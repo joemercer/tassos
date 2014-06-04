@@ -10,7 +10,7 @@ ________
 
 - livereload plugin?
 
-- i should put my tests through jshint as well !!!
+- run npm-check-updates on a init:dev perhaps
 
 - move to folder static-seed and install to test installing on a new box
 
