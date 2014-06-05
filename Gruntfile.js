@@ -50,7 +50,7 @@ module.exports = function(grunt) {
     // deletes files
     // clean:dev does not delete vendor.js because it rarely changes
     clean: {
-      scripts: ['public/js', 'build/<%= ops.browserify.app %>.js', 'build/<%= ops.built.js %>.js'],
+      scripts: ['public/js'],
       styles: ['public/css', 'build/<%= ops.built.css %>.css'],
       templates: ['public/**/*.html'],
       img: ['public/img'],
@@ -164,34 +164,19 @@ module.exports = function(grunt) {
     // note: vendor.js includes all javascript from dependencies in bower.json
     // but we're ignoring the bootstrap js files
     browserify: {
-      vendor: {
-        src: ['client/requires/**/*.js'],
-        dest: 'build/<%= ops.browserify.vendor %>.js',
-        options: {
-          ignore: [
-            'client/requires/bootstrap-less/**/*.js',
-            'client/requires/fontawesome/**/*.js'
-          ],
-          shim: {
-            jquery: {
-              path: 'client/requires/jquery/js/jquery.js',
-              exports: '$'
-            },
-            underscore: {
-              path: 'client/requires/underscore/js/underscore.js',
-              exports: '_'
-            }
-          }
-        }
-      },
       app: {
         files: {
-          'build/<%= ops.browserify.app %>.js': ['client/src/main.js']
+          'build/<%= ops.browserify.app %>.js': [
+            'client/src/lib.js',
+            'client/src/main.js'
+          ]
         },
         options: {
+          // browserify-shim makes CommonJS-incompatible files browserifyable
           // hbsfy allows you to require handlebars templates in your javascript
-          transform: ['hbsfy'],
-          external: ['jquery', 'underscore']
+          transform: ['browserify-shim', 'hbsfy'],
+          // !!! external: ['jquery', 'underscore']
+          watch: true
         }
       },
       test: {
@@ -201,8 +186,9 @@ module.exports = function(grunt) {
           ]
         },
         options: {
-          transform: ['hbsfy'],
-          external: ['jquery', 'underscore']
+          transform: ['browserify-shim', 'hbsfy'],
+          // !!! external: ['jquery', 'underscore']
+          watch: true
         }
       }
     },
@@ -230,10 +216,11 @@ module.exports = function(grunt) {
       }
     },
 
-    // concatanates js files
-    concat: {
-      'build/<%= ops.built.js %>.js': ['build/<%= ops.browserify.vendor %>.js', 'build/<%= ops.browserify.app %>.js']
-    },
+    // !!! remove concat devDep in package.json
+    // // concatanates js files
+    // concat: {
+    //   'build/<%= ops.built.js %>.js': ['build/<%= ops.browserify.vendor %>.js', 'build/<%= ops.browserify.app %>.js']
+    // },
 
     // precompiles handlebars templates to html on the server
     // TODO(joe) check this for helpers and partials
@@ -290,7 +277,7 @@ module.exports = function(grunt) {
     watch: {
       scripts: {
         files: ['client/src/**/*.js'],
-        tasks: ['jshint:dev', 'clean:scripts', 'browserify:app', 'concat', 'copy:scripts']
+        tasks: ['jshint:dev', 'clean:scripts', 'copy:scripts']
       },
       less: {
         files: ['client/styles/**/*.less'],
@@ -302,7 +289,7 @@ module.exports = function(grunt) {
       },
       test: {
         files: ['build/<%= ops.browserify.app %>.js', 'client/spec/**/*.test.js'],
-        tasks: ['browserify:test']
+        tasks: []
       },
       karma: {
         files: ['build/<%= ops.browserify.test %>.js'],
@@ -393,7 +380,7 @@ module.exports = function(grunt) {
   });
 
   // cleans the build, then downloads front end packages
-  grunt.registerTask('init:dev', ['clean', 'bower', 'browserify:vendor']);
+  grunt.registerTask('init:dev', ['clean', 'bower']);
 
   // builds dev
   // 1. deletes /public
@@ -402,7 +389,7 @@ module.exports = function(grunt) {
   // TODO(joe) consider not copying over images and other large files
   grunt.registerTask('build:dev', ['clean:dev', 'browserify:app', 'browserify:test', 'jshint:dev', 'less:transpile', 'concat', 'compile-handlebars:dev', 'copy:dev']);
   // builds prod
-  grunt.registerTask('build:prod', ['clean:prod', 'browserify:vendor', 'browserify:app', 'jshint:all', 'less:transpile', 'concat', 'compile-handlebars:prod', 'cssmin', 'uglify', 'copy:prod']);
+  grunt.registerTask('build:prod', ['clean:prod', 'browserify:app', 'jshint:all', 'less:transpile', 'concat', 'compile-handlebars:prod', 'cssmin', 'uglify', 'copy:prod']);
 
   // builds dev then starts the server
   grunt.registerTask('server', ['build:dev', 'concurrent:dev']);

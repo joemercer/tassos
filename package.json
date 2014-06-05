@@ -13,18 +13,25 @@
   "scripts": {
     "start": "node server.js"
   },
+  "browser": {
+    "jquery": "./bower_components/jquery/jquery.js",
+    "lodash": "./node_modules/lodash/dist/lodash.compat.js"
+  },
+  "browserify-shim": "./shims.js",
   "dependencies": {
+    "errorHandler": "~1.0.1",
     "express": "~4.4.1",
-    "morgan": "~1.1.1",
-    "errorHandler": "~1.0.1"
+    "lodash": "~2.4.1",
+    "morgan": "~1.1.1"
   },
   "devDependencies": {
     "bower": "~1.3.4",
-    "browserify": "2.36.1",
+    "browserify": "4.1.8",
+    "browserify-shim": "~3.5.0",
     "chai": "~1.9.1",
     "grunt": "~0.4.5",
     "grunt-bower-task": "~0.3.4",
-    "grunt-browserify": "~1.3.0",
+    "grunt-browserify": "~2.1.0",
     "grunt-compile-handlebars": "~0.8.0",
     "grunt-concurrent": "~0.5.0",
     "grunt-contrib-clean": "~0.5.0",
@@ -37,15 +44,15 @@
     "grunt-contrib-watch": "~0.6.1",
     "grunt-gh-pages": "~0.9.1",
     "grunt-karma": "~0.8.3",
-    "nodemon": "~1.1.1",
     "grunt-nodemon": "~0.2.1",
     "grunt-shell-spawn": "~0.3.0",
     "grunt-simple-mocha": "~0.4.0",
-    "hbsfy": "~1.0.0",
+    "hbsfy": "~1.3.2",
     "karma": "~0.12.16",
     "karma-chrome-launcher": "~0.1.4",
     "karma-jasmine": "~0.1.5",
     "load-grunt-tasks": "~0.4.0",
+    "nodemon": "~1.1.1",
     "sinon": "~1.10.2",
     "sinon-chai": "~2.5.0",
     "time-grunt": "~0.3.1"
