@@ -52,9 +52,9 @@
     "karma": "~0.12.16",
     "karma-chrome-launcher": "~0.1.4",
     "karma-jasmine": "~0.1.5",
-    "nodemon": "~1.1.1",
+    "nodemon": "~1.2.0",
     "sinon": "~1.10.2",
     "sinon-chai": "~2.5.0",
-    "time-grunt": "~0.3.1"
+    "time-grunt": "~0.3.2"
   }
 }
