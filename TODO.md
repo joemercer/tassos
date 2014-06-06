@@ -1,14 +1,6 @@
 # TODO
 ________
 
-- upgrade obvious packages using npm-check-updates
-- attempt to upgrade browserify **
-- document npm-check-updates
-- revise Gruntfile
-- revise karma.conf.js
-- revise tests (do the run?)
-
-- change name of ops.browserify.app and ops.built etc
 
 - livereload plugin?
 
@@ -62,6 +54,13 @@ _________
 # how browserify works
 http://aeflash.com/2014-05/grunt-browserify-2-x-update.html
 http://aeflash.com/2014-05/watchify-and-grunt.html
+
+
+# For updating:
+
+npm-check-updates
+
+npm outdated
 
 
 _______________________

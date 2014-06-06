@@ -3,7 +3,9 @@ module.exports = function(grunt) {
   // displays the elapsed execution time of grunt tasks when done
   require('time-grunt')(grunt);
   // only load the plugins required for each task
-  require('jit-grunt')(grunt);
+  require('jit-grunt')(grunt, {
+    simplemocha: 'grunt-simple-mocha'
+  });
 
   // define some app specific options
   var ops = {
@@ -270,7 +272,7 @@ module.exports = function(grunt) {
         tasks: ['clean:templates', 'compile-handlebars:dev']
       },
       karma: {
-        files: ['build/<%= ops.browserify.test %>.js'],
+        files: ['build/<%= ops.built.test %>.js'],
         tasks: ['jshint:test', 'karma:watcher:run']
       }
     },
@@ -333,7 +335,7 @@ module.exports = function(grunt) {
       options: {
         configFile: 'karma.conf.js',
         files: [
-          'build/<%= ops.browserify.test %>.js'
+          'build/<%= ops.built.test %>.js'
         ]
       },
       watcher: {

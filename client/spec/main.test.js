@@ -1,6 +1,6 @@
 describe('Client:', function() {
 
-  describe('test', function() {
+  describe('boogie', function() {
 
     var hello = 'hello';
 
