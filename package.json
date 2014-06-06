@@ -1,6 +1,6 @@
 {
   "name": "static-seed",
-  "description": "Static website seed app. Hosts using Github Pages. Includes a simple Express web server for hosting locally. JavaScript with Bower and Browserify. Styling with LESS. Templating with Handlebars. Testing with Karma. Grunt runs everything.",
+  "description": "Static website seed app. Hosts using Github Pages. Includes a simple Express web server for hosting locally. JavaScript with Bower and Browserify. Styling with LESS. Templating with Handlebars. Testing with Mocha and Karma. Grunt runs everything.",
   "version": "0.1.0",
   "author": "Joe Mercer",
   "repository": {

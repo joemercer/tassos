@@ -1,12 +1,74 @@
+# Static-Seed
+
+Seed app for a basic static website. Includes...
+
+- Github Pages for hosting
+- Express web server for testing locally
+- Grunt to do all the things
+- Handlebars for templating
+- LESS for styling
+- Custom Bootstrap
+- Golden
+- FontAwesome for icons
+- Bower and Browserify for JavaScript dependency management
+- jQuery and lodash on the front end
+- jshint
+- Handlebars precompilation
+- CSS minifaction and JS uglification
+- Karma for testing the client
+- Mocha for testing the server
+
+# Getting Started
+
+1. Make sure you have git and node installed (see below if you don't)
+
+!!! plus you need grunt cli (hmmm)
+
+`$ git --version`
+
+`$ node --version` > v0.10.0
+
+`$ npm --version` > v1.4.0
+
+2. Clone this repository
+
+`$ git clone https://github.com/joemercer/static-seed.git <directory>`
+
+3. Install the server dependencies
+
+`$ npm install`
+
+(Note: This can take a couple minutes.)
+
+4. Install the client dependencies
+
+`$ grunt init:dev`
+
+5. Start up the server
+
+`$ grunt server`
+
+6. Open a browser and navigate to `http://localhost:3300/`
+
+7. Do your stuff :)
+
+8. Test
+
+`$ grunt test`
+
+9. Release
+
+!!! this requires that you have set your thing up as a github repo
+
+`$ grunt release`
+
+10. Done :)
+
+
 <<<<<<< HEAD
 ulimit -n
 ulimit -n 2048
 
-# B.E.N.M Boilerplate
-
-Backbone.js, ExpressJS & node.js, MongoDB
-
-This boilerplate app features a complete backend using node.js with ExpressJS, a data layer using MongoDB with Mongoose, and a complete front-end application built using Backbone.js (with Marionette and Browserify).  The front-end application is a simple Contacts manager.  All of the code is fairly basic yet functional.
 
 A detailed blog post covering this entire application can be found here:
 http://kroltech.com/2013/12/boilerplate-web-app-using-backbone-js-expressjs-node-js-mongodb/
