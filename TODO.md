@@ -2,18 +2,6 @@
 ________
 
 
-- livereload plugin?
-
-- run npm-check-updates on a init:dev perhaps
-
-- move to folder static-seed and install to test installing on a new box
-
-
-- split this project into its two parts
-- put it into the joemercer.github repo
-- save the existing joemercer.github repo
-
-FOR EACH PART
 - also edit the TODO file (split it into sections, make it nice looking, etc)
 - edit the README !!!
 - edit package.json (name, etc)
@@ -24,17 +12,14 @@ FOR EACH PART
 # Backlog
 ___________
 
-- add some margin top to the side in the sections
-- img-circle css not working on first page load
+- livereload plugin?
+
+- run npm-check-updates on a init:dev perhaps
+
+- move to folder static-seed and install to test installing on a new box
 
 
-
-- also edit the TODO file (split it into sections, make it nice looking, etc)
 - add a nice markdown compiler that plays nicely with other json data
-- fix the pipeline
-- - perhaps use a grunt plugin to only run moved tasks
-- condense the list of grunt plugins
-- - probably don't need the karma plugins / don't even know what they do
 
 
 
