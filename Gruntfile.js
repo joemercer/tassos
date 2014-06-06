@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+  'use strict';
 
   // displays the elapsed execution time of grunt tasks when done
   require('time-grunt')(grunt);

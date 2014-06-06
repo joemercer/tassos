@@ -1,3 +1,5 @@
+'use strict';
+
 // require() is node's way of loading modules
 // npm modules should be defined in the package.json
 

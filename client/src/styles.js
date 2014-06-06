@@ -12,7 +12,7 @@ $.fn.rotate = function(degrees) {
 };
 
 $(function(){
-	"use strict";
+	'use strict';
 
 	var $window = $(window);
 
