@@ -2,9 +2,8 @@ module.exports = function(grunt) {
 
   // displays the elapsed execution time of grunt tasks when done
   require('time-grunt')(grunt);
-  // load all grunt tasks matching the `grunt-*` pattern
-  // grunt modules defined in package.json
-  require('load-grunt-tasks')(grunt);
+  // only loads the plugins required for each task
+  require('jit-grunt')(grunt);
 
   // define some app specific options
   var ops = {
