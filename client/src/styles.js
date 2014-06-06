@@ -1,4 +1,5 @@
 var $ = require('jquery');
+var _ = require('lodash');
 
 // # Rotate Effect
 // ________________

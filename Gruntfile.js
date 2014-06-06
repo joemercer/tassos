@@ -31,13 +31,12 @@ module.exports = function(grunt) {
     // options for built directory naming
     built: {
       css: 'built-styles',
-      js: 'built-main'
+      js: 'browserify-app'
     },
     // options for browserify naming
     // also used in the karma.conf.js
     browserify: {
       app: 'browserify-app',
-      vendor: 'browserify-vendor',
       test: 'browserify-tests'
     }
   };
@@ -48,16 +47,13 @@ module.exports = function(grunt) {
     ops: ops,
 
     // deletes files
-    // clean:dev does not delete vendor.js because it rarely changes
     clean: {
       scripts: ['public/js'],
       styles: ['public/css', 'build/<%= ops.built.css %>.css'],
       templates: ['public/**/*.html'],
       img: ['public/img'],
-      build: ['build'],
-      'public': ['public'],
       dev: {
-        src: ['public', 'build/<%= ops.browserify.app %>.js', 'build/<%= ops.built.css %>.css', 'build/<%= ops.built.js %>.js']
+        src: ['public', 'build']
       },
       prod: ['dist']
     },
@@ -216,12 +212,6 @@ module.exports = function(grunt) {
       }
     },
 
-    // !!! remove concat devDep in package.json
-    // // concatanates js files
-    // concat: {
-    //   'build/<%= ops.built.js %>.js': ['build/<%= ops.browserify.vendor %>.js', 'build/<%= ops.browserify.app %>.js']
-    // },
-
     // precompiles handlebars templates to html on the server
     // TODO(joe) check this for helpers and partials
     'compile-handlebars': {
@@ -287,10 +277,6 @@ module.exports = function(grunt) {
         files: ['client/templates/views/**/*.hbs', 'client/templates/views/**/*.json', 'client/data/**/*.json'],
         tasks: ['clean:templates', 'compile-handlebars:dev']
       },
-      test: {
-        files: ['build/<%= ops.browserify.app %>.js', 'client/spec/**/*.test.js'],
-        tasks: []
-      },
       karma: {
         files: ['build/<%= ops.browserify.test %>.js'],
         tasks: ['jshint:test', 'karma:watcher:run']
@@ -316,7 +302,7 @@ module.exports = function(grunt) {
     // can also run multiple blocking tasks (like nodemon and watch)
     concurrent: {
       dev: {
-        tasks: ['nodemon:dev', 'watch:scripts', 'watch:less', 'watch:templates', 'watch:test'],
+        tasks: ['nodemon:dev', 'watch:scripts', 'watch:less', 'watch:templates'],
         options: {
           logConcurrentOutput: true
         }
@@ -355,7 +341,6 @@ module.exports = function(grunt) {
       options: {
         configFile: 'karma.conf.js',
         files: [
-          'build/<%= ops.browserify.vendor %>.js',
           'build/<%= ops.browserify.test %>.js'
         ]
       },
@@ -384,12 +369,12 @@ module.exports = function(grunt) {
 
   // builds dev
   // 1. deletes /public
-  // 2. builds assets except vendor.js
+  // 2. builds assets
   // 3. copies assets to /public
   // TODO(joe) consider not copying over images and other large files
-  grunt.registerTask('build:dev', ['clean:dev', 'browserify:app', 'browserify:test', 'jshint:dev', 'less:transpile', 'concat', 'compile-handlebars:dev', 'copy:dev']);
+  grunt.registerTask('build:dev', ['clean:dev', 'browserify:app', 'browserify:test', 'jshint:dev', 'less:transpile', 'compile-handlebars:dev', 'copy:dev']);
   // builds prod
-  grunt.registerTask('build:prod', ['clean:prod', 'browserify:app', 'jshint:all', 'less:transpile', 'concat', 'compile-handlebars:prod', 'cssmin', 'uglify', 'copy:prod']);
+  grunt.registerTask('build:prod', ['clean:prod', 'browserify:app', 'jshint:all', 'less:transpile', 'compile-handlebars:prod', 'cssmin', 'uglify', 'copy:prod']);
 
   // builds dev then starts the server
   grunt.registerTask('server', ['build:dev', 'concurrent:dev']);

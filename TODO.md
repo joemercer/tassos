@@ -8,6 +8,8 @@ ________
 - revise karma.conf.js
 - revise tests (do the run?)
 
+- change name of ops.browserify.app and ops.built etc
+
 - livereload plugin?
 
 - run npm-check-updates on a init:dev perhaps
