@@ -5,6 +5,7 @@ module.exports = function(grunt) {
   require('time-grunt')(grunt);
   // only load the plugins required for each task
   require('jit-grunt')(grunt, {
+    bower: 'grunt-bower-task',
     simplemocha: 'grunt-simple-mocha'
   });
 
