@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 
   // displays the elapsed execution time of grunt tasks when done
   require('time-grunt')(grunt);
-  // only loads the plugins required for each task
+  // only load the plugins required for each task
   require('jit-grunt')(grunt);
 
   // define some app specific options
@@ -24,19 +24,14 @@ module.exports = function(grunt) {
       js: 'main'
     },
 
-    // don't change names below here
+    // don't change options below here
     // _____________________________
 
     // options for built directory naming
     built: {
       css: 'built-styles',
-      js: 'browserify-app'
-    },
-    // options for browserify naming
-    // also used in the karma.conf.js
-    browserify: {
-      app: 'browserify-app',
-      test: 'browserify-tests'
+      js: 'app.browserify',
+      test: 'tests.browserify'
     }
   };
 
@@ -161,7 +156,7 @@ module.exports = function(grunt) {
     browserify: {
       app: {
         files: {
-          'build/<%= ops.browserify.app %>.js': [
+          'build/<%= ops.built.js %>.js': [
             'client/src/lib.js',
             'client/src/main.js'
           ]
@@ -170,19 +165,17 @@ module.exports = function(grunt) {
           // browserify-shim makes CommonJS-incompatible files browserifyable
           // hbsfy allows you to require handlebars templates in your javascript
           transform: ['browserify-shim', 'hbsfy'],
-          // !!! external: ['jquery', 'underscore']
           watch: true
         }
       },
       test: {
         files: {
-          'build/<%= ops.browserify.test %>.js': [
+          'build/<%= ops.built.test %>.js': [
             'client/spec/**/*.test.js'
           ]
         },
         options: {
           transform: ['browserify-shim', 'hbsfy'],
-          // !!! external: ['jquery', 'underscore']
           watch: true
         }
       }
