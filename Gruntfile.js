@@ -187,10 +187,10 @@ module.exports = function(grunt) {
 
     // checks for good JavaScript coding practices
     jshint: {
-      all: ['Gruntfile.js', 'server.js', 'client/src/**/*.js', 'client/spec/**/*.js'],
+      all: ['Gruntfile.js', 'client/src/**/*.js', 'client/spec/**/*.js'],
       dev: ['client/src/**/*.js'],
       test: ['client/spec/**/*.js'],
-      server: ['Gruntfile.js', 'server.js', 'spec/**/*.js'],
+      server: ['Gruntfile.js', 'spec/**/*.js'],
       options: {
         debug: true,
         smarttabs: true
