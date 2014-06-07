@@ -31,12 +31,11 @@ _________
 - for converting pngs to ico: http://convertico.org/Multi_Image_to_one_icon/
 - chrome needed a 256x256 to work (dunno why)
 
-## Grunt error about not being able to watch enough files
-- change the ulimit: `ulimit -n 2048`
 
 
 
-# how browserify works
+
+## how browserify works
 http://aeflash.com/2014-05/grunt-browserify-2-x-update.html
 http://aeflash.com/2014-05/watchify-and-grunt.html
 
@@ -147,7 +146,3 @@ _____________________________________________________________________
 
 
 
-
-
-
-"description": "A seed app for quickly creating and deploying a static website. Includes Handlebars for templating, LESS, a customized version of Bootstrap, Golden for spacing, Font Awesome for icons, Bower and Browserify for frontend JavaScript dependency management, Underscore, jQuery, Grunt for the build pipeline, a simple Express web server, Mocha for testing the server, Karma for testing the frontend, and Github for hosting. Made by @jomrcr.

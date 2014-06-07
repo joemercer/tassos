@@ -1,4 +1,5 @@
 # Static-Seed
+by [@jomrcr](https://twitter.com/jomrcr)
 
 Seed app for a basic static website. Includes...
 
@@ -20,135 +21,92 @@ Seed app for a basic static website. Includes...
 
 # Getting Started
 
-1. Make sure you have git and node installed (see below if you don't)
+### Setting up the dev environment
 
-!!! plus you need grunt cli (hmmm)
+1. Install Git
+
+I like using the [Github instructions](https://help.github.com/articles/set-up-git). Once you're done, check that you've installed it properly:
 
 `$ git --version`
 
-`$ node --version` > v0.10.0
+2. Install Node
 
-`$ npm --version` > v1.4.0
+See the section below for help installing Node. Then check that your Node version is at least `0.10.28`
 
-2. Clone this repository
+`$ node --version`
 
-`$ git clone https://github.com/joemercer/static-seed.git <directory>`
+Node comes packaged with Npm. Check that your Npm version is at least `1.4.9`
 
-3. Install the server dependencies
+`$ npm --version`
+
+3. Install the Grunt-cli ([official docs](http://gruntjs.com/getting-started))
+
+`$ npm install -g grunt-cli`
+
+### Clone the project
+
+`$ git clone https://github.com/joemercer/static-seed.git <directory>` will clone the project into a new directory called <directory>.
+
+`$ git clone https://github.com/joemercer/static-seed.git` will clone the project into a new directory called static-seed.
+
+### Install the dependencies
+
+1. Install the server dependencies
 
 `$ npm install`
 
-(Note: This can take a couple minutes.)
-
-4. Install the client dependencies
+2. Install the client dependencies
 
 `$ grunt init:dev`
 
-5. Start up the server
+### Start the app
+
+1. Launch the web server
 
 `$ grunt server`
 
-6. Open a browser and navigate to `http://localhost:3300/`
+This also starts a watch task that will rebuild the app and restart the server when files are changed.
 
-7. Do your stuff :)
+2. Open the app
 
-8. Test
+In a browser, navigate to `http://localhost:3300/`.
+
+### Run the tests
+
+1. Run the server tests
+
+`$ grunt test:server`
+
+2. Run the client tests (requires Chrome)
+
+`$ grunt test:client`
+
+3. Run all the tests
 
 `$ grunt test`
 
-9. Release
+### Release (requires that you've pushed your project to Github)
 
-!!! this requires that you have set your thing up as a github repo
+Builds the app, then pushes the built directory to a gh-pages branch on Github. 
 
 `$ grunt release`
 
-10. Done :)
+Give it a couple minutes, then check to see if worked by navigating to `<username>.github.io/<repo>` where <username> is your Github username and <repo> is the Github repo for your project.
+
+# FAQ
+
+### How do I fix the error: `EMFILE: Too many opened files.`?
+
+This error is because you've reached your system's max open file limit.
+
+To see this limit: ulimit -n
+
+To temporarily increase this limit: `ulimit -n 2048`
+
+If that didn't work then see more info [here](http://superuser.com/questions/261023/how-to-change-default-ulimit-values-in-mac-os-x-10-6). 
 
 
-<<<<<<< HEAD
-ulimit -n
-ulimit -n 2048
 
 
-A detailed blog post covering this entire application can be found here:
-http://kroltech.com/2013/12/boilerplate-web-app-using-backbone-js-expressjs-node-js-mongodb/
 
- * Backbone.js
-  * Handlebars
-  * Browserify
-  * Jasmine tests
-  * Basic UI app
- * Express / Node.js
-  * Handlebars
-  * Mocha test runner
-  * Chai, Sinon, Proxyquire tests
- * MongoDB
-  * Mongoose
- * Bower
-  * package.json
- * Grunt:
-  * Bower install
-  * Browserify
-  * Handlebars (precompiled)
-  * jsHinting
-  * LESS
-  * Minification/Uglification
-  * Karma client testing/tdd
-  * Mocha node testing
-  * Watchers
-  * Concatenation/Copy
-  * Concurrent runs (server, karma, mongod, etc)
-
-## Requirements
-
-node 0.10+ (and npm), mongodb - visit nodejs.org and mongodb.com to download
-each.
-
-    $ sudo npm install -g grunt-cli
-    $ npm install
-    $ grunt init:dev
-
-Grunt init:dev only needs to be run the first time to prepare the vendor.js
-files.
-
-## Running the App:
-
-Start the server in DEV mode, with nodemon watching the app for a relaunch,
-watchers on scripts and less files for rebuild.
-
-    $ grunt server
-
-Note: Windows users, for some reason the grunt shell task will not launch
-mongod during runtime (so the node server will crash).  Be sure to launch
-mongod in another window before starting grunt server.
-
-### Front-end Tests/TDD:
-
-Requires PhantomJS to be installed globally:
-
-    $ sudo npm install -g phantomjs
-
-To run tests in TDD watch mode:
-
-    $ grunt tdd
-
-To run tests once:
-
-    $ grunt test:client
-
-### Server Tests:
-
-Server tests have been added using Mocha, Chai, and Proxyquire.  To run the
-tests:
-
-    $ grunt test:server
-
-Note:
-
-    $ grunt test
-
-(will run all tests - both server and client)
-=======
-static-seed
-===========
->>>>>>> 1053cc399bc49c9cb725c1dd63e5f774da9a4c49
+This project is loosely inspired by [this blog post](http://kroltech.com/2013/12/boilerplate-web-app-using-backbone-js-expressjs-node-js-mongodb/)
