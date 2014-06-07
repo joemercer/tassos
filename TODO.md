@@ -33,18 +33,11 @@ _________
 
 
 
-
-
 ## how browserify works
 http://aeflash.com/2014-05/grunt-browserify-2-x-update.html
 http://aeflash.com/2014-05/watchify-and-grunt.html
 
 
-# For updating:
-
-npm-check-updates
-
-npm outdated
 
 
 _______________________
@@ -116,9 +109,6 @@ If you cloned this repo then:
 9. Done
 
 :)
-
-
-
 
 
 

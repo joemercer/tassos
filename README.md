@@ -22,15 +22,15 @@ Seed app for a basic static website. Includes...
 
 ### Setting up the dev environment
 
-1. Install Git
+<p>1. Install Git</p>
 
 I like using the [Github instructions](https://help.github.com/articles/set-up-git). Once you're done, check that you've installed it properly:
 
 `$ git --version`
 
-2. Install Node
+<p>2. Install Node</p>
 
-See the section below for help installing Node. Then check that your Node version is at least `0.10.28`
+!!! Publish the notes in TODO as a gist and reference it here. Then check that your Node version is at least `0.10.28`
 
 `$ node --version`
 
@@ -38,7 +38,7 @@ Node comes packaged with Npm. Check that your Npm version is at least `1.4.9`
 
 `$ npm --version`
 
-3. Install the Grunt-cli ([official docs](http://gruntjs.com/getting-started))
+<p>3. Install the Grunt-cli ([official docs](http://gruntjs.com/getting-started))</p>
 
 `$ npm install -g grunt-cli`
 
@@ -50,37 +50,37 @@ Node comes packaged with Npm. Check that your Npm version is at least `1.4.9`
 
 ### Install the dependencies
 
-1. Install the server dependencies
+<p>1. Install the server dependencies</p>
 
 `$ npm install`
 
-2. Install the client dependencies
+<p>2. Install the client dependencies</p>
 
 `$ grunt init:dev`
 
 ### Start the app
 
-1. Launch the web server
+<p>1. Launch the web server</p>
 
 `$ grunt server`
 
 This also starts a watch task that will rebuild the app and restart the server when files are changed.
 
-2. Open the app
+<p>2. Open the app</p>
 
 In a browser, navigate to `http://localhost:3300/`.
 
 ### Run the tests
 
-1. Run the server tests
+<p>1. Run the server tests</p>
 
 `$ grunt test:server`
 
-2. Run the client tests (requires Chrome)
+<p>2. Run the client tests (requires Chrome)</p>
 
 `$ grunt test:client`
 
-3. Run all the tests
+<p>3. Run all the tests</p>
 
 `$ grunt test`
 
@@ -91,6 +91,8 @@ Builds the app, then pushes the built directory to a gh-pages branch on Github.
 `$ grunt release`
 
 Give it a couple minutes, then check to see if worked by navigating to `<username>.github.io/<repo>` where <username> is your Github username and <repo> is the Github repo for your project.
+
+
 
 # FAQ
 
@@ -106,6 +108,14 @@ If that didn't work then see more info [here](http://superuser.com/questions/261
 
 
 
+# Updating
 
+`npm-check-updates`
+
+`npm outdated`
+
+
+
+# Acknowledgements
 
 This project is loosely inspired by [this blog post](http://kroltech.com/2013/12/boilerplate-web-app-using-backbone-js-expressjs-node-js-mongodb/)
