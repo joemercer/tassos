@@ -1,5 +1,4 @@
 # Static-Seed
-by [@jomrcr](https://twitter.com/jomrcr)
 
 Seed app for a basic static website. Includes...
 

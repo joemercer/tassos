@@ -58,23 +58,23 @@ _______________________
 
 We will use nvm to manage our node and npm installation (instead of using Homebrew).
 
-1. Install nvm
+<p>1. Install nvm</p>
 
 Run this script to install Nvm and update your .bash_profile:
 
 `curl https://raw.githubusercontent.com/creationix/nvm/v0.7.0/install.sh | sh`
 
-2. Restart your terminal
+<p>2. Restart your terminal</p>
 
 or run
 
 `source ~/.bash_profile`
 
-3. Test that you have Nvm installed correctly:
+<p>3. Test that you have Nvm installed correctly:</p>
 
 `nvm --version`
 
-4. Install Node
+<p>4. Install Node</p>
 
 `nvm install <version>` will install the version specified in the command.
 `nvm install` will install the version specified in the .nvmrc file in the project's root
