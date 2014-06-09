@@ -12,6 +12,7 @@ ________
 - - package.json browser
 - - shims.js
 - - libs.js
+- - basically the steps for adding a new frontend dependency
 
 
 # Backlog
