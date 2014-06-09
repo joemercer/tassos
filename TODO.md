@@ -8,6 +8,11 @@ ________
 - edit bower.json (name, etc)
 
 
+- need to write in the readme about browserify stuff
+- - package.json browser
+- - shims.js
+- - libs.js
+
 
 # Backlog
 ___________
