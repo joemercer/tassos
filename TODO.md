@@ -14,11 +14,22 @@ ________
 - - libs.js
 - - basically the steps for adding a new frontend dependency
 
+- add a more fully realized version of bootstrap
+
+- add docs explaining the file structure
+
+- add docs explaining the main.js and main.css
+
+- pull out the more general stuff into gists and then just link to the gist
+
+- update the example app to NOT BE MY PERSONAL WEBSITE
+
 
 # Backlog
 ___________
 
 - livereload plugin?
+- - requires a script in the body which needs to be dynamically added. hmmm
 
 - run npm-check-updates on a init:dev perhaps
 
