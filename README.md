@@ -30,7 +30,7 @@ I like using the [Github instructions](https://help.github.com/articles/set-up-g
 
 <p>2. Install Node</p>
 
-!!! Publish the notes in TODO as a gist and reference it here. Then check that your Node version is at least `0.10.28`
+Follow the instructions [here](https://gist.github.com/joemercer/c428589649648f91ec78). Then check that your Node version is at least `0.10.28`
 
 `$ node --version`
 
@@ -118,4 +118,4 @@ If that didn't work then see more info [here](http://superuser.com/questions/261
 
 # Acknowledgements
 
-This project is loosely inspired by [this blog post](http://kroltech.com/2013/12/boilerplate-web-app-using-backbone-js-expressjs-node-js-mongodb/)
+This project is loosely inspired by [this blog post](http://kroltech.com/2013/12/boilerplate-web-app-using-backbone-js-expressjs-node-js-mongodb/).
