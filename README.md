@@ -84,13 +84,29 @@ In a browser, navigate to `http://localhost:3300/`.
 
 `$ grunt test`
 
-### Release (requires that you've pushed your project to Github)
+### Release (requires that you've pushed your project to Github repo)
 
 Builds the app, then pushes the built directory to a gh-pages branch on Github. 
 
 `$ grunt release`
 
 Give it a couple minutes, then check to see if worked by navigating to `<username>.github.io/<repo>` where <username> is your Github username and <repo> is the Github repo for your project.
+
+
+
+# How it all works
+
+## File structure
+
+## Adding a dependency (frontend / backend)
+
+## HTML
+
+## CSS
+
+## JavaScript
+
+## Testing
 
 
 
