@@ -118,10 +118,6 @@ module.exports = function(grunt) {
           cwd: 'client/img',
           src: '**/*',
           dest: 'public/img'
-        },
-        {
-          src: 'config.xml',
-          dest: 'public/config.xml'
         }]
       },
       prod: {
@@ -143,6 +139,8 @@ module.exports = function(grunt) {
           src: '**/*',
           dest: 'dist/img'
         },
+        // only copy the phonegap build config.xml to prod
+        // since we'll debug in the browser for now
         {
           src: 'config.xml',
           dest: 'dist/config.xml'
