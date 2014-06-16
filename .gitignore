@@ -3,6 +3,6 @@ node_modules/*
 bower_components/*
 client/requires/*
 build/*
-public/*
+dist/*
 .grunt/*
 config.xml
