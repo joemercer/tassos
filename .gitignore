@@ -5,4 +5,4 @@ client/requires/*
 build/*
 dist/*
 .grunt/*
-config.xml
+/config.xml
