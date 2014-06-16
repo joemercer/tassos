@@ -17,6 +17,8 @@
     Joe Mercer
   </author>
 
+  <icon src="dist/fonts/logo.png" />
+
   <content src="dist/index.html" />
   <access origin="*" />
 
