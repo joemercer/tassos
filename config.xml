@@ -17,8 +17,8 @@
     Joe Mercer
   </author>
 
-  <content src="dist/index.html" />
-  <icon src="dist/fonts/logo.png" />
+  <content src="index.html" />
+  <icon src="fonts/logo.png" />
   <access origin="*" />
 
   <feature name="http://api.phonegap.com/1.0/camera"/>
