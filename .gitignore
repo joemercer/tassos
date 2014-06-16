@@ -6,3 +6,4 @@ build/*
 public/*
 dist.zip
 .grunt/*
+config.xml
