@@ -118,6 +118,10 @@ module.exports = function(grunt) {
           cwd: 'client/img',
           src: '**/*',
           dest: 'public/img'
+        },
+        {
+          src: 'config.xml',
+          dest: 'public/config.xml'
         }]
       },
       prod: {
@@ -138,6 +142,10 @@ module.exports = function(grunt) {
           cwd: 'client/img',
           src: '**/*',
           dest: 'dist/img'
+        },
+        {
+          src: 'config.xml',
+          dest: 'dist/config.xml'
         }]
       }
     },
