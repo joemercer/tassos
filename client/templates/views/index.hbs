@@ -22,17 +22,16 @@
   </head>
   <body>
 
-    <header id="header">
-        <div class="header-inner">
-          <a class="hover-img"><img src="fonts/logo.png" class="header-icon-image"/></a>
-          <a href="{{joe.github.href}}" target="_blank" class="hover-link"><i class="fa fa-github"></i></a>
-          <a href="{{joe.twitter.href}}" target="_blank" class="hover-link"><i class="fa fa-twitter"></i></a>
-        </div>
-      </div>
+    <header id="header" class="container">
+      <h2>Tassos</h2>
     </header>
 
     <div id="content" class="container">
-
+      <ul>
+      {{#each cards}}
+        <li>{{this}}</li>
+      {{/each}}
+      </ul>
     </div>
 
     <footer id="footer">

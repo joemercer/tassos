@@ -3176,14 +3176,40 @@ address {
 .opacity-hide {
   opacity: 0;
 }
+.footer {
+  height: 50px;
+  background-color: #ffffff;
+  opacity: .9;
+  border-top: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
+}
+.footer span {
+  line-height: 50px;
+}
+.footer i {
+  font-size: 26px;
+  font-size: 2.6rem;
+  vertical-align: middle;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+.footer .footer-icon-image {
+  height: 35px;
+  vertical-align: middle;
+  margin-left: 30px;
+  opacity: 0.8;
+}
 @media (max-width: 565px) {
-  p {
-    font-size: 22px;
-    font-size: 2.2rem;
+  .footer {
+    font-size: 14px;
+    font-size: 1.4rem;
   }
-  p a {
-    font-size: 18px;
-    font-size: 1.8rem;
-    text-transform: uppercase;
+  .footer a {
+    font-size: 16px;
+    font-size: 1.6rem;
+  }
+  .footer .footer-icon-image {
+    margin-left: 8px;
+    margin-left: .8rem;
   }
 }

@@ -15,18 +15,52 @@
 
 @link-font-family: "Quicksand", Helvetica, Arial, sans-serif;
 
-// # Overrides
-// _____________
+@header-height: 50px;
 
-// special handling for font sizes on mobile
-@media (max-width: @screen-xxs-max) {
-	p {
-		font-size: 22px; font-size: 2.2rem;
-		a {
-			font-size: 18px; font-size: 1.8rem;
-			text-transform: uppercase;
-		}
+
+
+// # Footer
+// _________
+
+.footer {
+	height: @header-height;
+	background-color: @white;
+	opacity: .9;
+	border-top: 1px solid @border-color;
+	border-bottom: 1px solid @border-color;
+
+	span {
+		line-height: @header-height;
+	}
+
+	i {
+		font-size: 26px; font-size: 2.6rem;
+		vertical-align: middle;
+		margin-left: 6px;
+		margin-right: 6px;
+	}
+
+	// TODO(joe): see header icon image
+	.footer-icon-image {
+		height: 35px;
+		vertical-align: middle;
+		margin-left: 30px;
+		opacity: 0.8;
 	}
 }
 
+// special handling for font sizes on mobile
+@media (max-width: @screen-xxs-max) {
+	.footer {
+		font-size: 14px; font-size: 1.4rem;
+
+		a {
+			font-size: 16px; font-size: 1.6rem;
+		}
+
+		.footer-icon-image {
+			margin-left: 8px; margin-left: .8rem;
+		}
+	}
+}
 
