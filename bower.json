@@ -1,8 +1,9 @@
 {
-  "name": "static-seed",
+  "name": "Tassos",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "angular": "~1.2.18",
     "jquery": "~1.10.2",
     "bootstrap-less": "~3.1.1",
     "fontawesome": "~4.0.3"
