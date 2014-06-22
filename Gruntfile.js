@@ -356,6 +356,15 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+
+    // hosts the site using github pages
+    // puts dist directory in a gh-pages branch and pushes to origin remote
+    'gh-pages': {
+      options: {
+        base: 'dist'
+      },
+      src: ['**']
     }
   });
 
@@ -403,6 +412,13 @@ module.exports = function (grunt) {
     'filerev',
     'usemin',
     'htmlmin'
+  ]);
+
+  grunt.registerTask('release', [
+    'newer:jshint',
+    'test',
+    'build',
+    'gh-pages'
   ]);
 
   grunt.registerTask('default', [
