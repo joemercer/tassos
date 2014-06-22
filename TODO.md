@@ -10,7 +10,7 @@ ________
 - get data (card values) in json format
 - store the data somewhere appropriate
 
-- use PhoneGap Build's new build from branch option to build from the gh-pages branch and keep our "release" stuff all in one nice wrapped up place
+- have a phonegap build test app that builds from the core source so that we can test on mobile easier (instead of having to actually release the entier app)
 
 
 # Backlog

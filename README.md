@@ -4,7 +4,7 @@ A quirky card game.
 
 This is being built with PhoneGap and [Adobe PhoneGap Build](https://build.phonegap.com/apps).
 
-config.xml is what tells Adobe PhoneGap Build what to do. We load the files into Adobe PhoneGap Build through the Github repo. By placing the config.xml in /public we are indicating that is the root of our app. 
+We load the files into Adobe PhoneGap Build through the Github repo in the gh-pages branch (which is the same branch from which we build the website). The config.xml file is what tells Adobe PhoneGap Build some options (like where the logo is). We also have hydration turned on so you only need to install the app once and then you can see the new versions.
 
 
 # Getting started
