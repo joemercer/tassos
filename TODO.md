@@ -14,6 +14,8 @@ ________
 
 - add all the useful author metatags etc
 
+- we're not using a css preprocessor, like LESS, which is kind of obnoxious
+
 
 # Backlog
 ___________
