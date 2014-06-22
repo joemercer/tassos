@@ -308,6 +308,7 @@ module.exports = function (grunt) {
           dest: '<%= yeoman.dist %>',
           src: [
             '*.{ico,png,txt}',
+            'config.xml', // for Adobe PhoneGap Build
             '.htaccess',
             '*.html',
             'views/{,*/}*.html',
