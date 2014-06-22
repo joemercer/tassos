@@ -12,6 +12,8 @@ ________
 
 - have a phonegap build test app that builds from the core source so that we can test on mobile easier (instead of having to actually release the entier app)
 
+- add all the useful author metatags etc
+
 
 # Backlog
 ___________
