@@ -1,1 +1,0 @@
-"use strict";angular.module("tassosApp",[]),angular.module("tassosApp").controller("MainCtrl",["$scope",function(a){a.awesomeThings=["HTML5 Boilerplate","AngularJS","Karma"]}]);
