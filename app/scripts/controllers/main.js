@@ -19,6 +19,4 @@ angular.module('tassosApp')
     var card = CardsService.get();
     console.log(card);
 
-    debugger;
-
   });
