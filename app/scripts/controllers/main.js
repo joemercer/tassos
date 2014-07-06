@@ -10,13 +10,13 @@
 angular.module('tassosApp')
   .controller('MainCtrl', function ($scope, CardsService) {
 
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    $scope.card = {
+    	title: 'Press \'Next card\'',
+    	description: 'You gotta if you wanna start the game o_O'
+    };
 
-    var card = CardsService.get();
-    console.log(card);
+    $scope.getCard = function() {
+    	$scope.card = CardsService.get();
+    };
 
   });

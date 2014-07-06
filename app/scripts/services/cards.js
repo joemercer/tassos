@@ -31,7 +31,9 @@ angular.module('tassosApp')
     	if (!toReturn) {
     		return {
     			error: true,
-    			message: 'Ran out of cards :('
+    			message: 'Ran out of cards :(',
+    			title: 'Last card!',
+    			description: 'Reload the page if you dare to play again'
     		};
     	}
 
@@ -42,7 +44,7 @@ angular.module('tassosApp')
 
 
     // check cache in local storage
-    
+
 
     // load from spreadsheet 
     Tabletop.init({
