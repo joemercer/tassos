@@ -27,6 +27,10 @@ angular.module('tassosApp')
     $scope.degrees = 0;
     $scope.spin = function() {
     	$scope.degrees += 360 + (720 * Math.random());
+    	if ((-45 < (($scope.degrees - 180) % 360) - 360) && ((($scope.degrees - 180) % 360) - 360 < 45) || (-45 < (($scope.degrees - 180) % 360)) && ((($scope.degrees - 180) % 360) < 45)) {
+    		$scope.degrees += 90;
+    	}
+
     	$('.spinner').css({'-webkit-transform' : 'rotate('+ $scope.degrees +'deg)',
 											 	 '-moz-transform' : 'rotate('+ $scope.degrees +'deg)',
 												 '-ms-transform' : 'rotate('+ $scope.degrees +'deg)',
