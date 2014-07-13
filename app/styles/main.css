@@ -1,4 +1,10 @@
+body {
+  background: #F8F8F8;
+}
 
+p {
+  font-family: inherit;
+}
 
 /* Custom page header */
 .header {
@@ -7,6 +13,7 @@
 
 .header h3 {
   text-align: left;
+  font-family: Ubuntu, inherit;
 }
 
 /* Custom page footer */
@@ -21,11 +28,15 @@
   border-top: 1px solid #e5e5e5;
 }
 
+.footer h5 {
+  font-family: Ubuntu, inherit;
+}
+
 
 
 .card-wrapper {
-  height: 220px;
-  margin-top: 60px;
+  height: 200px;
+  margin-top: 70px;
 }
 
 .card-wrapper h1 {

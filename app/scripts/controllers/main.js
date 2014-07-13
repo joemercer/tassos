@@ -12,7 +12,7 @@ angular.module('tassosApp')
   .controller('MainCtrl', function ($scope, CardsService) {
 
     $scope.card = {
-    	title: 'Press \'Next card\'',
+    	title: 'Press the spinner',
     	description: 'You gotta if you wanna start the game o_O'
     };
 
