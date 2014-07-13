@@ -2,30 +2,25 @@
 
 /* Custom page header */
 .header {
-  margin-top: 85px;
-  margin-bottom: 50px;
   border-bottom: 1px solid #e5e5e5;
 }
 
 .header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
-  text-align: right;
+  text-align: left;
 }
 
 /* Custom page footer */
 .footer {
-  margin-top: 50px;
-  padding-top: 19px;
+  position: fixed;
+  bottom: 0px;
   color: #777;
   border-top: 1px solid #e5e5e5;
 }
 
 
+
 .card-wrapper {
-  height: 250px;
+  height: 220px;
 }
 
 .card-wrapper h1 {
@@ -38,5 +33,5 @@
 }
 
 .spinner {
-  font-size: 75px;
+  font-size: 150px;
 }
