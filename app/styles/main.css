@@ -32,3 +32,11 @@
   margin-bottom: 20px;
 }
 
+.spin-effect {
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+
+.spinner {
+  font-size: 75px;
+}

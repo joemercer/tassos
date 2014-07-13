@@ -1,3 +1,4 @@
+/*global $:false */
 'use strict';
 
 /**
@@ -15,8 +16,21 @@ angular.module('tassosApp')
     	description: 'You gotta if you wanna start the game o_O'
     };
 
-    $scope.getCard = function() {
+    $scope.next = function() {
     	$scope.card = CardsService.get();
+
+    	if ($scope.card.secondspin > 0) {
+    		$scope.spin();
+    	}
+    };
+
+    $scope.degrees = 0;
+    $scope.spin = function() {
+    	$scope.degrees += 360 + (720 * Math.random());
+    	$('.spinner').css({'-webkit-transform' : 'rotate('+ $scope.degrees +'deg)',
+											 	 '-moz-transform' : 'rotate('+ $scope.degrees +'deg)',
+												 '-ms-transform' : 'rotate('+ $scope.degrees +'deg)',
+												 'transform' : 'rotate('+ $scope.degrees +'deg)'});
     };
 
   });
