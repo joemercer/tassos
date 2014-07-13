@@ -10,9 +10,13 @@
 }
 
 /* Custom page footer */
-.footer {
+.footer-container {
   position: fixed;
   bottom: 0px;
+  width: 100%;
+}
+
+.footer {
   color: #777;
   border-top: 1px solid #e5e5e5;
 }
