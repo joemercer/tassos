@@ -1,26 +1,25 @@
 # TODO
 ________
 
+- switch logging to production datastore
 
-- remove handlebars and precompilation from workflow
-- - we'll let angular handle our templating
+- switch out the data source to first date cards
 
-- begin structuring the angular app
+- polish
+--- put circle around spinner
 
-- get data (card values) in json format
-- store the data somewhere appropriate
+- feedback buttons on bottom
 
-- have a phonegap build test app that builds from the core source so that we can test on mobile easier (instead of having to actually release the entier app)
+- add trytassos email for additional feedback
+
+- look into iOS 100 testers
 
 - add all the useful author metatags etc
-
-- we're not using a css preprocessor, like LESS, which is kind of obnoxious
 
 
 # Backlog
 ___________
 
-- incorporate Tabletop.js for a "database"
 
 - testing? ugh
 

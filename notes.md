@@ -12,7 +12,7 @@ pass: tassos12345
 <YOUR-ACCESS-TOKEN> = 05PF-9qnGb8AAAAAAAAABEI3DKas5jHeRJcOMxH_U-I4a-JLcDkTS-ww3tTiEkWu
 
 
-// make a default data store
+// make a default datastore
 
 curl https://api.dropbox.com/1/datastores/get_or_create_datastore -d dsid=default -H "Authorization: Bearer <YOUR-ACCESS-TOKEN>"
 
@@ -21,7 +21,7 @@ curl https://api.dropbox.com/1/datastores/get_or_create_datastore -d dsid=defaul
 -> {"handle": "OFoEkC1vmfvF3X3Qekjg15fvwhxAZn", "rev": 0, "created": true}
 
 
-// make a logs data store
+// make a logs datastore
 
 curl https://api.dropbox.com/1/datastores/get_or_create_datastore -d dsid=default -H "Authorization: Bearer <YOUR-ACCESS-TOKEN>"
 
@@ -46,6 +46,10 @@ curl https://api.dropbox.com/1/datastores/get_snapshot?handle=<DATASTORE-HANDLE>
 curl https://api.dropbox.com/1/datastores/get_snapshot?handle=eBgq2tXRM8YA0QETZqjhBmsk7m8KFq -H "Authorization: Bearer 05PF-9qnGb8AAAAAAAAABEI3DKas5jHeRJcOMxH_U-I4a-JLcDkTS-ww3tTiEkWu"
 
 -> {"rows": [], "rev": 0}
+
+// and the default datastore
+
+curl https://api.dropbox.com/1/datastores/get_snapshot?handle=OFoEkC1vmfvF3X3Qekjg15fvwhxAZn -H "Authorization: Bearer 05PF-9qnGb8AAAAAAAAABEI3DKas5jHeRJcOMxH_U-I4a-JLcDkTS-ww3tTiEkWu"
 
 
 // END
