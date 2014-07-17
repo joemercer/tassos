@@ -9,7 +9,7 @@
  * Controller of the tassosApp
  */
 angular.module('tassosApp')
-  .controller('MainCtrl', function ($scope, CardsService) {
+  .controller('MainCtrl', function ($scope, Logging, CardsService) {
 
     $scope.card = {
     	title: 'Press the spinner',
@@ -19,9 +19,16 @@ angular.module('tassosApp')
     $scope.next = function() {
     	$scope.card = CardsService.get();
 
+    	Logging.log({
+    		type: 'next_card_requested',
+    		cardNumber: $scope.card.cardnumber
+    	});
+
     	if ($scope.card.secondspin > 0) {
     		$scope.spin();
     	}
+
+    	Logging.output();
     };
 
     $scope.degrees = 0;
