@@ -32,7 +32,6 @@ angular.module('tassosApp')
 				console.log('no logger');
 				return;
 			}
-
 			console.log(this.logger.query());
 		};
 

@@ -11,11 +11,13 @@
   	<span class="spinner spin-effect glyphicon glyphicon-arrow-up" ng-click="next()"></span>
   </div>
 
-  <h4>Review this card</h4>
-	<div class = "btn-group">
-	  <button class="btn btn-lg btn-danger"><span class="glyphicon glyphicon-thumbs-down"></span></button>
-	  <button class="btn btn-lg btn-warning">meh</button>
-	  <button class="btn btn-lg btn-success"><span class="glyphicon glyphicon-thumbs-up"></span></button>
-	</div>
+</div>
 
+<div class="card-rating">
+  <h4>Review this card:</h4>
+	<div class="btn-group">
+	  <button class="btn btn-lg btn-danger" ng-click="rateGood()"><span class="glyphicon glyphicon-thumbs-down"></span></button>
+	  <button class="btn btn-lg btn-warning" ng-click="rateMeh()">meh</button>
+	  <button class="btn btn-lg btn-success"><span class="glyphicon glyphicon-thumbs-up" ng-click="rateBad()"></span></button>
+	</div>
 </div>

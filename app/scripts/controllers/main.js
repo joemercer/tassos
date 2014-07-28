@@ -44,4 +44,41 @@ angular.module('tassosApp')
 												 'transform' : 'rotate('+ $scope.degrees +'deg)'});
     };
 
+    $scope.rateGood = function() {
+        if (!canRate()){
+            return; 
+        } 
+        Logging.log({
+            type:'card_rated',
+            cardNumber: $scope.card.cardnumber,
+            cardRating:'Good'
+        });
+    };
+    $scope.rateMeh = function(){
+        if (!canRate()){
+            return; 
+        } 
+        Logging.log({
+            type:'card_rated',
+            cardNumber: $scope.card.cardnumber,
+            cardRating:'Meh'
+        });
+    };
+    $scope.rateBad = function(){
+        if (!canRate()){
+            return; 
+        } 
+        Logging.log({
+            type:'card_rated',
+            cardNumber: $scope.card.cardnumber,
+            cardRating:'Bad'
+        });
+    };
+
+    var canRate = function(){
+        if (!$scope.card.cardnumber){
+            return false; 
+        }
+        return true; 
+    };
   });
