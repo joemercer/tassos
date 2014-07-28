@@ -18,6 +18,7 @@ angular.module('tassosApp')
 
     $scope.next = function() {
     	$scope.card = CardsService.get();
+        $scope.hasBeenRated = false;
 
     	Logging.log({
     		type: 'next_card_requested',
@@ -44,6 +45,8 @@ angular.module('tassosApp')
 												 'transform' : 'rotate('+ $scope.degrees +'deg)'});
     };
 
+    $scope.hasBeenRated = true;
+
     $scope.rateGood = function() {
         if (!canRate()){
             return; 
@@ -53,6 +56,7 @@ angular.module('tassosApp')
             cardNumber: $scope.card.cardnumber,
             cardRating:'Good'
         });
+        $scope.hasBeenRated = true;
     };
     $scope.rateMeh = function(){
         if (!canRate()){
@@ -63,6 +67,7 @@ angular.module('tassosApp')
             cardNumber: $scope.card.cardnumber,
             cardRating:'Meh'
         });
+        $scope.hasBeenRated = true;
     };
     $scope.rateBad = function(){
         if (!canRate()){
@@ -73,6 +78,7 @@ angular.module('tassosApp')
             cardNumber: $scope.card.cardnumber,
             cardRating:'Bad'
         });
+        $scope.hasBeenRated = true;
     };
 
     var canRate = function(){
