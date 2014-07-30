@@ -41,8 +41,8 @@ angular.module('tassosApp')
 				return;
 			}
 
+			// or log out more helpful queries
 			console.log(this.logger.query());
-			debugger;
 		};
 
   	this.dropbox = new Dropbox.Client({
@@ -58,7 +58,7 @@ angular.module('tassosApp')
 		      console.log('Error opening default datastore: ' + error);
 		    }
 
-		    this.logger = datastore.getTable('test');
+		    this.logger = datastore.getTable('logs');
 
 		    for (var i=0; i<this.backlog.length; ++i) {
 		    	this.logger.insert(this.backlog[i]);
