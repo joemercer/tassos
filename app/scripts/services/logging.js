@@ -14,10 +14,18 @@ angular.module('tassosApp')
 
   	this.logger = null;
   	this.backlog = [];
+  	this.userId = localStorage.getItem('tassos_user_id');
+
+  	// create a new userId
+  	// this should be checked against the existing userIds to prevent duplicates
+  	if (!this.userId) {
+  		this.userId = Math.floor(10000*Math.random());
+  		localStorage.setItem('tassos_user_id', this.userId);
+  	}
 
 		this.log = function(item) {
 			item.timestamp = (new Date()).getTime();
-			// !!! add support for tracking the user
+			item.userId = this.userId;
 
 			if (!this.logger) {
 				this.backlog.push(item);
@@ -32,7 +40,9 @@ angular.module('tassosApp')
 				console.log('no logger');
 				return;
 			}
+
 			console.log(this.logger.query());
+			debugger;
 		};
 
   	this.dropbox = new Dropbox.Client({
