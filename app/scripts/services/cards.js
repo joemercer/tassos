@@ -13,8 +13,6 @@ angular.module('tassosApp')
   .service('CardsService', function CardsService() {
     // AngularJS will instantiate a singleton by calling "new" on this function
 
-    var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/115idP64c_fvIxJw6zm6A8-feGbCjOeYxp3DnOPwMBhM/pubhtml';
-
     this.cards = [];
     this.current = 0;
 
@@ -42,6 +40,10 @@ angular.module('tassosApp')
     };
 
 
+    var spinzDeck = 'https://docs.google.com/spreadsheets/d/115idP64c_fvIxJw6zm6A8-feGbCjOeYxp3DnOPwMBhM/pubhtml';
+    var firstDateDeck = 'https://docs.google.com/spreadsheets/d/1uQLtqSJPecrQw1LZrLWVS9hSaJWGSOfkKHaVbTswtzM/pubhtml';
+
+    var publicSpreadsheetUrl = firstDateDeck;
 
     // check cache in local storage
 
