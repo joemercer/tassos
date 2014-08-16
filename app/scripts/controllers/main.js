@@ -26,9 +26,9 @@ angular.module('tassosApp')
     		cardNumber: $scope.card.cardnumber
     	});
 
-    	if ($scope.card.secondspin > 0) {
-    		$scope.spin();
-    	}
+    	// if ($scope.card.secondspin > 0) {
+    	// 	$scope.spin();
+    	// }
 
     	// Logging.output();
     };
@@ -85,4 +85,24 @@ angular.module('tassosApp')
     var canRate = function(){
         return isFinite($scope.card.cardnumber);
     };
+
+    // some keyboard shortcuts
+    $(window).keyup(function(e){
+        // if enter, space, or left arrow pressed, then next card
+        if (e.which === 13 || e.which === 32 || e.which === 39) {
+            $scope.next();
+            $scope.$apply();
+        }
+        // if up arrow pressed, then rate good
+        if (e.which === 38) {
+            $scope.rateGood();
+            $scope.$apply();
+        }
+        // if down arrow pressed, then rate bad
+        if (e.which === 40) {
+            $scope.rateBad();
+            $scope.$apply();
+        }
+    });
+
   });

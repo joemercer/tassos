@@ -86,6 +86,9 @@ p {
 }
 
 @media (min-height: 700px) {
+  html, body, .content {
+    height: auto;
+  }
   .card-wrapper {
     position: relative;
     height: 420px;
