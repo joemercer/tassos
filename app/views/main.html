@@ -1,32 +1,34 @@
-<div class="text-center">
 
-  <div class="card-wrapper">
-    <div ng-if="card">
-      <h1>{{card.title}}</h1>
-      <p class="lead">{{card.description}}</p>
-    </div>
-  </div>
 
-  <div>
-  	<span class="spinner spin-effect glyphicon glyphicon-arrow-up" ng-click="next()"></span>
+<div class="card-wrapper text-center">
+  <div ng-if="card">
+    <h1>{{card.title}}</h1>
+    <p class="lead">{{card.description}}</p>
   </div>
+</div>
+
+<!-- <div>
+	<span class="spinner spin-effect glyphicon glyphicon-arrow-up" ng-click="next()"></span>
+</div> -->
 
 </div>
 
-<div class="card-rating">
-  <h4>Review this card:</h4>
-	<div class="btn-group">
+<div class="controls-wrapper">
 
-	  <button ng-if="!hasBeenRated" class="btn btn-lg btn-danger" ng-click="rateGood()"><span class="glyphicon glyphicon-thumbs-down"></span></button>
-	  <button ng-if="hasBeenRated" class="btn btn-lg btn-danger disabled" ng-click="rateGood()"><span class="glyphicon glyphicon-thumbs-down"></span></button>
+<div class="btn-group">
 
-	  <button ng-if="!hasBeenRated" class="btn btn-lg btn-warning" ng-click="rateMeh()">meh</button>
-	  <button ng-if="hasBeenRated" class="btn btn-lg btn-warning disabled" ng-click="rateMeh()">meh</button>
+  <button ng-click="rateGood()" ng-if="!hasBeenRated" class="btn btn-lg btn-danger"><span class="glyphicon glyphicon-thumbs-down"></span></button>
+  <button ng-if="hasBeenRated" class="btn btn-lg btn-danger disabled"><span class="glyphicon glyphicon-thumbs-down"></span></button>
 
-	  <button ng-if="!hasBeenRated" class="btn btn-lg btn-success"><span class="glyphicon glyphicon-thumbs-up" ng-click="rateBad()"></span></button>
-	  <button ng-if="hasBeenRated" class="btn btn-lg btn-success disabled"><span class="glyphicon glyphicon-thumbs-up" ng-click="rateBad()"></span></button>
+  <button ng-click="rateMeh()" ng-if="!hasBeenRated" class="btn btn-lg btn-warning">meh</button>
+  <button ng-if="hasBeenRated" class="btn btn-lg btn-warning disabled">meh</button>
 
-	</div>
+  <button ng-click="rateBad()" ng-if="!hasBeenRated" class="btn btn-lg btn-success"><span class="glyphicon glyphicon-thumbs-up"></span></button>
+  <button ng-if="hasBeenRated" class="btn btn-lg btn-success disabled"><span class="glyphicon glyphicon-thumbs-up"></span></button>
+
 </div>
+
+<button class="btn btn-default btn-lg pull-right" ng-click="next()">Next <span class="glyphicon glyphicon-arrow-right"></span></button>
+
 
 <!-- disabled -->

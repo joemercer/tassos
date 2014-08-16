@@ -12,8 +12,9 @@ angular.module('tassosApp')
   .controller('MainCtrl', function ($scope, Logging, CardsService) {
 
     $scope.card = {
-    	title: 'Press the spinner',
-    	description: 'You gotta if you wanna start the game o_O'
+    	title: 'What\'s your favorite song?',
+    	description: '',
+        cardnumber: 0
     };
 
     $scope.next = function() {
@@ -29,7 +30,7 @@ angular.module('tassosApp')
     		$scope.spin();
     	}
 
-    	Logging.output();
+    	// Logging.output();
     };
 
     $scope.degrees = 0;
@@ -45,7 +46,7 @@ angular.module('tassosApp')
 												 'transform' : 'rotate('+ $scope.degrees +'deg)'});
     };
 
-    $scope.hasBeenRated = true;
+    $scope.hasBeenRated = false;
 
     $scope.rateGood = function() {
         if (!canRate()){
@@ -82,9 +83,6 @@ angular.module('tassosApp')
     };
 
     var canRate = function(){
-        if (!$scope.card.cardnumber){
-            return false; 
-        }
-        return true; 
+        return isFinite($scope.card.cardnumber);
     };
   });

@@ -1,4 +1,9 @@
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
   background: #F8F8F8;
 }
 
@@ -6,7 +11,13 @@ p {
   font-family: inherit;
 }
 
-/* Custom page header */
+/* Custom page header fixed to top*/
+.header-container {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+}
+
 .header {
   border-bottom: 1px solid #e5e5e5;
 }
@@ -16,7 +27,7 @@ p {
   font-family: Ubuntu, inherit;
 }
 
-/* Custom page footer */
+/* Custom page footer fixed to bottom*/
 .footer-container {
   position: fixed;
   bottom: 0px;
@@ -32,15 +43,59 @@ p {
   font-family: Ubuntu, inherit;
 }
 
+/* Content */
+.content {
+  height: 100%;
+
+  /*header-height: 57px;
+  footer-height: 36px;*/
+}
+
+/* Main controller 
+    header-height: 57px;
+    footer-height: 36px;
+*/
 .card-wrapper {
-  height: 200px;
-  margin-top: 70px;
+  width: 100%;
+  max-width: 400px;
+  left: 0px;
+  right: 0px;
+  margin: 0px auto;
+  position: absolute;
+  top: 57px;
+
+  margin-top: 20px;
+  padding: 0px 10px;
 }
 
 .card-wrapper h1 {
-  margin-bottom: 20px;
+
 }
 
+.controls-wrapper{
+  width: 100%;
+  max-width: 400px;
+  left: 0px;
+  right: 0px;
+  margin: 0px auto;
+  position: absolute;
+  bottom: 36px;
+
+  margin-bottom: 20px;
+  padding: 0px 10px;
+}
+
+@media (min-height: 700px) {
+  .card-wrapper {
+    position: relative;
+    height: 420px;
+  }
+  .controls-wrapper{
+    position: relative;
+  }
+}
+
+/* Spinner */
 .spin-effect {
   -webkit-transition: 1s ease-in-out;
   transition: 1s ease-in-out;
@@ -49,8 +104,4 @@ p {
 .spinner {
   font-size: 150px;
   padding-right: 13px;
-}
-
-.card-rating{
-  margin-top: 50px;
 }
